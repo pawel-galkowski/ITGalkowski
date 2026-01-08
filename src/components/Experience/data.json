@@ -1,0 +1,50 @@
+[
+  {
+    "id": "t6vg80ivfan7ayy04z746t1c",
+    "company": "Capgemini SE",
+    "position": "Senior Software Engineer",
+    "location": "Katowice (Hybrid)",
+    "date": "07/2025 - Present",
+    "summary": "<ul><li><p>Contributed to an AI‑powered search platform using Azure AI Search and Cognitive Services, improving relevance and user experience.</p></li><li><p>Built modern, responsive interfaces using TypeScript and component‑based frontend architectures, with a strong focus on UX clarity and performance.</p></li><li><p>Decreased UI-related defects by ~20% through improved component architecture and testing standards.</p></li><li><p>Collaborated with designers to prototype new interaction patterns and refine visual consistency across the product.</p></li><li><p>Mentored engineers and improved frontend architecture, reducing duplication and accelerating delivery.</p></li><li><p>Established testing and accessibility standards across the team.</p></li></ul>",
+    "url": {
+      "label": "capgemini.com",
+      "href": "https://www.capgemini.com/"
+    }
+  },
+  {
+    "id": "ch1w2rrsi17m3j8bb1qwymf3",
+    "company": "Capgemini SE",
+    "position": "Software Engineer",
+    "location": "Katowice (Remote)",
+    "date": "05/2022 - 07/2025",
+    "summary": "<ul><li><p>Collaborated with distributed teams across multiple time zones, ensuring smooth delivery and alignment.</p></li><li><p>Delivered scalable frontend solutions using React, TypeScript, Node, and cloud‑native tooling.</p></li><li><p>Worked directly with clients to define requirements and iterate quickly based on feedback.</p></li><li><p>Built automated testing frameworks (Jest, Cypress) to ensure reliability and reduce regressions.</p></li><li><p>Facilitated knowledge‑sharing sessions and improved engineering quality across the team.</p></li><li><p>Enhanced UI performance and consistency across multiple applications by improving component architecture and reducing redundant logic.</p></li></ul>",
+    "url": {
+      "label": "capgemini.com",
+      "href": "https://www.capgemini.com/"
+    }
+  },
+  {
+    "id": "fxiqvrqisw1a04ycotk8a5vk",
+    "company": "ING Bank Śląski S.A.",
+    "position": "JavaScript Developer",
+    "location": "Katowice (Hybrid)",
+    "date": "12/2020 - 05/2022",
+    "summary": "<ul><li><p>Maintained and optimised a large‑scale banking system used by thousands of customers.</p></li><li><p>Developed reusable UI components in JavaScript, improving maintainability and reducing UI defects.</p></li><li><p>Created mock data and testing utilities to support QA automation.</p></li><li><p>Proposed architectural improvements to enhance performance and stability.</p></li><li><p>Supported a system serving thousands of daily users, ensuring stability and smooth performance.</p></li></ul>",
+    "url": {
+      "label": "ing.pl",
+      "href": "https://www.ing.pl/"
+    }
+  },
+  {
+    "id": "bix2508glushfuan8d8g9ugx",
+    "company": "Instal‑Konsorcjum Sp. z o.o.",
+    "position": "Junior Full‑Stack Developer ",
+    "location": "Wrocław (On‑site)",
+    "date": "07/2018 - 12/2020",
+    "summary": "<ul><li><p>Built a client ticket dashboard, reducing support call volume by <strong>40%</strong>.</p></li><li><p>Developed responsive websites using JavaScript, Vue, PHP, MySQL, Node, and C# .NET Core.</p></li><li><p>Modernised legacy systems, achieving measurable performance gains (18%+ faster load times).</p></li><li><p>Maintained internal applications across multiple technologies.</p></li></ul>",
+    "url": {
+      "label": "ik.pl",
+      "href": "https://ik.pl/"
+    }
+  }
+]
