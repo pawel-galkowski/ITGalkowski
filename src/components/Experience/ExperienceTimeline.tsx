@@ -11,9 +11,9 @@ import data from './data.json'
 import { Box, Typography } from '@mui/material'
 import { v4 as uuidv4 } from 'uuid'
 import { parse } from 'node-html-parser'
+const stringToHTML = (str: string) => parse(str)
 
 const ExperienceTimeline = () => {
-  const stringToHTML = (str: string) => parse(str)
   return (
     <Timeline position='alternate'>
       {data.map((el) => (
