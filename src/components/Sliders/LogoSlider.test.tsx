@@ -1,52 +1,52 @@
-import React from 'react'
-import { render, screen } from '@testing-library/react'
-import LogoSlider from './LogoSlider'
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import LogoSlider from "./LogoSlider";
 
-describe('LogoSlider Component', () => {
-  it('renders LogoSlider with title', () => {
-    render(<LogoSlider />)
-    expect(screen.getByText('Proudly Supported by')).toBeInTheDocument()
-  })
+describe("LogoSlider Component", () => {
+  it("renders LogoSlider with title", () => {
+    render(<LogoSlider />);
+    expect(screen.getByText("Proudly Supported by")).toBeInTheDocument();
+  });
 
-  it('renders all company logos', () => {
-    render(<LogoSlider />)
+  it("renders all company logos", () => {
+    render(<LogoSlider />);
     // Use getAllByAltText with a specific index to avoid duplicates from carousel loop
-    const szpitalLogos = screen.getAllByAltText(/Szpital rejonowy w Raciborzu/)
-    const instalLogos = screen.getAllByAltText(/Instal Konsorcjum/)
-    const abnLogos = screen.getAllByAltText(/ABN AMRO/)
-    const ingLogos = screen.getAllByAltText(/Ing Bank/)
-    const capgeminiLogos = screen.getAllByAltText(/Capgemini/)
-    
-    expect(szpitalLogos.length).toBeGreaterThan(0)
-    expect(instalLogos.length).toBeGreaterThan(0)
-    expect(abnLogos.length).toBeGreaterThan(0)
-    expect(ingLogos.length).toBeGreaterThan(0)
-    expect(capgeminiLogos.length).toBeGreaterThan(0)
-  })
+    const szpitalLogos = screen.getAllByAltText(/Szpital rejonowy w Raciborzu/);
+    const instalLogos = screen.getAllByAltText(/Instal Konsorcjum/);
+    const abnLogos = screen.getAllByAltText(/ABN AMRO/);
+    const ingLogos = screen.getAllByAltText(/Ing Bank/);
+    const capgeminiLogos = screen.getAllByAltText(/Capgemini/);
 
-  it('contains at least 5 logos (accounting for carousel duplication)', () => {
-    render(<LogoSlider />)
-    const images = screen.getAllByRole('img')
-    expect(images.length).toBeGreaterThanOrEqual(5)
-  })
+    expect(szpitalLogos.length).toBeGreaterThan(0);
+    expect(instalLogos.length).toBeGreaterThan(0);
+    expect(abnLogos.length).toBeGreaterThan(0);
+    expect(ingLogos.length).toBeGreaterThan(0);
+    expect(capgeminiLogos.length).toBeGreaterThan(0);
+  });
 
-  it('has navigation buttons', () => {
-    render(<LogoSlider />)
-    const buttons = screen.getAllByRole('button')
-    expect(buttons.length).toBe(2) // Previous and Next buttons
-  })
+  it("contains at least 5 logos (accounting for carousel duplication)", () => {
+    render(<LogoSlider />);
+    const images = screen.getAllByRole("img");
+    expect(images.length).toBeGreaterThanOrEqual(5);
+  });
 
-  it('all logos have valid src attributes', () => {
-    render(<LogoSlider />)
-    const images = screen.getAllByRole('img')
+  it("has navigation buttons", () => {
+    render(<LogoSlider />);
+    const buttons = screen.getAllByRole("button");
+    expect(buttons.length).toBe(2); // Previous and Next buttons
+  });
+
+  it("all logos have valid src attributes", () => {
+    render(<LogoSlider />);
+    const images = screen.getAllByRole("img");
     images.forEach((img) => {
-      const src = img.getAttribute('src')
-      expect(src).toBeTruthy()
-    })
-  })
+      const src = img.getAttribute("src");
+      expect(src).toBeTruthy();
+    });
+  });
 
-  it('renders with full viewport width styling', () => {
-    const { container } = render(<LogoSlider />)
-    expect(container.firstChild).toBeInTheDocument()
-  })
-})
+  it("renders with full viewport width styling", () => {
+    const { container } = render(<LogoSlider />);
+    expect(container.firstChild).toBeInTheDocument();
+  });
+});

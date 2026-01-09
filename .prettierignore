@@ -1,0 +1,11 @@
+# Ignore files and folders
+node_modules/
+.next/
+build/
+dist/
+.git/
+coverage/
+out/
+*.log
+.env.local
+.env.*.local

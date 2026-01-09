@@ -1,15 +1,18 @@
 # Test Suite Documentation
 
 ## Overview
+
 This document outlines the comprehensive test suite created for the ITGalkowski portfolio website. The tests cover all components, sections, and the main page using Jest and React Testing Library.
 
 ## Test Configuration
 
 ### Files Added:
+
 1. **jest.config.ts** - Jest configuration with Next.js support
 2. **jest.setup.ts** - Jest setup file with testing-library utilities
 
 ### Dependencies Added to package.json:
+
 - `@testing-library/react` - React component testing utilities
 - `@testing-library/jest-dom` - Custom Jest matchers
 - `@testing-library/user-event` - User interaction simulation
@@ -23,6 +26,7 @@ This document outlines the comprehensive test suite created for the ITGalkowski 
 ### Components Tests
 
 #### 1. Header Component (`src/components/header/Header.test.tsx`)
+
 - **Tests:**
   - Renders header with logo text
   - Renders all navigation items (Home, About, Contact)
@@ -32,6 +36,7 @@ This document outlines the comprehensive test suite created for the ITGalkowski 
   - Renders AppBar component
 
 #### 2. Footer Component (`src/components/footer/Footer.test.tsx`)
+
 - **Tests:**
   - Renders footer with copyright text
   - Displays correct current year
@@ -40,6 +45,7 @@ This document outlines the comprehensive test suite created for the ITGalkowski 
   - Displays company name
 
 #### 3. Faqs Component (`src/components/faqs/Faqs.test.tsx`)
+
 - **Tests:**
   - Renders accordion component
   - Displays all FAQ questions
@@ -49,6 +55,7 @@ This document outlines the comprehensive test suite created for the ITGalkowski 
   - Contains agile methodologies mention
 
 #### 4. ImageTiles Component (`src/components/imageTiles/ImageTiles.test.tsx`)
+
 - **Tests:**
   - Renders ImageList component
   - Displays all service titles and descriptions
@@ -58,6 +65,7 @@ This document outlines the comprehensive test suite created for the ITGalkowski 
   - Displays service bar with title and subtitle
 
 #### 5. Slider Component (`src/components/Sliders/Slider.test.tsx`)
+
 - **Tests:**
   - Renders carousel with images
   - Renders navigation buttons (Previous/Next)
@@ -69,6 +77,7 @@ This document outlines the comprehensive test suite created for the ITGalkowski 
   - Auto-advances carousel with timer
 
 #### 6. ImgSlider Component (`src/components/Sliders/ImgSlider.test.tsx`)
+
 - **Tests:**
   - Renders with title "Proudly Supported by"
   - Renders all 6 featured images
@@ -78,6 +87,7 @@ This document outlines the comprehensive test suite created for the ITGalkowski 
   - Renders with full viewport width styling
 
 #### 7. LogoSlider Component (`src/components/Sliders/LogoSlider.test.tsx`)
+
 - **Tests:**
   - Renders with title "Proudly Supported by"
   - Renders all 5 company logos
@@ -87,6 +97,7 @@ This document outlines the comprehensive test suite created for the ITGalkowski 
   - Renders with full viewport width styling
 
 #### 8. ExperienceTimeline Component (`src/components/Experience/ExperienceTimeline.test.tsx`)
+
 - **Tests:**
   - Renders timeline component
   - Displays experience entries
@@ -98,6 +109,7 @@ This document outlines the comprehensive test suite created for the ITGalkowski 
 ### Sections Tests
 
 #### 1. EntrySection Component (`src/sections/EntrySection.test.tsx`)
+
 - **Tests:**
   - Renders main heading
   - Displays description text
@@ -109,6 +121,7 @@ This document outlines the comprehensive test suite created for the ITGalkowski 
   - Image has correct src attribute
 
 #### 2. InovationSection Component (`src/sections/InovationSection.test.tsx`)
+
 - **Tests:**
   - Renders main heading
   - Displays description text
@@ -122,6 +135,7 @@ This document outlines the comprehensive test suite created for the ITGalkowski 
 ### Page Tests
 
 #### 1. Home Page (`src/pages/index.test.tsx`)
+
 - **Tests:**
   - Renders main element
   - Renders all child components (Header, Footer, sections)
@@ -131,6 +145,7 @@ This document outlines the comprehensive test suite created for the ITGalkowski 
 ## Running Tests
 
 ### Commands:
+
 ```bash
 # Run all tests
 npm test
@@ -151,6 +166,7 @@ Total test files created: **11**
 Total test cases: **80+**
 
 ### Coverage Summary:
+
 - **Header Component:** 6 tests
 - **Footer Component:** 5 tests
 - **Faqs Component:** 7 tests
@@ -166,11 +182,13 @@ Total test cases: **80+**
 ## Testing Approach
 
 ### Technologies Used:
+
 - **Jest:** Test runner and assertion library
 - **React Testing Library:** Component testing utilities
 - **@testing-library/user-event:** User interaction testing
 
 ### Testing Principles Applied:
+
 1. **User-centric testing:** Tests focus on what users see and interact with
 2. **Component isolation:** Each component is tested independently
 3. **Mock dependencies:** External components are mocked in parent tests

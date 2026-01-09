@@ -1,4 +1,6 @@
-import React from 'react'
+"use client";
+
+import React, { useState } from "react";
 import {
   AppBar,
   Box,
@@ -11,97 +13,118 @@ import {
   ListItemButton,
   ListItemText,
   Toolbar,
-  Typography
-} from '@mui/material'
-import Image from 'next/image'
-import MenuIcon from '@mui/icons-material/Menu'
-import { v4 as uuidv4 } from 'uuid'
+  Typography,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import { useLanguage } from "@/context/LanguageContext";
+import { useTranslations } from "@/i18n";
 
-const drawerWidth = 240
-const navItems = ['Home', 'About', 'Contact']
+const drawerWidth = 240;
 
 const Header: React.FC = () => {
-  const [mobileOpen, setMobileOpen] = React.useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const { language } = useLanguage();
+  const { t } = useTranslations(language);
+
+  const navItems = [
+    { key: "header.home", label: t("header.home") },
+    { key: "header.about", label: t("header.about") },
+    { key: "header.contact", label: t("header.contact") },
+  ];
 
   const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState)
-  }
+    setMobileOpen((prevState) => !prevState);
+  };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant='h6' sx={{ my: 2 }}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+      <Typography variant="h6" sx={{ my: 2 }}>
         Logo ITGalkowski
       </Typography>
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+          <ListItem key={item.key} disablePadding>
+            <ListItemButton sx={{ textAlign: "center" }}>
+              <ListItemText primary={item.label} />
             </ListItemButton>
           </ListItem>
         ))}
       </List>
     </Box>
-  )
+  );
 
   return (
-    <Box sx={{ display: 'flex' }} data-testid='header'>
-      <AppBar component='nav' sx={{ padding: 2}}>
+    <>
+      <AppBar
+        position="fixed"
+        sx={{ padding: 2 }}
+        data-testid="header"
+        aria-label="Site header navigation"
+      >
         <Toolbar>
           <IconButton
-            color='inherit'
-            aria-label='open drawer'
-            edge='start'
+            color="inherit"
+            aria-label="open navigation drawer"
+            edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}>
+            sx={{ mr: 2, display: { sm: "none" } }}
+          >
             <MenuIcon />
           </IconButton>
           <Typography
-            variant='h6'
-            component='div'
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' }, flexDirection: 'row', alignItems: 'center', gap: 2 }}>
+            variant="h6"
+            component="div"
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", sm: "flex" },
+              flexDirection: "row",
+              alignItems: "center",
+              gap: 2,
+            }}
+          >
             <Box
-              component='img'
-              src='/img/logo.png'
-              alt='Logo'
+              component="img"
+              src="/img/logo.png"
+              alt="ITGalkowski logo"
               sx={{
-                objectFit: 'cover',
-                width: '100%',
-                height: 'auto',
-                maxWidth: 300
+                objectFit: "cover",
+                width: "100%",
+                height: "auto",
+                maxWidth: 300,
               }}
             />
           </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+          <Box sx={{ display: { xs: "none", sm: "block" } }} role="navigation">
             {navItems.map((item) => (
-              <Button key={uuidv4()} sx={{ color: '#fff' }}>
-                {item}
+              <Button key={item.key} sx={{ color: "#fff" }}>
+                {item.label}
               </Button>
             ))}
           </Box>
         </Toolbar>
       </AppBar>
-      <nav>
+      <nav aria-label="Main navigation">
         <Drawer
-          variant='temporary'
+          variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true
+            keepMounted: true,
           }}
           sx={{
-            display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': {
-              boxSizing: 'border-box',
-              width: drawerWidth
-            }
-          }}>
+            display: { xs: "block", sm: "none" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+            },
+          }}
+        >
           {drawer}
         </Drawer>
       </nav>
-    </Box>
-  )
-}
+    </>
+  );
+};
 
-export default Header
+export default Header;
