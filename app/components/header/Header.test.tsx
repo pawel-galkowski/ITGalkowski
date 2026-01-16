@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { renderWithA11y } from "@/test-utils/a11y";
-import { LanguageProvider } from "../../../app/context/LanguageContext";
+import { LanguageProvider } from "@/context/LanguageContext";
 import Header from "./Header";
 
 const HeaderWithProvider = () => (

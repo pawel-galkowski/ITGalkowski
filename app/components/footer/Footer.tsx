@@ -2,8 +2,8 @@
 
 import { Box, Typography } from "@mui/material";
 import React from "react";
-import { useLanguage } from "../../../app/context/LanguageContext";
-import { useTranslations } from "../../../app/i18n";
+import { useLanguage } from "@/context/LanguageContext";
+import { useTranslations } from "@/i18n";
 
 const Footer: React.FC = () => {
   const { language } = useLanguage();
@@ -33,4 +33,3 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
-

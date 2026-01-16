@@ -10,7 +10,7 @@ export const pl: Translations = {
     contact: "Kontakt",
   },
   footer: {
-    copyright: "© 2026 Wszystkie prawa zastrzeżone",
+    copyright: "Wszystkie prawa zastrzeżone",
     followUs: "Śledź nas",
     quickLinks: "Szybkie linki",
   },
@@ -23,4 +23,9 @@ export const pl: Translations = {
     delete: "Usuń",
     edit: "Edytuj",
   },
+  explorePortfolio: {
+    title: "Popraw jakość korzystania z Internetu",
+    body: "Prezentacja solidnego portfolio w języku JavaScript opartego na fundamencie TypeScript, prosto z serca Katowic.",
+    button: "Przeglądaj portfolio"
+  }
 };

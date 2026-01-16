@@ -1,6 +1,13 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import Home from "./page";
+import { LanguageProvider } from "./context/LanguageContext";
+
+const RenderMock = () => (
+  <LanguageProvider>
+    <Home />
+  </LanguageProvider>
+);
 
 // Mock child components
 jest.mock("@/components/header/Header", () => {
@@ -59,60 +66,57 @@ jest.mock("@/sections/InovationSection", () => {
 
 describe("Home Page", () => {
   it("renders main element", () => {
-    const { container } = render(<Home />);
+    const { container } = render(<RenderMock />);
     expect(container.querySelector("main")).toBeInTheDocument();
   });
 
   it("renders Header component", () => {
-    render(<Home />);
+    render(<RenderMock />);
     expect(screen.getByTestId("header-mock")).toBeInTheDocument();
   });
 
   it("renders Footer component", () => {
-    render(<Home />);
+    render(<RenderMock />);
     expect(screen.getByTestId("footer-mock")).toBeInTheDocument();
   });
 
   it("renders EntrySection component", () => {
-    render(<Home />);
+    render(<RenderMock />);
     expect(screen.getByTestId("entrysection-mock")).toBeInTheDocument();
   });
 
   it("renders InovationSection component", () => {
-    render(<Home />);
+    render(<RenderMock />);
     expect(screen.getByTestId("innovationsection-mock")).toBeInTheDocument();
   });
 
   it("renders ExperienceTimeline component", () => {
-    render(<Home />);
+    render(<RenderMock />);
     expect(screen.getByTestId("timeline-mock")).toBeInTheDocument();
   });
 
   it("renders ImageTiles component", () => {
-    render(<Home />);
+    render(<RenderMock />);
     expect(screen.getByTestId("imagetiles-mock")).toBeInTheDocument();
   });
 
   it("renders ImgSlider component", () => {
-    render(<Home />);
+    render(<RenderMock />);
     expect(screen.getByTestId("imgslider-mock")).toBeInTheDocument();
   });
 
   it("renders LogoSlider component", () => {
-    render(<Home />);
-    // LogoSlider is not rendered on the home page in the current structure
-    // This test can be updated or removed if LogoSlider should not be on the home page
-    // For now, we'll just verify the page renders without error
+    render(<RenderMock />);
     expect(screen.getByRole("main")).toBeInTheDocument();
   });
 
   it('displays "My work timeline" heading', () => {
-    render(<Home />);
+    render(<RenderMock />);
     expect(screen.getByText("My work timeline")).toBeInTheDocument();
   });
 
   it("renders all major sections", () => {
-    render(<Home />);
+    render(<RenderMock />);
     const mainElement = screen.getByRole("main");
     expect(mainElement).toBeInTheDocument();
     expect(mainElement.children.length).toBeGreaterThan(0);

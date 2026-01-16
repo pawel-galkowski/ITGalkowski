@@ -16,14 +16,16 @@ import {
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useLanguage } from "../../../app/context/LanguageContext";
-import { useTranslations } from "../../../app/i18n";
+import { useLanguage } from "@/context/LanguageContext";
+import { useTranslations } from "@/i18n";
+import { Languages } from "@/i18n/types";
+import { LanguageButtons } from "../utils";
 
 const drawerWidth = 240;
 
 const Header: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { language } = useLanguage();
+  const { language, setLanguage } = useLanguage();
   const { t } = useTranslations(language);
 
   const navItems = [
@@ -34,6 +36,10 @@ const Header: React.FC = () => {
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
+  };
+
+  const handleLanguageChange = (lang: Languages) => {
+    setLanguage(lang);
   };
 
   const drawer = (
@@ -95,12 +101,16 @@ const Header: React.FC = () => {
               }}
             />
           </Typography>
-          <Box sx={{ display: { xs: "none", sm: "block" } }} role="navigation">
+          <Box
+            sx={{ display: { xs: "none", sm: "flex", alignItems: "center", gap: 5 } }}
+            role="navigation"
+          >
             {navItems.map((item) => (
               <Button key={item.key} sx={{ color: "#fff" }}>
                 {item.label}
               </Button>
             ))}
+            <LanguageButtons language={language} handleLanguageChange={handleLanguageChange} />
           </Box>
         </Toolbar>
       </AppBar>

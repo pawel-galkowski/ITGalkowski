@@ -2,7 +2,7 @@ export type Language = Languages.EN | Languages.PL;
 
 export enum Languages {
   EN = "en",
-  PL = "pl"
+  PL = "pl",
 }
 
 export interface Translations {
@@ -27,5 +27,10 @@ export interface Translations {
     save: string;
     delete: string;
     edit: string;
+  };
+  explorePortfolio: {
+    title: string;
+    body: string;
+    button: string;
   };
 }

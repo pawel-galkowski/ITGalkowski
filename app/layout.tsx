@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Providers } from "./providers";
+import "@/index.module.css";
 
 export const metadata: Metadata = {
   title: "ITGalkowski - Portfolio",
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
   keywords: ["portfolio", "developer", "projects", "experience"],
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "pl_PL",
     title: "ITGalkowski - Portfolio",
     description: "Professional portfolio showcasing experience, skills, and projects",
   },
@@ -25,10 +26,18 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       </head>
-      <body style={{ padding: 0, margin: 0 }} suppressHydrationWarning>
+      <body
+        style={{
+          padding: 0,
+          margin: 0,
+          width: "100vw",
+          minHeight: "100vh",
+          overflowX: "hidden",
+        }}
+        suppressHydrationWarning
+      >
         <Providers>{children}</Providers>
       </body>
     </html>
   );
 }
-
