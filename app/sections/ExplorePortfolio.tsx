@@ -10,24 +10,42 @@ const ExplorePortfolio = () => {
     <Box
       sx={{
         width: "100%",
-        height: 400,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        objectFit: 'cover',
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        flexDirection: "column",
-        color: "black",
-        gap: 2,
-        backgroundImage:
-          "url(https://media.gettyimages.com/id/1413283697/photo/writing-code-creating-website-dashboards-and-programming-help-for-technology-website-upkeep.jpg?b=1&s=2048x2048&w=0&k=20&c=uRu5fvA1eopJyvF5AiiQIOlK6xvaoHhBrucKIupMQdM=)",
+        height: 600,
+        position: "relative",
       }}
     >
-      <Typography variant="h1">{t('explorePortfolio.title')}</Typography>
-      <Typography variant="body1">{t('explorePortfolio.body')}</Typography>
-      <Button variant="contained" color="primary">{t('explorePortfolio.button')}</Button>
+      <Box
+        sx={{
+          width: "100%",
+          height: "100%",
+          position: "absolute",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "column",
+          color: "white",
+          backgroundColor: "rgba(0, 0, 0, 0.7)",
+          gap: 2,
+        }}
+      >
+        <Typography variant="h1">{t("explorePortfolio.title")}</Typography>
+        <Typography variant="body1">{t("explorePortfolio.body")}</Typography>
+        <Button variant="contained" sx={{ backgroundColor: "secondary.light", opacity: 1 }}>
+          {t("explorePortfolio.button")}
+        </Button>
+      </Box>
+      <Box
+        sx={{
+          width: "100%",
+          objectFit: "cover",
+          backgroundImage:
+            "url(https://media.gettyimages.com/id/1413283697/photo/writing-code-creating-website-dashboards-and-programming-help-for-technology-website-upkeep.jpg?b=1&s=2048x2048&w=0&k=20&c=uRu5fvA1eopJyvF5AiiQIOlK6xvaoHhBrucKIupMQdM=)",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          height: "100%",
+        }}
+      ></Box>
     </Box>
   );
 };

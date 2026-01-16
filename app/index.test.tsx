@@ -3,13 +3,12 @@ import { render, screen } from "@testing-library/react";
 import Home from "./page";
 import { LanguageProvider } from "./context/LanguageContext";
 
-const RenderMock = () => (
+const RenderMock: React.FC = () => (
   <LanguageProvider>
     <Home />
   </LanguageProvider>
 );
 
-// Mock child components
 jest.mock("@/components/header/Header", () => {
   return function DummyHeader() {
     return <header data-testid="header-mock">Header</header>;

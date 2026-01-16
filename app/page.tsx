@@ -4,7 +4,6 @@ import styles from "@/index.module.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import ExperienceTimeline from "@/components/Experience/ExperienceTimeline";
-import Faqs from "@/components/Faqs/Faqs";
 import ImageTiles from "@/components/ImageTiles/ImageTiles";
 import { Box, Container, Typography } from "@mui/material";
 import React from "react";
@@ -12,7 +11,8 @@ import { defaultSectionStyle } from "@/styles";
 import EntrySection from "@/sections/EntrySection";
 import InovationSection from "@/sections/InovationSection";
 import ImgSlider from "@/components/Sliders/ImgSlider";
-import ExplorePortfolio from "./sections/ExplorePortfolio";
+import ExplorePortfolio from "@/sections/ExplorePortfolio";
+import FAQSection from "@/sections/FAQSection";
 
 const Home: React.FC = () => (
   <main className={styles.main}>
@@ -72,9 +72,7 @@ const Home: React.FC = () => (
           </Box>
         </Container>
       </Box>
-      <Container>
-        <Faqs />
-      </Container>
+      <FAQSection />
       <ExplorePortfolio />
     </Box>
 
