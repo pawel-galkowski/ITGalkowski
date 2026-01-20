@@ -1,0 +1,50 @@
+[
+  {
+    "id": "t6vg80ivfan7ayy04z746t1c",
+    "company": "Capgemini SE",
+    "position": "Senior Software Engineer",
+    "location": "Katowice (Praca hybrydowa)",
+    "date": "07/2025 - Obecnie",
+    "summary": "<ul><li><p>Przyczynił się do platformy wyszukiwania zasilanej sztuczną inteligencją przy użyciu usługi Azure AI Search i Cognitive Services, poprawiając trafność i doświadczenie użytkownika.</p></li><li><p>Zbudował nowoczesne, responsywne interfejsy przy użyciu TypeScript i architektur frontendowych opartych na komponentach, z silnym naciskiem na jasność UX i wydajność.</p></li><li><p>Zmniejszył defekty związane z interfejsem użytkownika o ~20% dzięki ulepszonej architekturze komponentów i standardom testowania.</p></li><li><p>Współpracował z projektantami w celu prototypowania nowych wzorców interakcji i udoskonalania spójności wizualnej w całym produkcie.</p></li><li><p>Mentorował inżynierów i ulepszył architekturę frontendową, zmniejszając duplikaty i przyspieszając dostarczanie.</p></li><li><p>Ustalił standardy testowania i dostępności w całej zespole.</p></li></ul>",
+    "url": {
+      "label": "capgemini.com",
+      "href": "https://www.capgemini.com/"
+    }
+  },
+  {
+    "id": "ch1w2rrsi17m3j8bb1qwymf3",
+    "company": "Capgemini SE",
+    "position": "Software Engineer",
+    "location": "Katowice (Praca zdalna)",
+    "date": "05/2022 - 07/2025",
+    "summary": "<ul><li><p>Współpracował z rozproszonymi zespołami w wielu strefach czasowych, zapewniając płynne dostarczanie i wyrównanie.</p></li><li><p>Dostarczył skalowalne rozwiązania frontendowe przy użyciu React, TypeScript, Node i narzędzi natywnych dla chmury.</p></li><li><p>Pracował bezpośrednio z klientami w celu zdefiniowania wymagań i szybkiej iteracji na podstawie opinii.</p></li><li><p>Zbudował zautomatyzowane ramy testowania (Jest, Cypress) w celu zapewnienia niezawodności i zmniejszenia regresji.</p></li><li><p>Ułatwił sesje wymiany wiedzy i poprawił jakość inżynierii w całym zespole.</p></li><li><p>Ulepszył wydajność i spójność interfejsu użytkownika w wielu aplikacjach poprzez ulepszenie architektury komponentów i zmniejszenie nadmiarowej logiki.</p></li></ul>",
+    "url": {
+      "label": "capgemini.com",
+      "href": "https://www.capgemini.com/"
+    }
+  },
+  {
+    "id": "fxiqvrqisw1a04ycotk8a5vk",
+    "company": "ING Bank Śląski S.A.",
+    "position": "JavaScript Developer",
+    "location": "Katowice (Praca hybrydowa)",
+    "date": "12/2020 - 05/2022",
+    "summary": "<ul><li><p>Utrzymywał i optymalizował wielkoobszarowy system bankowy używany przez tysiące klientów.</p></li><li><p>Opracował komponenty interfejsu użytkownika wielokrotnego użytku w języku JavaScript, poprawiając łatwość konserwacji i zmniejszając defekty interfejsu użytkownika.</p></li><li><p>Utworzył dane testowe i narzędzia testowania w celu wspierania automatyzacji QA.</p></li><li><p>Zaproponował ulepszenia architektoniczne w celu zwiększenia wydajności i stabilności.</p></li><li><p>Wspierał system obsługujący tysiące użytkowników dziennie, zapewniając stabilność i płynną wydajność.</p></li></ul>",
+    "url": {
+      "label": "ing.pl",
+      "href": "https://www.ing.pl/"
+    }
+  },
+  {
+    "id": "bix2508glushfuan8d8g9ugx",
+    "company": "Instal‑Konsorcjum Sp. z o.o.",
+    "position": "Junior Full‑Stack Developer ",
+    "location": "Wrocław (Praca lokalna)",
+    "date": "07/2018 - 12/2020",
+    "summary": "<ul><li><p>Zbudował pulpit nawigacyjny biletów klientów, zmniejszając ilość połączeń na linię wsparcia o <strong>40%</strong>.</p></li><li><p>Opracował responsywne witryny internetowe przy użyciu JavaScript, Vue, PHP, MySQL, Node i C# .NET Core.</p></li><li><p>Zmodernizował systemy legacy, osiągając mierzalne wzrosty wydajności (18%+ szybsze czasy ładowania).</p></li><li><p>Utrzymywał aplikacje wewnętrzne na wielu technologiach.</p></li></ul>",
+    "url": {
+      "label": "ik.pl",
+      "href": "https://ik.pl/"
+    }
+  }
+]

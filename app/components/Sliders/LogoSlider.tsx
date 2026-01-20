@@ -1,8 +1,8 @@
 import React from "react";
 import { SliderImageProps } from "./types";
-import Slider from "./Slider";
-import { Box, Typography } from "@mui/material";
-import { sectionStyles } from "./styles";
+import { Box } from "@mui/material";
+import { keyframes } from "@mui/system";
+import { v4 as uuidv4 } from 'uuid';
 
 const images: SliderImageProps[] = [
   {
@@ -10,7 +10,7 @@ const images: SliderImageProps[] = [
     alt: "Szpital rejonowy w Raciborzu Logo",
   },
   {
-    src: "https://ik.pl/logo/logo_xmas.png",
+    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Instal-konsorcjum-logo-RGB-%401600px.jpg/960px-Instal-konsorcjum-logo-RGB-%401600px.jpg",
     alt: "Instal Konsorcjum Logo",
   },
   {
@@ -27,25 +27,85 @@ const images: SliderImageProps[] = [
   },
 ];
 
+// Infinite scroll animation
+const scroll = keyframes`
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+`;
+
 const LogoSlider: React.FC = () => (
   <Box
     sx={{
-      ...sectionStyles,
-      width: "100vw",
-      position: "relative",
-      left: "50%",
-      right: "50%",
-      marginLeft: "calc(-50vw + 0px)",
-      marginRight: "calc(-50vw + 0px)",
-      padding: "3rem 0",
+      width: "100%",
+      backgroundColor: "#1F2629",
+      py: 4,
+      overflow: "hidden",
     }}
   >
-    <Box sx={{ maxWidth: 1200, width: "100%", margin: "0 auto" }}>
-      <Typography variant="h2" sx={{ textAlign: "center", mt: 0, mb: 2 }}>
-        Proudly Supported by
-      </Typography>
+    <Box
+      sx={{
+        display: "flex",
+        animation: `${scroll} 20s linear infinite`,
+        width: "200%",
+      }}
+    >
+      {/* First set of logos */}
+      {images.map((image) => (
+        <Box
+          key={uuidv4()}
+          sx={{
+            flex: "0 0 16.666%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            px: 2,
+            minHeight: 120,
+          }}
+        >
+          <Box
+            component="img"
+            src={image.src}
+            alt={image.alt}
+            sx={{
+              maxHeight: "100%",
+              maxWidth: "100%",
+              objectFit: "contain",
+              filter: "grayscale(50%)",
+            }}
+          />
+        </Box>
+      ))}
+      {/* Second set of logos for seamless loop */}
+      {images.map((image) => (
+        <Box
+          key={uuidv4()}
+          sx={{
+            flex: "0 0 16.666%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            px: 2,
+            minHeight: 120,
+          }}
+        >
+          <Box
+            component="img"
+            src={image.src}
+            alt={image.alt}
+            sx={{
+              maxHeight: "100%",
+              maxWidth: "100%",
+              objectFit: "contain",
+              filter: "grayscale(100%)",
+            }}
+          />
+        </Box>
+      ))}
     </Box>
-    <Slider images={images} />
   </Box>
 );
 

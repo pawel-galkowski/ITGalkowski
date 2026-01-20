@@ -29,9 +29,11 @@ const Header: React.FC = () => {
   const { t } = useTranslations(language);
 
   const navItems = [
-    { key: "header.home", label: t("header.home") },
-    { key: "header.about", label: t("header.about") },
-    { key: "header.contact", label: t("header.contact") },
+    { key: "header.home", label: t("header.home"), url: '#' },
+    { key: "header.about", label: t("header.about"), url: '#about' },
+    { key: "header.timeline", label: t("header.timeline"), url: '#timeline' },
+    { key: "header.faqs", label: t("header.faqs"), url: '#faqs' },
+    { key: "header.contact", label: t("header.contact"), url: '#contact' },
   ];
 
   const handleDrawerToggle = () => {

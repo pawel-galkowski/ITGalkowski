@@ -7,13 +7,16 @@ import {
   TimelineOppositeContent,
   TimelineSeparator,
 } from "@mui/lab";
-import data from "./data.json";
+import en from "./en.json";
+import pl from "./pl.json";
 import { Box, Typography } from "@mui/material";
 import { v4 as uuidv4 } from "uuid";
 import { stringToHTML } from "./utils";
-
+import { useLanguage } from "@/context/LanguageContext";
 
 const ExperienceTimeline = () => {
+  const { language } = useLanguage();
+  const data = language === "pl" ? pl : en;
   return (
     <Timeline position="alternate">
       {data.map((el) => (
@@ -35,9 +38,7 @@ const ExperienceTimeline = () => {
               <Typography variant="h6" component="span">
                 {el.company}
               </Typography>
-              <Box sx={{ textAlign: "start" }}>
-                {stringToHTML(el.summary)}
-              </Box>
+              <Box sx={{ textAlign: "start" }}>{stringToHTML(el.summary)}</Box>
             </Box>
           </TimelineContent>
         </TimelineItem>

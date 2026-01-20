@@ -1,64 +1,94 @@
 import * as React from "react";
-import { Accordion, AccordionDetails, AccordionSummary, Typography } from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary, Box, Typography } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { v4 as uuidv4 } from "uuid";
-
-const faqsList: { question: string; answer: string }[] = [
-  {
-    question: "What services do you offer as a full-stack JavaScript engineer?",
-    answer:
-      "I provide comprehensive web development services using JavaScript, including front-end, back-end, and database integration solutions.",
-  },
-  {
-    question: "Which JavaScript frameworks do you specialize in?",
-    answer:
-      "I specialize in React, Node.js, and Express, ensuring robust and scalable web applications tailored to client needs.",
-  },
-  {
-    question: "Can you work remotely from Katowice?",
-    answer:
-      "Yes, I offer remote work services from Katowice, providing flexibility and effective communication through various digital collaboration tools.",
-  },
-  {
-    question: "Do you handle the entire development process?",
-    answer:
-      "Yes, I manage the full development lifecycle, from initial design and coding to deployment and post-launch support.",
-  },
-  {
-    question: "What is your approach to project management?",
-    answer:
-      "I follow agile methodologies, ensuring adaptive planning and collaboration, tailored to deliver efficient and timely project outcomes.",
-  },
-];
+import { useLanguage } from "@/context/LanguageContext";
+import { useTranslations } from "@/i18n";
 
 export default function Faqs() {
   const [expanded, setExpanded] = React.useState<string | false>(false);
+  const { language } = useLanguage();
+  const { translations } = useTranslations(language);
 
   const handleChange = (panel: string) => (_: React.SyntheticEvent, isExpanded: boolean) => {
     setExpanded(isExpanded ? panel : false);
   };
 
+  const faqsList = (translations?.faqs?.list || []) as Array<{
+    question: string;
+    answer: string;
+  }>;
+
   return (
-    <>
-      <Typography variant="h1">Comprehensive JavaScript FAQs</Typography>
-      {faqsList.map((faq, index) => (
+    <Box sx={{ width: "100%", display: "flex", flexDirection: "column", gap: 1 }}>
+      <Typography
+        variant="h1"
+        sx={{
+          fontSize: { xs: "28px", sm: "36px", md: "42px" },
+          fontWeight: 500,
+          mb: 3,
+          textAlign: "center",
+        }}
+      >
+        {translations?.faqs?.header || "Comprehensive JavaScript FAQs"}
+      </Typography>
+      {faqsList?.map((faq, index) => (
         <Accordion
           key={uuidv4()}
           expanded={expanded === `panel${index + 1}`}
           onChange={handleChange(`panel${index + 1}`)}
+          sx={{
+            backgroundColor: "transparent",
+            color: "primary.contrastText",
+            border: "none",
+            "&:before": {
+              display: "none",
+            },
+            "&.Mui-expanded": {
+              margin: 0,
+            },
+          }}
         >
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1-content"
-            id="panel1-header"
+            aria-controls={`panel${index + 1}-content`}
+            id={`panel${index + 1}-header`}
+            sx={{
+              padding: "16px 0",
+              "&:hover": {
+                backgroundColor: "transparent",
+              },
+            }}
           >
-            <Typography component="span">{faq.question}</Typography>
+            <Typography
+              component="span"
+              sx={{
+                fontSize: { xs: "16px", md: "18px" },
+                fontWeight: 400,
+                lineHeight: 1.5,
+              }}
+            >
+              {faq.question}
+            </Typography>
           </AccordionSummary>
-          <AccordionDetails>
-            <Typography>{faq.answer}</Typography>
+          <AccordionDetails
+            sx={{
+              padding: "8px 0 20px 0",
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: { xs: "14px", md: "16px" },
+                fontWeight: 400,
+                lineHeight: 1.6,
+                opacity: 0.9,
+              }}
+            >
+              {faq.answer}
+            </Typography>
           </AccordionDetails>
         </Accordion>
       ))}
-    </>
+    </Box>
   );
 }

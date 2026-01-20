@@ -3,11 +3,6 @@ import { render, screen } from "@testing-library/react";
 import LogoSlider from "./LogoSlider";
 
 describe("LogoSlider Component", () => {
-  it("renders LogoSlider with title", () => {
-    render(<LogoSlider />);
-    expect(screen.getByText("Proudly Supported by")).toBeInTheDocument();
-  });
-
   it("renders all company logos", () => {
     render(<LogoSlider />);
     // Use getAllByAltText with a specific index to avoid duplicates from carousel loop

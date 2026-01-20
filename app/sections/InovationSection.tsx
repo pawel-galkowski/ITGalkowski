@@ -2,8 +2,12 @@ import LogoSlider from "@/components/Sliders/LogoSlider";
 import { defaultSectionStyle } from "../styles";
 import { Box, Container, Typography } from "@mui/material";
 import React from "react";
+import { useTranslations } from "@/i18n";
+import { useLanguage } from "@/context/LanguageContext";
 
 const InovationSection: React.FC = () => {
+  const { language } = useLanguage();
+  const { t } = useTranslations(language);
   return (
     <Box sx={{ defaultSectionStyle, backgroundColor: "#1F2629" }}>
       <Container
@@ -25,13 +29,10 @@ const InovationSection: React.FC = () => {
           }}
         >
           <Typography variant="h1" color="white">
-            Innovative JavaScript Engineering Silesia
+            {t("inovationSection.title")}
           </Typography>
           <Typography variant="h4" color="white">
-            Explore top-tier full-stack JavaScript solutions with our expert services in Katowice.
-            Specializing in cutting-edge technologies, we deliver seamless, scalable web
-            applications tailored to your unique business needs. Partner with a trusted engineer
-            dedicated to driving innovation and efficiency in the Silesian Voivodeship and beyond.
+            {t("inovationSection.body")}
           </Typography>
         </Box>
         <Box

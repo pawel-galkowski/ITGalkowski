@@ -1,7 +1,6 @@
 import React from "react";
-import Slider from "./Slider";
-import { Box, Typography } from "@mui/material";
-import { sectionStyles } from "./styles";
+import CarouselSlider from "@/components/Sliders/CarouselSlider";
+import { Box } from "@mui/material";
 
 const images = [
   {
@@ -31,24 +30,8 @@ const images = [
 ];
 
 const ImgSlider: React.FC = () => (
-  <Box
-    sx={{
-      ...sectionStyles,
-      width: "100vw",
-      position: "relative",
-      left: "50%",
-      right: "50%",
-      marginLeft: "calc(-50vw + 0px)",
-      marginRight: "calc(-50vw + 0px)",
-      padding: "3rem 0",
-    }}
-  >
-    <Box sx={{ maxWidth: 1200, width: "100%", margin: "0 auto" }}>
-      <Typography variant="h2" sx={{ textAlign: "center", mt: 0, mb: 2 }}>
-        Proudly Supported by
-      </Typography>
-    </Box>
-    <Slider images={images} sx={{ height: 700 }} />
+  <Box sx={{ width: "100%", backgroundColor: "secondary.main", py: 4 }}>
+    <CarouselSlider images={images} />
   </Box>
 );
 export default ImgSlider;

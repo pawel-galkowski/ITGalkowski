@@ -1,12 +1,22 @@
 import Faqs from "@/components/Faqs/Faqs";
-import { Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import React from "react";
 
 const FAQSection: React.FC = () => {
   return (
-    <Container>
-      <Faqs />
-    </Container>
+    <Box
+      sx={{
+        backgroundColor: "primary.main",
+        py: 8,
+        px: 2,
+        color: "primary.contrastText",
+        width: "100%",
+      }}
+    >
+      <Container maxWidth="md">
+        <Faqs />
+      </Container>
+    </Box>
   );
 };
 

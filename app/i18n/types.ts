@@ -13,6 +13,8 @@ export interface Translations {
     projects: string;
     skills: string;
     contact: string;
+    faqs: string;
+    timeline: string;
   };
   footer: {
     copyright: string;
@@ -28,9 +30,35 @@ export interface Translations {
     delete: string;
     edit: string;
   };
+  entrySection: {
+    title: string;
+    body: string;
+    button: string;
+  };
   explorePortfolio: {
     title: string;
     body: string;
     button: string;
   };
+  tiles: {
+    header: string;
+  };
+  experience: {
+    header: string;
+  };
+  empowerSolutionSection: {
+    title: string;
+    body: string;
+  };
+  inovationSection: {
+    title: string;
+    body: string;
+  };
+  faqs: {
+    header: string;
+    list: {
+      question: string;
+      answer: string;
+    }[];
+  }
 }
