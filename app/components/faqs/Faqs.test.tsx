@@ -1,24 +1,29 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import Faqs from "./Faqs";
+import { LanguageProvider } from "@/context/LanguageContext";
+
+const renderWithLanguage = (component: React.ReactElement) => {
+  return render(<LanguageProvider>{component}</LanguageProvider>);
+};
 
 describe("Faqs Component", () => {
   it("renders accordion component", () => {
-    render(<Faqs />);
+    renderWithLanguage(<Faqs />);
     // Check for at least one accordion visible
     const accordions = screen.getAllByRole("button");
     expect(accordions.length).toBeGreaterThan(0);
   });
 
   it("displays first FAQ question", () => {
-    render(<Faqs />);
+    renderWithLanguage(<Faqs />);
     expect(
       screen.getByText(/What services do you offer as a full-stack JavaScript engineer/)
     ).toBeInTheDocument();
   });
 
   it("displays all FAQ questions", () => {
-    render(<Faqs />);
+    renderWithLanguage(<Faqs />);
     expect(
       screen.getByText(/What services do you offer as a full-stack JavaScript engineer/)
     ).toBeInTheDocument();
@@ -31,24 +36,24 @@ describe("Faqs Component", () => {
   });
 
   it("contains JavaScript-related content", () => {
-    render(<Faqs />);
+    renderWithLanguage(<Faqs />);
     const jsElements = screen.queryAllByText(/JavaScript/);
     expect(jsElements.length).toBeGreaterThan(0);
   });
 
   it("contains Katowice reference", () => {
-    render(<Faqs />);
+    renderWithLanguage(<Faqs />);
     const katowiceElements = screen.queryAllByText(/Katowice/);
     expect(katowiceElements.length).toBeGreaterThan(0);
   });
 
   it("contains development process mention", () => {
-    render(<Faqs />);
+    renderWithLanguage(<Faqs />);
     expect(screen.getByText(/development lifecycle/)).toBeInTheDocument();
   });
 
   it("contains agile methodologies mention", () => {
-    render(<Faqs />);
+    renderWithLanguage(<Faqs />);
     expect(screen.getByText(/agile methodologies/)).toBeInTheDocument();
   });
 });

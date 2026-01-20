@@ -5,7 +5,7 @@ import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import { SliderImageProps } from "./types";
 import { v4 as uuidv4 } from 'uuid';
 
-const CarouselSlider: React.FC<{ images: SliderImageProps[] }> = ({ images }) => {
+const CarouselSlider: React.FC<{ images: SliderImageProps[], height?: number }> = ({ images, height = 400 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePreviousClick = useCallback(() => {
@@ -42,7 +42,6 @@ const CarouselSlider: React.FC<{ images: SliderImageProps[] }> = ({ images }) =>
         sx={{
           position: "relative",
           width: "100%",
-          maxWidth: "1200px",
           mx: "auto",
           px: 2,
           display: "flex",
@@ -56,7 +55,7 @@ const CarouselSlider: React.FC<{ images: SliderImageProps[] }> = ({ images }) =>
           onClick={handlePreviousClick}
           sx={{
             position: "absolute",
-            left: 0,
+            left: 10,
             zIndex: 10,
             color: "#fff",
             backgroundColor: "rgba(0, 0, 0, 0.3)",
@@ -74,7 +73,7 @@ const CarouselSlider: React.FC<{ images: SliderImageProps[] }> = ({ images }) =>
         <Box
           sx={{
             flex: "0 0 20%",
-            height: 400,
+            height,
             opacity: 0.5,
             filter: "blur(4px)",
             overflow: "hidden",
@@ -97,7 +96,7 @@ const CarouselSlider: React.FC<{ images: SliderImageProps[] }> = ({ images }) =>
         <Box
           sx={{
             flex: "0 0 50%",
-            height: 400,
+            height,
             border: "4px solid #51C9FF",
             borderRadius: 2,
             overflow: "hidden",
@@ -120,7 +119,7 @@ const CarouselSlider: React.FC<{ images: SliderImageProps[] }> = ({ images }) =>
         <Box
           sx={{
             flex: "0 0 20%",
-            height: 400,
+            height,
             opacity: 0.5,
             filter: "blur(4px)",
             overflow: "hidden",
@@ -144,7 +143,7 @@ const CarouselSlider: React.FC<{ images: SliderImageProps[] }> = ({ images }) =>
           onClick={handleNextClick}
           sx={{
             position: "absolute",
-            right: 0,
+            right: 10,
             zIndex: 10,
             color: "#fff",
             backgroundColor: "rgba(0, 0, 0, 0.3)",

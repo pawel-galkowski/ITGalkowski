@@ -1,6 +1,7 @@
 import { render as rtlRender, RenderOptions } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
 import React, { ReactElement } from "react";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 expect.extend(toHaveNoViolations);
 
@@ -27,4 +28,11 @@ export function renderWithA11y(ui: ReactElement, options?: Omit<RenderOptions, "
 export async function checkAccessibility(element: HTMLElement | Document) {
   const results = await axe(element as Element);
   return results;
+}
+
+/**
+ * Render a component with LanguageProvider for testing
+ */
+export function renderWithLanguage(component: ReactElement, options?: Omit<RenderOptions, "wrapper">) {
+  return rtlRender(<LanguageProvider>{component}</LanguageProvider>, options);
 }

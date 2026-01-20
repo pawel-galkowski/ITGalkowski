@@ -7,7 +7,7 @@ const FAQSection: React.FC = () => {
     <Box
       sx={{
         backgroundColor: "primary.main",
-        py: 8,
+        py: 12,
         px: 2,
         color: "primary.contrastText",
         width: "100%",

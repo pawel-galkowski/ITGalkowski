@@ -1,64 +1,65 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import InovationSection from "./InovationSection";
+import { renderWithLanguage } from "@/test-utils/a11y";
 
 describe("InovationSection Component", () => {
   it("renders main heading", () => {
-    render(<InovationSection />);
+    renderWithLanguage(<InovationSection />);
     expect(screen.getByText("Innovative JavaScript Engineering Silesia")).toBeInTheDocument();
   });
 
   it("displays description text", () => {
-    render(<InovationSection />);
+    renderWithLanguage(<InovationSection />);
     expect(
       screen.getByText(/Explore top-tier full-stack JavaScript solutions/)
     ).toBeInTheDocument();
   });
 
   it("contains Katowice reference", () => {
-    render(<InovationSection />);
+    renderWithLanguage(<InovationSection />);
     expect(screen.getByText(/Katowice/)).toBeInTheDocument();
   });
 
   it("contains Silesian Voivodeship reference", () => {
-    render(<InovationSection />);
+    renderWithLanguage(<InovationSection />);
     expect(screen.getByText(/Silesian Voivodeship/)).toBeInTheDocument();
   });
 
   it("renders feature image", () => {
-    render(<InovationSection />);
+    renderWithLanguage(<InovationSection />);
     expect(screen.getByAltText("laptop")).toBeInTheDocument();
   });
 
   it("has correct image src", () => {
-    render(<InovationSection />);
+    renderWithLanguage(<InovationSection />);
     const image = screen.getByAltText("laptop");
     expect(image.getAttribute("src")).toBe("/img/laptop.jpg");
   });
 
   it("displays multiple typography variants", () => {
-    render(<InovationSection />);
+    renderWithLanguage(<InovationSection />);
     const headings = screen.getAllByRole("heading");
     expect(headings.length).toBeGreaterThan(1);
   });
 
   it("contains cutting-edge mention", () => {
-    render(<InovationSection />);
+    renderWithLanguage(<InovationSection />);
     expect(screen.getByText(/cutting-edge technologies/)).toBeInTheDocument();
   });
 
   it("mentions scalable solutions", () => {
-    render(<InovationSection />);
+    renderWithLanguage(<InovationSection />);
     expect(screen.getByText(/scalable web applications/)).toBeInTheDocument();
   });
 
   it("mentions business needs", () => {
-    render(<InovationSection />);
+    renderWithLanguage(<InovationSection />);
     expect(screen.getByText(/unique business needs/)).toBeInTheDocument();
   });
 
   it("renders with dark background color", () => {
-    const { container } = render(<InovationSection />);
+    const { container } = renderWithLanguage(<InovationSection />);
     const section = container.querySelector('[class*="MuiBox"]');
     expect(section).toBeInTheDocument();
   });

@@ -1,17 +1,22 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import ImageTiles from "./ImageTiles";
+import { LanguageProvider } from "@/context/LanguageContext";
+
+const renderWithLanguage = (component: React.ReactElement) => {
+  return render(<LanguageProvider>{component}</LanguageProvider>);
+};
 
 describe("ImageTiles Component", () => {
   it("renders ImageList component", () => {
-    render(<ImageTiles />);
+    renderWithLanguage(<ImageTiles />);
     // Check for at least one image in the list
     const images = screen.getAllByRole("img");
     expect(images.length).toBeGreaterThan(0);
   });
 
   it("displays all service titles", () => {
-    render(<ImageTiles />);
+    renderWithLanguage(<ImageTiles />);
     expect(screen.getByText("Custom Web Application Development")).toBeInTheDocument();
     expect(screen.getByText("Responsive Frontend Design")).toBeInTheDocument();
     expect(screen.getByText("Backend API Integration")).toBeInTheDocument();
@@ -19,7 +24,7 @@ describe("ImageTiles Component", () => {
   });
 
   it("displays all service descriptions", () => {
-    render(<ImageTiles />);
+    renderWithLanguage(<ImageTiles />);
     expect(screen.getByText(/Expertly crafted, dynamic web solutions/)).toBeInTheDocument();
     expect(screen.getByText(/Create stunning, responsive interfaces/)).toBeInTheDocument();
     expect(screen.getByText(/Streamline your operations with robust/)).toBeInTheDocument();
@@ -27,13 +32,13 @@ describe("ImageTiles Component", () => {
   });
 
   it("renders correct number of image tiles", () => {
-    render(<ImageTiles />);
+    renderWithLanguage(<ImageTiles />);
     const images = screen.getAllByRole("img");
     expect(images.length).toBe(4);
   });
 
   it("displays images with correct alt text", () => {
-    render(<ImageTiles />);
+    renderWithLanguage(<ImageTiles />);
     expect(screen.getByAltText("Custom Web Application Development")).toBeInTheDocument();
     expect(screen.getByAltText("Responsive Frontend Design")).toBeInTheDocument();
     expect(screen.getByAltText("Backend API Integration")).toBeInTheDocument();
@@ -41,7 +46,7 @@ describe("ImageTiles Component", () => {
   });
 
   it("images have proper src attributes", () => {
-    render(<ImageTiles />);
+    renderWithLanguage(<ImageTiles />);
     const images = screen.getAllByRole("img");
     images.forEach((img) => {
       const src = img.getAttribute("src");
@@ -51,7 +56,7 @@ describe("ImageTiles Component", () => {
   });
 
   it("displays service bar with title and subtitle", () => {
-    render(<ImageTiles />);
+    renderWithLanguage(<ImageTiles />);
     const titleElements = screen.getAllByText(/Development|Design|Integration|Consultation/);
     expect(titleElements.length).toBeGreaterThan(0);
   });

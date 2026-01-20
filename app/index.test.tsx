@@ -9,45 +9,15 @@ const RenderMock: React.FC = () => (
   </LanguageProvider>
 );
 
-jest.mock("@/components/header/Header", () => {
+jest.mock("@/components/Header/Header", () => {
   return function DummyHeader() {
     return <header data-testid="header-mock">Header</header>;
   };
 });
 
-jest.mock("@/components/footer/Footer", () => {
+jest.mock("@/components/Footer/Footer", () => {
   return function DummyFooter() {
     return <footer data-testid="footer-mock">Footer</footer>;
-  };
-});
-
-jest.mock("@/components/Experience/ExperienceTimeline", () => {
-  return function DummyTimeline() {
-    return <div data-testid="timeline-mock">Timeline</div>;
-  };
-});
-
-jest.mock("@/components/faqs/Faqs", () => {
-  return function DummyFaqs() {
-    return <div data-testid="faqs-mock">FAQs</div>;
-  };
-});
-
-jest.mock("@/components/imageTiles/ImageTiles", () => {
-  return function DummyImageTiles() {
-    return <div data-testid="imagetiles-mock">ImageTiles</div>;
-  };
-});
-
-jest.mock("@/components/Sliders/LogoSlider", () => {
-  return function DummyLogoSlider() {
-    return <div data-testid="logoslider-mock">LogoSlider</div>;
-  };
-});
-
-jest.mock("@/components/Sliders/ImgSlider", () => {
-  return function DummyImgSlider() {
-    return <div data-testid="imgslider-mock">ImgSlider</div>;
   };
 });
 
@@ -60,6 +30,42 @@ jest.mock("@/sections/EntrySection", () => {
 jest.mock("@/sections/InovationSection", () => {
   return function DummyInovationSection() {
     return <section data-testid="innovationsection-mock">InovationSection</section>;
+  };
+});
+
+jest.mock("@/sections/TilesSection", () => {
+  return function DummyTilesSection() {
+    return <section data-testid="tilessection-mock">TilesSection</section>;
+  };
+});
+
+jest.mock("@/sections/ImgSliderSection", () => {
+  return function DummyImgSliderSection() {
+    return <section data-testid="imgslidersection-mock">ImgSliderSection</section>;
+  };
+});
+
+jest.mock("@/sections/ExperienceSection", () => {
+  return function DummyExperienceSection() {
+    return <section data-testid="experiencesection-mock">ExperienceSection</section>;
+  };
+});
+
+jest.mock("@/sections/EmpowerSolutionSection", () => {
+  return function DummyEmpowerSolutionSection() {
+    return <section data-testid="empowersection-mock">EmpowerSolutionSection</section>;
+  };
+});
+
+jest.mock("@/sections/FAQSection", () => {
+  return function DummyFAQSection() {
+    return <section data-testid="faqsection-mock">FAQSection</section>;
+  };
+});
+
+jest.mock("@/sections/ExplorePortfolio", () => {
+  return function DummyExplorePortfolio() {
+    return <section data-testid="portfolio-mock">ExplorePortfolio</section>;
   };
 });
 
@@ -89,35 +95,50 @@ describe("Home Page", () => {
     expect(screen.getByTestId("innovationsection-mock")).toBeInTheDocument();
   });
 
-  it("renders ExperienceTimeline component", () => {
+  it("renders TilesSection component", () => {
     render(<RenderMock />);
-    expect(screen.getByTestId("timeline-mock")).toBeInTheDocument();
+    expect(screen.getByTestId("tilessection-mock")).toBeInTheDocument();
   });
 
-  it("renders ImageTiles component", () => {
+  it("renders ImgSliderSection component", () => {
     render(<RenderMock />);
-    expect(screen.getByTestId("imagetiles-mock")).toBeInTheDocument();
+    expect(screen.getByTestId("imgslidersection-mock")).toBeInTheDocument();
   });
 
-  it("renders ImgSlider component", () => {
+  it("renders ExperienceSection component", () => {
     render(<RenderMock />);
-    expect(screen.getByTestId("imgslider-mock")).toBeInTheDocument();
+    expect(screen.getByTestId("experiencesection-mock")).toBeInTheDocument();
   });
 
-  it("renders LogoSlider component", () => {
+  it("renders EmpowerSolutionSection component", () => {
     render(<RenderMock />);
-    expect(screen.getByRole("main")).toBeInTheDocument();
+    expect(screen.getByTestId("empowersection-mock")).toBeInTheDocument();
   });
 
-  it('displays "My work timeline" heading', () => {
+  it("renders FAQSection component", () => {
     render(<RenderMock />);
-    expect(screen.getByText("My work timeline")).toBeInTheDocument();
+    expect(screen.getByTestId("faqsection-mock")).toBeInTheDocument();
   });
 
-  it("renders all major sections", () => {
+  it("renders ExplorePortfolio component", () => {
     render(<RenderMock />);
-    const mainElement = screen.getByRole("main");
-    expect(mainElement).toBeInTheDocument();
-    expect(mainElement.children.length).toBeGreaterThan(0);
+    expect(screen.getByTestId("portfolio-mock")).toBeInTheDocument();
+  });
+
+  it("renders all major sections in correct order", () => {
+    render(<RenderMock />);
+    const main = screen.getByRole("main");
+    expect(main).toBeInTheDocument();
+    // Check that all sections are rendered
+    expect(screen.getByTestId("header-mock")).toBeInTheDocument();
+    expect(screen.getByTestId("entrysection-mock")).toBeInTheDocument();
+    expect(screen.getByTestId("innovationsection-mock")).toBeInTheDocument();
+    expect(screen.getByTestId("tilessection-mock")).toBeInTheDocument();
+    expect(screen.getByTestId("imgslidersection-mock")).toBeInTheDocument();
+    expect(screen.getByTestId("experiencesection-mock")).toBeInTheDocument();
+    expect(screen.getByTestId("empowersection-mock")).toBeInTheDocument();
+    expect(screen.getByTestId("faqsection-mock")).toBeInTheDocument();
+    expect(screen.getByTestId("portfolio-mock")).toBeInTheDocument();
+    expect(screen.getByTestId("footer-mock")).toBeInTheDocument();
   });
 });
