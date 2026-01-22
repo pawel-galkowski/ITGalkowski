@@ -7,6 +7,7 @@ export const pl: Translations = {
     experience: "Doświadczenie",
     projects: "Projekty",
     skills: "Umiejętności",
+    subjects: "Obszar doświadczenia",
     contact: "Kontakt",
     faqs: "FAQ",
     timeline: "Oś czasu",
@@ -74,4 +75,12 @@ export const pl: Translations = {
       },
     ],
   },
+  contact: {
+    title: "Skontaktuj się ze mną",
+    body: "Masz pytania lub chcesz omówić swój projekt? Skontaktuj się ze mną, a odpowiem tak szybko, jak to możliwe.",
+    nameLabel: "Imię i nazwisko",
+    emailLabel: "Adres e-mail",
+    messageLabel: "Wiadomość",
+    sendButton: "Wyślij wiadomość",
+  }
 };

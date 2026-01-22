@@ -2,9 +2,10 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import Home from "./page";
 import { LanguageProvider } from "./context/LanguageContext";
+import { Languages } from "./i18n/types";
 
 const RenderMock: React.FC = () => (
-  <LanguageProvider>
+  <LanguageProvider initialLanguage={Languages.EN}>
     <Home />
   </LanguageProvider>
 );

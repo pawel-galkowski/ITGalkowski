@@ -9,7 +9,7 @@ const InovationSection: React.FC = () => {
   const { language } = useLanguage();
   const { t } = useTranslations(language);
   return (
-    <Box sx={{ defaultSectionStyle, backgroundColor: "#1F2629" }}>
+    <Box sx={{ defaultSectionStyle, backgroundColor: "#1F2629" }} id="about">
       <Container
         fixed={true}
         sx={{

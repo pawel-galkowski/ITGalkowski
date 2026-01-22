@@ -12,6 +12,7 @@ const FAQSection: React.FC = () => {
         color: "primary.contrastText",
         width: "100%",
       }}
+      id="faqs"
     >
       <Container maxWidth="md">
         <Faqs />

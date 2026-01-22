@@ -3,9 +3,10 @@ import { useTranslations } from "@/i18n";
 import { Box, Typography, Button } from "@mui/material";
 import React from "react";
 
-const ExplorePortfolio = () => {
+const ExplorePortfolio: React.FC = () => {
   const { language } = useLanguage();
   const { t } = useTranslations(language);
+
   return (
     <Box
       sx={{
@@ -13,6 +14,7 @@ const ExplorePortfolio = () => {
         height: 600,
         position: "relative",
       }}
+      id="projects"
     >
       <Box
         sx={{
@@ -30,7 +32,12 @@ const ExplorePortfolio = () => {
       >
         <Typography variant="h1">{t("explorePortfolio.title")}</Typography>
         <Typography variant="body1">{t("explorePortfolio.body")}</Typography>
-        <Button variant="contained" sx={{ backgroundColor: "secondary.light", opacity: 1 }}>
+        <Button
+          href="https://github.com/pawel-galkowski"
+          target="_blank"
+          variant="contained"
+          sx={{ backgroundColor: "secondary.light", opacity: 1 }}
+        >
           {t("explorePortfolio.button")}
         </Button>
       </Box>

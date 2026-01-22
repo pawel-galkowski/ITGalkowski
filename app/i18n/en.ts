@@ -8,6 +8,7 @@ export const en: Translations = {
     projects: "Projects",
     skills: "Skills",
     contact: "Contact",
+    subjects: "Subjects",
     faqs: "FAQS",
     timeline: "Timeline",
   },
@@ -73,5 +74,13 @@ export const en: Translations = {
         answer: "I follow agile methodologies to ensure flexibility, transparency, and efficient delivery throughout the project lifecycle."
       }
     ]
+  },
+  contact: {
+    title: "Get in Touch",
+    body: "Have questions or want to discuss your project? Reach out to me, and I'll respond as soon as possible.",
+    nameLabel: "Name",
+    emailLabel: "Email Address",
+    messageLabel: "Message",
+    sendButton: "Send Message",
   }
 };

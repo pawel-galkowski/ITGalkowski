@@ -9,7 +9,7 @@ const ExperienceSection: React.FC = () => {
   const { t } = useTranslations(language);
   return (
     <Box sx={{ width: "100%", backgroundColor: "secondary.main" }}>
-      <Container>
+      <Container id="timeline">
         <Typography variant="h2" sx={{ textAlign: "center", mt: 6, mb: 2 }}>
           {t("experience.header")}
         </Typography>

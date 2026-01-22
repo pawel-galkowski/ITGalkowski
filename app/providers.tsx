@@ -5,10 +5,15 @@ import { LanguageProvider } from "./context/LanguageContext";
 import theme from "./theme";
 import { ReactNode } from "react";
 
-export function Providers({ children }: Readonly<{ children: ReactNode }>) {
+interface ProvidersProps {
+  readonly children: ReactNode;
+  readonly initialLanguage?: string;
+}
+
+export function Providers({ children, initialLanguage }: ProvidersProps) {
   return (
     <ThemeProvider theme={theme}>
-      <LanguageProvider>{children}</LanguageProvider>
+      <LanguageProvider initialLanguage={initialLanguage as any}>{children}</LanguageProvider>
     </ThemeProvider>
   );
 }

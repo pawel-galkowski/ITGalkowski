@@ -31,8 +31,10 @@ const Header: React.FC = () => {
   const navItems = [
     { key: "header.home", label: t("header.home"), url: '#' },
     { key: "header.about", label: t("header.about"), url: '#about' },
+    { key: "header.subjects", label: t("header.subjects"), url: '#subjects' },
     { key: "header.timeline", label: t("header.timeline"), url: '#timeline' },
     { key: "header.faqs", label: t("header.faqs"), url: '#faqs' },
+    { key: "header.projects", label: t("header.projects"), url: '#projects' },
     { key: "header.contact", label: t("header.contact"), url: '#contact' },
   ];
 

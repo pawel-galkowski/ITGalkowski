@@ -12,6 +12,7 @@ export interface Translations {
     experience: string;
     projects: string;
     skills: string;
+    subjects: string;
     contact: string;
     faqs: string;
     timeline: string;
@@ -60,5 +61,13 @@ export interface Translations {
       question: string;
       answer: string;
     }[];
+  }
+  contact: {
+    title: string;
+    body: string;
+    nameLabel: string;
+    emailLabel: string;
+    messageLabel: string;
+    sendButton: string;
   }
 }

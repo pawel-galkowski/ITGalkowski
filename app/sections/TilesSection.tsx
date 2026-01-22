@@ -8,7 +8,7 @@ const TilesSection: React.FC = () => {
   const { language } = useLanguage();
   const { t } = useTranslations(language);
   return (
-    <Box sx={{ width: "100%", backgroundColor: "secondary.main", py: 12 }}>
+    <Box sx={{ width: "100%", backgroundColor: "secondary.main", py: 12 }} id="subjects">
       <Container>
         <Typography variant="h2" sx={{ mt: 6, mb: 2 }}>
           {t("tiles.header")}
