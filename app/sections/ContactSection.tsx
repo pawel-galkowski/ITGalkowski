@@ -1,7 +1,7 @@
 import { useLanguage } from "@/context/LanguageContext";
 import { useTranslations } from "@/i18n";
-import { Box, Typography } from "@mui/material";
-import ContactForm from "@/components/ContactForm";
+import { Box, Container, Typography } from "@mui/material";
+import ContactForm from "@/components/ContactForm/ContactForm";
 import React from "react";
 
 const ContactSection: React.FC = () => {
@@ -18,10 +18,12 @@ const ContactSection: React.FC = () => {
         width: "100%",
       }}
     >
-      <Typography variant="h2" sx={{ textAlign: "center", mb: 4 }}>
-        {t("contact.title")}
-      </Typography>
-      <ContactForm />
+      <Container>
+        <Typography variant="h2" sx={{ textAlign: "center", mb: 4 }}>
+          {t("contact.title")}
+        </Typography>
+        <ContactForm />
+      </Container>
     </Box>
   );
 };

@@ -1,15 +1,23 @@
 import LogoSlider from "@/components/Sliders/LogoSlider";
-import { defaultSectionStyle } from "../styles";
 import { Box, Container, Typography } from "@mui/material";
 import React from "react";
 import { useTranslations } from "@/i18n";
 import { useLanguage } from "@/context/LanguageContext";
 
+export const inovationSectionStyle = {
+  pt: 4,
+  display: "flex",
+  width: "100%",
+  flexDirection: "column",
+  gap: 4,
+  backgroundColor: "primary.main",
+};
+
 const InovationSection: React.FC = () => {
   const { language } = useLanguage();
   const { t } = useTranslations(language);
   return (
-    <Box sx={{ defaultSectionStyle, backgroundColor: "#1F2629" }} id="about">
+    <Box sx={inovationSectionStyle} id="about">
       <Container
         fixed={true}
         sx={{

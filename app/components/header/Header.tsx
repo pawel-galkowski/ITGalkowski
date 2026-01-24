@@ -47,7 +47,7 @@ const Header: React.FC = () => {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
         Logo ITGalkowski
       </Typography>
@@ -55,7 +55,12 @@ const Header: React.FC = () => {
       <List>
         {navItems.map((item) => (
           <ListItem key={item.key} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
+            <ListItemButton
+              component="a"
+              href={item.url}
+              sx={{ textAlign: "center" }}
+              onClick={handleDrawerToggle}
+            >
               <ListItemText primary={item.label} />
             </ListItemButton>
           </ListItem>
@@ -110,7 +115,12 @@ const Header: React.FC = () => {
             role="navigation"
           >
             {navItems.map((item) => (
-              <Button key={item.key} sx={{ color: "#fff" }}>
+              <Button
+                key={item.key}
+                component="a"
+                href={item.url}
+                sx={{ color: "#fff" }}
+              >
                 {item.label}
               </Button>
             ))}

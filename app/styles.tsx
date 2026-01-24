@@ -1,4 +1,5 @@
 export const fullLayoutSectionStyle = {
+  pt: 4,
   display: "flex",
   width: "100%",
   flexDirection: "row",
@@ -6,6 +7,7 @@ export const fullLayoutSectionStyle = {
 };
 
 export const defaultSectionStyle = {
+  pt: 4,
   display: "flex",
   width: "100%",
   flexDirection: "column",

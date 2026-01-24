@@ -15,18 +15,17 @@ export const metadata: Metadata = {
   },
 };
 
-export default function LangLayout({
-  children,
-  params,
-}: Readonly<{
-  children: React.ReactNode;
-  params: { lang: string };
-}>) {
-  const initialLanguage =
-    params.lang === Languages.PL ? Languages.PL : Languages.EN;
+import React from "react";
+
+export default function LangLayout(
+  props: Readonly<{ children: React.ReactNode; params: Promise<{ lang: string }> }>
+) {
+  const { children } = props;
+  const params = React.use(props.params);
+  const initialLanguage = params.lang === Languages.PL ? Languages.PL : Languages.EN;
 
   return (
-    <html lang={initialLanguage}>
+    <html lang={initialLanguage ?? Languages.EN} style={{ scrollBehavior: "smooth" }}>
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
