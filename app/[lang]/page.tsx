@@ -8,7 +8,7 @@ import React from "react";
 import EntrySection from "@/sections/EntrySection";
 import InovationSection from "@/sections/InovationSection";
 import ExplorePortfolio from "@/sections/ExplorePortfolio";
-import FAQSection from "@/sections/FAQSection";
+import FAQSection from "@/sections/FaqSection";
 import ImgSliderSection from "../sections/ImgSliderSection";
 import ExperienceSection from "../sections/ExperienceSection";
 import EmpowerSolutionSection from "../sections/EmpowerSolutionSection";

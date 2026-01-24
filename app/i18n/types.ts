@@ -18,7 +18,7 @@ export interface Translations {
     timeline: string;
   };
   footer: {
-    copyright: string;
+    rightsReserved: string;
     followUs: string;
     quickLinks: string;
   };

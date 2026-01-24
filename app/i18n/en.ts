@@ -13,7 +13,7 @@ export const en: Translations = {
     timeline: "Timeline",
   },
   footer: {
-    copyright: "All Rights Reserved",
+    rightsReserved: "All rights reserved.",
     followUs: "Follow Us",
     quickLinks: "Quick Links",
   },

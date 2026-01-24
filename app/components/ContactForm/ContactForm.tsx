@@ -86,7 +86,12 @@ const ContactForm: React.FC = () => {
         setErrorMsg(data.error || "Something went wrong");
       }
     } catch (err) {
-      setErrorMsg("Network error");
+      console.error("Error submitting contact form:", err);
+      setErrorMsg(
+        err instanceof Error
+          ? `Network error: ${err.message}`
+          : "Network error"
+      );
     } finally {
       setSubmitting(false);
     }

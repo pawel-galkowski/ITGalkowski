@@ -5,7 +5,7 @@ import { Box, Container, Typography } from "@mui/material";
 import React from "react";
 
 export const experienceSectionStyle = {
-  pt: 4,
+  py: 6,
   display: "flex",
   width: "100%",
   flexDirection: "column",

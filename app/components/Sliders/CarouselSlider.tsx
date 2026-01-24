@@ -3,9 +3,12 @@ import { Box, IconButton } from "@mui/material";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import { SliderImageProps } from "./types";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
-const CarouselSlider: React.FC<{ images: SliderImageProps[], height?: number }> = ({ images, height = 400 }) => {
+const CarouselSlider: React.FC<{ images: SliderImageProps[]; height?: number }> = ({
+  images,
+  height = 400,
+}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePreviousClick = useCallback(() => {
@@ -37,7 +40,6 @@ const CarouselSlider: React.FC<{ images: SliderImageProps[], height?: number }> 
         gap: 3,
       }}
     >
-      {/* Carousel Container */}
       <Box
         sx={{
           position: "relative",
@@ -50,7 +52,6 @@ const CarouselSlider: React.FC<{ images: SliderImageProps[], height?: number }> 
           gap: 2,
         }}
       >
-        {/* Left Arrow */}
         <IconButton
           onClick={handlePreviousClick}
           sx={{
@@ -69,10 +70,9 @@ const CarouselSlider: React.FC<{ images: SliderImageProps[], height?: number }> 
           <NavigateBeforeIcon sx={{ fontSize: 32 }} />
         </IconButton>
 
-        {/* Left Peek Image */}
         <Box
           sx={{
-            flex: "0 0 20%",
+            flex: "0 0 25%",
             height,
             opacity: 0.5,
             filter: "blur(4px)",
@@ -92,7 +92,6 @@ const CarouselSlider: React.FC<{ images: SliderImageProps[], height?: number }> 
           />
         </Box>
 
-        {/* Center Large Image */}
         <Box
           sx={{
             flex: "0 0 50%",
@@ -115,10 +114,9 @@ const CarouselSlider: React.FC<{ images: SliderImageProps[], height?: number }> 
           />
         </Box>
 
-        {/* Right Peek Image */}
         <Box
           sx={{
-            flex: "0 0 20%",
+            flex: "0 0 25%",
             height,
             opacity: 0.5,
             filter: "blur(4px)",
@@ -138,7 +136,6 @@ const CarouselSlider: React.FC<{ images: SliderImageProps[], height?: number }> 
           />
         </Box>
 
-        {/* Right Arrow */}
         <IconButton
           onClick={handleNextClick}
           sx={{
@@ -158,7 +155,6 @@ const CarouselSlider: React.FC<{ images: SliderImageProps[], height?: number }> 
         </IconButton>
       </Box>
 
-      {/* Dot Indicators */}
       <Box
         sx={{
           display: "flex",

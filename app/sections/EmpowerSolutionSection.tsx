@@ -10,9 +10,11 @@ const EmpowerSolutionSection: React.FC = () => {
     <Box
       sx={{
         backgroundColor: "secondary.main",
-        py: 8,
-        px: 2,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
         width: "100%",
+        minHeight: { md: "500px", xs: "auto" },
       }}
     >
       <Container maxWidth="xl">
@@ -39,7 +41,7 @@ const EmpowerSolutionSection: React.FC = () => {
               alt="Empowering Digital Solutions"
               sx={{
                 width: "100%",
-                maxWidth: 400,
+                maxWidth: 800,
                 objectFit: "cover",
                 objectPosition: "center",
                 borderRadius: 2,
@@ -54,28 +56,8 @@ const EmpowerSolutionSection: React.FC = () => {
               gap: 2,
             }}
           >
-            <Typography
-              variant="h2"
-              sx={{
-                fontSize: { xs: "28px", sm: "32px", md: "40px" },
-                fontWeight: 400,
-                lineHeight: 1.3,
-                color: "primary.main",
-              }}
-            >
-              {t("empowerSolutionSection.title")}
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                fontSize: { xs: "14px", md: "16px" },
-                fontWeight: 400,
-                lineHeight: 1.6,
-                color: "primary.main",
-              }}
-            >
-              {t("empowerSolutionSection.body")}
-            </Typography>
+            <Typography variant="h1">{t("empowerSolutionSection.title")}</Typography>
+            <Typography variant="body1">{t("empowerSolutionSection.body")}</Typography>
           </Box>
         </Box>
       </Container>

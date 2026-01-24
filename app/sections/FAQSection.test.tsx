@@ -1,4 +1,4 @@
-import FAQSection from "./FAQSection";
+import FAQSection from "./FaqSection";
 import { renderWithLanguage } from "@/test-utils/a11y";
 
 describe("FAQSection Component", () => {

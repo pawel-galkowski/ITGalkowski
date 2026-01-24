@@ -31,7 +31,7 @@ const images = [
 
 const ImgSliderSection: React.FC = () => {
   return (
-    <Box sx={{ width: "100%", overflow: "hidden", backgroundColor: "secondary.main", py: 12 }}>
+    <Box sx={{ width: "100%", overflow: "hidden", backgroundColor: "secondary.main", py: 12, px: 2 }}>
       <CarouselSlider images={images} height={800} />
     </Box>
   );

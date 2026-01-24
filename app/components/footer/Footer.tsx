@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
       role="contentinfo"
     >
       <Typography variant="body1">
-        &copy; {currentYear} {t("footer.copyright")}
+        &copy; Copyright {currentYear} ITGalkowski. {t("footer.rightsReserved")}
       </Typography>
     </Box>
   );
