@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { renderWithA11y } from "@/test-utils/a11y";
 import { LanguageProvider } from "@/context/LanguageContext";
-import Header from "./Header";
+import Header, { headerTestIds } from "./Header";
 
 const HeaderWithProvider = () => (
   <LanguageProvider>
@@ -27,7 +27,7 @@ describe("Header Component", () => {
 
   it("has header data-testid", () => {
     render(<HeaderWithProvider />);
-    expect(screen.getByTestId("header")).toBeInTheDocument();
+    expect(screen.getByTestId(headerTestIds.root)).toBeInTheDocument();
   });
 
   it("has header role banner for accessibility", () => {
@@ -51,8 +51,32 @@ describe("Header Component", () => {
 
   it("renders AppBar component", () => {
     render(<HeaderWithProvider />);
-    const header = screen.getByTestId("header");
+    const header = screen.getByTestId(headerTestIds.root);
     expect(header).toBeInTheDocument();
+  });
+  it("renders logo with data-testid", () => {
+    render(<HeaderWithProvider />);
+    expect(screen.getByTestId(headerTestIds.logo)).toBeInTheDocument();
+  });
+
+  it("renders nav with data-testid", () => {
+    render(<HeaderWithProvider />);
+    expect(screen.getByTestId(headerTestIds.nav)).toBeInTheDocument();
+  });
+
+  it("renders menu button with data-testid", () => {
+    render(<HeaderWithProvider />);
+    expect(screen.getByTestId(headerTestIds.menuButton)).toBeInTheDocument();
+  });
+
+  it("renders drawer and drawer elements with data-testid", () => {
+    render(<HeaderWithProvider />);
+    // Open drawer
+    fireEvent.click(screen.getByTestId(headerTestIds.menuButton));
+    expect(screen.getByTestId(headerTestIds.drawer)).toBeInTheDocument();
+    expect(screen.getByTestId(headerTestIds.drawerTitle)).toBeInTheDocument();
+    expect(screen.getByTestId(headerTestIds.drawerNav)).toBeInTheDocument();
+    expect(screen.getAllByTestId(headerTestIds.drawerListButton).length).toBeGreaterThan(0);
   });
 
   it("has no accessibility violations", async () => {

@@ -1,8 +1,15 @@
 import { Box, useMediaQuery, useTheme, Typography } from "@mui/material";
 import { v4 as uuidv4 } from "uuid";
-import en from "@/components/ImageTiles/en.json";
-import pl from "@/components/ImageTiles/pl.json";
+import en from "@/components/ImageTiles/data/en.json";
+import pl from "@/components/ImageTiles/data/pl.json";
 import { useLanguage } from "@/context/LanguageContext";
+import { imageTilesStyles } from "@/components/imageTiles/ImageTiles.styles";
+
+export const imageTilesTestIds = {
+  root: "image-tiles-root",
+  tile: "image-tiles-tile",
+  image: "image-tiles-image",
+};
 
 const ImageTiles: React.FC = () => {
   const { language } = useLanguage();
@@ -12,31 +19,26 @@ const ImageTiles: React.FC = () => {
 
   return (
     <Box
-      sx={{
-        display: "grid",
-        gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)",
-        gap: 3,
-        width: "100%",
-      }}
+      sx={imageTilesStyles.root(isMobile)}
+      data-testid={imageTilesTestIds.root}
     >
       {itemData.map((item) => (
-        <Box key={uuidv4()} sx={{ display: "flex", flexDirection: "column" }}>
+        <Box
+          key={uuidv4()}
+          sx={imageTilesStyles.tile}
+          data-testid={imageTilesTestIds.tile}
+        >
           <Box
             component="img"
             src={item.src}
             alt={item.title}
-            sx={{
-              width: "100%",
-              height: "auto",
-              aspectRatio: "1",
-              objectFit: "cover",
-              marginBottom: 2,
-            }}
+            sx={imageTilesStyles.image}
+            data-testid={imageTilesTestIds.image}
           />
-          <Typography variant="h6" sx={{ fontWeight: 600, marginBottom: 1 }}>
+          <Typography variant="h6" sx={imageTilesStyles.title}>
             {item.title}
           </Typography>
-          <Typography variant="body2" sx={{ color: "text.secondary" }}>
+          <Typography variant="body2" sx={imageTilesStyles.content}>
             {item.content}
           </Typography>
         </Box>

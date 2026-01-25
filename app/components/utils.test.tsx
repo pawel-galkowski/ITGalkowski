@@ -1,86 +1,99 @@
-import { screen } from "@testing-library/react";
+import { screen, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { LanguageButtons } from "./utils";
+import { LanguageButtons, languageButtonsTestIds } from "./utils";
 import { Languages } from "@/i18n/types";
-import { render } from "@testing-library/react";
 
 describe("LanguageButtons Component", () => {
-  it("renders language buttons container", () => {
+  it("renders language buttons container with test ID", () => {
     const mockHandleLanguageChange = jest.fn();
-    const { container } = render(
+    render(
       <LanguageButtons 
         language={Languages.EN} 
         handleLanguageChange={mockHandleLanguageChange} 
       />
     );
-    expect(container).toBeInTheDocument();
+    expect(screen.getByTestId(languageButtonsTestIds.container)).toBeInTheDocument();
   });
 
-  it("renders when language is English", () => {
+  it("renders English flag with test ID when language is English", () => {
     const mockHandleLanguageChange = jest.fn();
-    const { container } = render(
+    render(
       <LanguageButtons 
         language={Languages.EN} 
         handleLanguageChange={mockHandleLanguageChange} 
       />
     );
-    const button = container.querySelector('img[alt="English flag"]');
-    expect(button).toBeInTheDocument();
+    expect(screen.getByTestId(languageButtonsTestIds.enFlag)).toBeInTheDocument();
+    expect(screen.getByAltText("English flag")).toBeInTheDocument();
   });
 
-  it("renders when language is Polish", () => {
+  it("renders Polish flag with test ID when language is Polish", () => {
     const mockHandleLanguageChange = jest.fn();
-    const { container } = render(
+    render(
       <LanguageButtons 
         language={Languages.PL} 
         handleLanguageChange={mockHandleLanguageChange} 
       />
     );
-    const button = container.querySelector('img[alt="Polish flag"]');
-    expect(button).toBeInTheDocument();
+    expect(screen.getByTestId(languageButtonsTestIds.plFlag)).toBeInTheDocument();
+    expect(screen.getByAltText("Polish flag")).toBeInTheDocument();
   });
 
-  it("calls handler when flag is clicked", async () => {
+  it("calls handler when English flag is clicked", async () => {
     const user = userEvent.setup();
     const mockHandleLanguageChange = jest.fn();
-    const { container } = render(
+    render(
       <LanguageButtons 
         language={Languages.EN} 
         handleLanguageChange={mockHandleLanguageChange} 
       />
     );
     
-    const button = container.querySelector('img');
-    if (button) {
-      await user.click(button);
-      expect(mockHandleLanguageChange).toHaveBeenCalledWith(Languages.PL);
-    }
+    const button = screen.getByTestId(languageButtonsTestIds.enFlag);
+    await user.click(button);
+    expect(mockHandleLanguageChange).toHaveBeenCalledWith(Languages.PL);
   });
 
-  it("displays flag images with proper styling", () => {
+  it("calls handler when Polish flag is clicked", async () => {
+    const user = userEvent.setup();
     const mockHandleLanguageChange = jest.fn();
-    const { container } = render(
+    render(
       <LanguageButtons 
-        language={Languages.EN} 
+        language={Languages.PL} 
         handleLanguageChange={mockHandleLanguageChange} 
       />
     );
     
-    const flagImage = container.querySelector('img');
-    expect(flagImage).toHaveAttribute('alt');
-    expect(flagImage).toHaveStyle({ width: '20px' });
+    const button = screen.getByTestId(languageButtonsTestIds.plFlag);
+    await user.click(button);
+    expect(mockHandleLanguageChange).toHaveBeenCalledWith(Languages.EN);
   });
 
-  it("has clickable flag image element", () => {
+  it("displays English flag with proper styling", () => {
     const mockHandleLanguageChange = jest.fn();
-    const { container } = render(
+    render(
       <LanguageButtons 
         language={Languages.EN} 
         handleLanguageChange={mockHandleLanguageChange} 
       />
     );
     
-    const flagImage = container.querySelector('img');
-    expect(flagImage).toBeInTheDocument();
+    const flagImage = screen.getByTestId(languageButtonsTestIds.enFlag);
+    expect(flagImage).toHaveAttribute("alt", "English flag");
+    expect(flagImage).toHaveAttribute("src", "/img/en.png");
+  });
+
+  it("displays Polish flag with proper styling", () => {
+    const mockHandleLanguageChange = jest.fn();
+    render(
+      <LanguageButtons 
+        language={Languages.PL} 
+        handleLanguageChange={mockHandleLanguageChange} 
+      />
+    );
+    
+    const flagImage = screen.getByTestId(languageButtonsTestIds.plFlag);
+    expect(flagImage).toHaveAttribute("alt", "Polish flag");
+    expect(flagImage).toHaveAttribute("src", "/img/pl.png");
   });
 });

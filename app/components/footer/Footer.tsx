@@ -4,6 +4,11 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { useTranslations } from "@/i18n";
+import { footerStyles } from "@/components/footer/Footer.styles";
+
+export const footerTestIds = {
+  root: "footer-root",
+};
 
 const Footer: React.FC = () => {
   const { language } = useLanguage();
@@ -14,16 +19,9 @@ const Footer: React.FC = () => {
     <Box
       component="footer"
       suppressHydrationWarning
-      sx={{
-        width: "100%",
-        height: 100,
-        backgroundColor: "primary.main",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        color: "white",
-      }}
+      sx={footerStyles}
       role="contentinfo"
+      data-testid={footerTestIds.root}
     >
       <Typography variant="body1">
         &copy; Copyright {currentYear} ITGalkowski. {t("footer.rightsReserved")}

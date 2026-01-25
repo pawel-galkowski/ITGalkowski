@@ -1,18 +1,28 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import ImageTiles from "./ImageTiles";
 import { LanguageProvider } from "@/context/LanguageContext";
+import ImageTiles, { imageTilesTestIds } from "@/components/ImageTiles/ImageTiles";
 
 const renderWithLanguage = (component: React.ReactElement) => {
   return render(<LanguageProvider>{component}</LanguageProvider>);
 };
 
 describe("ImageTiles Component", () => {
-  it("renders ImageList component", () => {
+  it("renders root with data-testid", () => {
     renderWithLanguage(<ImageTiles />);
-    // Check for at least one image in the list
-    const images = screen.getAllByRole("img");
+    expect(screen.getByTestId(imageTilesTestIds.root)).toBeInTheDocument();
+  });
+
+  it("renders at least one image with data-testid", () => {
+    renderWithLanguage(<ImageTiles />);
+    const images = screen.getAllByTestId(imageTilesTestIds.image);
     expect(images.length).toBeGreaterThan(0);
+  });
+
+  it("renders at least one tile with data-testid", () => {
+    renderWithLanguage(<ImageTiles />);
+    const tiles = screen.getAllByTestId(imageTilesTestIds.tile);
+    expect(tiles.length).toBeGreaterThan(0);
   });
 
   it("displays all service titles", () => {
@@ -33,8 +43,8 @@ describe("ImageTiles Component", () => {
 
   it("renders correct number of image tiles", () => {
     renderWithLanguage(<ImageTiles />);
-    const images = screen.getAllByRole("img");
-    expect(images.length).toBe(4);
+    const tiles = screen.getAllByTestId(imageTilesTestIds.tile);
+    expect(tiles.length).toBe(4);
   });
 
   it("displays images with correct alt text", () => {

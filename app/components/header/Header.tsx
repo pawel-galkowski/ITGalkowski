@@ -20,8 +20,18 @@ import { useLanguage } from "@/context/LanguageContext";
 import { useTranslations } from "@/i18n";
 import { Languages } from "@/i18n/types";
 import { LanguageButtons } from "../utils";
+import { headerStyles } from "@/components/header/Header.styles";
 
-const drawerWidth = 240;
+export const headerTestIds = {
+  root: "header-root",
+  nav: "header-nav",
+  logo: "header-logo",
+  menuButton: "header-menu-button",
+  drawer: "header-drawer",
+  drawerTitle: "header-drawer-title",
+  drawerNav: "header-drawer-nav",
+  drawerListButton: "header-drawer-list-button",
+};
 
 const Header: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -47,19 +57,20 @@ const Header: React.FC = () => {
   };
 
   const drawer = (
-    <Box sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
+    <Box sx={headerStyles.drawerBox} data-testid={headerTestIds.drawer}>
+      <Typography variant="h6" sx={headerStyles.drawerTitle} data-testid={headerTestIds.drawerTitle}>
         Logo ITGalkowski
       </Typography>
       <Divider />
-      <List>
+      <List data-testid={headerTestIds.drawerNav}>
         {navItems.map((item) => (
           <ListItem key={item.key} disablePadding>
             <ListItemButton
               component="a"
               href={item.url}
-              sx={{ textAlign: "center" }}
+              sx={headerStyles.drawerListButton}
               onClick={handleDrawerToggle}
+              data-testid={headerTestIds.drawerListButton}
             >
               <ListItemText primary={item.label} />
             </ListItemButton>
@@ -73,8 +84,8 @@ const Header: React.FC = () => {
     <>
       <AppBar
         position="fixed"
-        sx={{ padding: 2 }}
-        data-testid="header"
+        sx={headerStyles.appBar}
+        data-testid={headerTestIds.root}
         aria-label="Site header navigation"
       >
         <Toolbar>
@@ -83,36 +94,28 @@ const Header: React.FC = () => {
             aria-label="open navigation drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
+            sx={headerStyles.menuButton}
+            data-testid={headerTestIds.menuButton}
           >
             <MenuIcon />
           </IconButton>
           <Typography
             variant="h6"
             component="div"
-            sx={{
-              flexGrow: 1,
-              display: { xs: "none", sm: "flex" },
-              flexDirection: "row",
-              alignItems: "center",
-              gap: 2,
-            }}
+            sx={headerStyles.title}
           >
             <Box
               component="img"
               src="/img/logo.png"
               alt="ITGalkowski logo"
-              sx={{
-                objectFit: "cover",
-                width: "100%",
-                height: "auto",
-                maxWidth: 300,
-              }}
+              sx={headerStyles.logo}
+              data-testid={headerTestIds.logo}
             />
           </Typography>
           <Box
-            sx={{ display: { xs: "none", sm: "flex", alignItems: "center", gap: 5 } }}
+            sx={headerStyles.nav}
             role="navigation"
+            data-testid={headerTestIds.nav}
           >
             {navItems.map((item) => (
               <Button
@@ -136,13 +139,7 @@ const Header: React.FC = () => {
           ModalProps={{
             keepMounted: true,
           }}
-          sx={{
-            display: { xs: "block", sm: "none" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: drawerWidth,
-            },
-          }}
+          sx={headerStyles.drawer}
         >
           {drawer}
         </Drawer>

@@ -1,22 +1,28 @@
 "use client";
 
-import styles from "@/index.module.css";
-import Header from "@/components/Header/Header";
-import Footer from "@/components/Footer/Footer";
-import { Box } from "@mui/material";
 import React from "react";
-import EntrySection from "@/sections/EntrySection";
-import InovationSection from "@/sections/InovationSection";
-import ExplorePortfolio from "@/sections/ExplorePortfolio";
-import FAQSection from "@/sections/FaqSection";
-import ImgSliderSection from "../sections/ImgSliderSection";
-import ExperienceSection from "../sections/ExperienceSection";
-import EmpowerSolutionSection from "../sections/EmpowerSolutionSection";
-import TilesSection from "../sections/TilesSection";
+import { Box } from "@mui/material";
 import { useParams } from "next/navigation";
-import { Languages } from "../i18n/types";
-import { useLanguage } from "../context/LanguageContext";
-import ContactSection from "@/sections/ContactSection";
+import { Languages } from "@/i18n/types";
+import { useLanguage } from "@/context/LanguageContext";
+import styles from "@/index.module.css";
+import Header from "@/components/header/Header";
+import Footer from "@/components/footer/Footer";
+import EntrySection from "@/sections/entrySection/EntrySection";
+import InovationSection from "@/sections/inovationSection/InovationSection";
+import ExplorePortfolio from "@/sections/explorePortfolio/ExplorePortfolio";
+import FaqsSection from "@/sections/faqsSection/FaqsSection";
+import ImgSliderSection from "@/sections/imgSliderSection/ImgSliderSection";
+import ExperienceSection from "@/sections/experienceSection/ExperienceSection";
+import EmpowerSolutionSection from "@/sections/empowerSolutionSection/EmpowerSolutionSection";
+import TilesSection from "@/sections/tilesSection/TilesSection";
+import ContactSection from "@/sections/contactSection/ContactSection";
+
+const homeStyles = {
+  display: "flex",
+  flexDirection: "column",
+  width: "100%",
+};
 
 const Home: React.FC = () => {
   const params = useParams();
@@ -31,20 +37,14 @@ const Home: React.FC = () => {
   return (
     <main className={styles.main}>
       <Header />
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          width: "100%",
-        }}
-      >
+      <Box sx={homeStyles}>
         <EntrySection />
         <InovationSection />
         <TilesSection />
         <ImgSliderSection />
         <ExperienceSection />
         <EmpowerSolutionSection />
-        <FAQSection />
+        <FaqsSection />
         <ExplorePortfolio />
         <ContactSection />
       </Box>

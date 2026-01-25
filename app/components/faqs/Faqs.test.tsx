@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import Faqs, { baseTestIds, generateFaqTestId } from "./Faqs";
+import Faqs, { baseTestIds, generateFaqTestId } from "@/components/faqs/Faqs";
 
 const faqsList = [
   { question: "How does the FAQ work?", answer: "The FAQ works using an accordion." },

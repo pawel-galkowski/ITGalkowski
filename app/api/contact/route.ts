@@ -21,7 +21,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`,
     });
-    const recaptchaData = await recaptchaRes.json();
+    const recaptchaData = (await recaptchaRes.json()) as { success: boolean };
     if (!recaptchaData.success) {
       return res.status(400).json({ error: "reCAPTCHA failed" });
     }
@@ -44,6 +44,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     });
     return res.status(200).json({ success: true });
   } catch (err) {
+    console.error("Error in contact form submission:", err);
     return res.status(500).json({ error: "Failed to send email" });
   }
 };

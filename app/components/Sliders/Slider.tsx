@@ -1,16 +1,24 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Box, IconButton, SxProps, Theme } from "@mui/material";
-import { imageContainerStyles, leftNavButtonStyles, rightNavButtonStyles } from "./styles";
+import {
+  imageContainerStyles,
+  leftNavButtonStyles,
+  rightNavButtonStyles,
+} from "@/components/sliders/styles";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-import { SliderImageProps } from "./types";
-import { v4 as uuidv4 } from 'uuid';
+import { ImageCarouselProps, SliderImageProps } from "@/components/sliders/types";
+import { v4 as uuidv4 } from "uuid";
 
-const ImageCarousel: React.FC<{
-  images: SliderImageProps[];
-  imgStyles?: SxProps<Theme>;
-  sx?: SxProps<Theme>;
-}> = ({ images, imgStyles, sx }) => {
+export const sliderTestIds = {
+  root: "slider-root",
+  leftButton: "slider-left-button",
+  rightButton: "slider-right-button",
+  track: "slider-track",
+  image: "slider-image",
+};
+
+const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, imgStyles, sx }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleCount, setVisibleCount] = useState(4);
 
@@ -69,21 +77,30 @@ const ImageCarousel: React.FC<{
 
   const itemWidth = 100 / visibleCount;
 
-  const finalSx: SxProps<Theme> = (sx 
-    ? { ...imageContainerStyles, ...sx }
-    : imageContainerStyles) as SxProps<Theme>;
+  const finalSx: SxProps<Theme> = (
+    sx ? { ...imageContainerStyles, ...sx } : imageContainerStyles
+  ) as SxProps<Theme>;
 
   return (
-    <Box sx={finalSx}>
-      <IconButton sx={leftNavButtonStyles} onClick={handlePreviousClick}>
+    <Box sx={finalSx} data-testid={sliderTestIds.root}>
+      <IconButton
+        sx={leftNavButtonStyles}
+        onClick={handlePreviousClick}
+        data-testid={sliderTestIds.leftButton}
+        aria-label="previous slide"
+      >
         <NavigateBeforeIcon />
       </IconButton>
 
       <Box
         className="slider-track"
+        data-testid={sliderTestIds.track}
         sx={{
           transform: `translateX(-${currentIndex * itemWidth}%)`,
           width: `${(displayImages.length * 100) / visibleCount}%`,
+          display: "flex",
+          alignItems: "center",
+          transition: "transform 0.5s ease",
         }}
       >
         {displayImages.map((image: SliderImageProps) => (
@@ -102,12 +119,18 @@ const ImageCarousel: React.FC<{
               src={image.src}
               alt={image.alt}
               sx={{ height: "100%", width: "auto", ...imgStyles }}
+              data-testid={sliderTestIds.image}
             />
           </Box>
         ))}
       </Box>
 
-      <IconButton sx={rightNavButtonStyles} onClick={handleNextClick}>
+      <IconButton
+        sx={rightNavButtonStyles}
+        onClick={handleNextClick}
+        data-testid={sliderTestIds.rightButton}
+        aria-label="next slide"
+      >
         <NavigateNextIcon />
       </IconButton>
     </Box>

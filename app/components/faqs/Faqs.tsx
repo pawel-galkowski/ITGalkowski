@@ -2,12 +2,7 @@ import * as React from "react";
 import { Accordion, AccordionDetails, AccordionSummary, Box, Typography } from "@mui/material";
 import { ExpandMore } from "@mui/icons-material";
 import { v4 as uuidv4 } from "uuid";
-import {
-  accordionStyles,
-  summaryStyles,
-  detailsStyles,
-  answerTypographyStyles,
-} from "./Faqs.styles";
+import { accordionStyles, summaryStyles, detailsStyles, answerTypographyStyles } from "@/components/faqs/Faqs.styles";
 
 interface FaqsProps {
   faqsList: { question: string; answer: string }[];
