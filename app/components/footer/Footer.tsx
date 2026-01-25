@@ -23,9 +23,8 @@ const Footer: React.FC = () => {
       role="contentinfo"
       data-testid={footerTestIds.root}
     >
-      <Typography variant="body1">
-        &copy; Copyright {currentYear} ITGalkowski. {t("footer.rightsReserved")}
-      </Typography>
+      <Typography variant="body1">&copy; Copyright {currentYear} ITGalkowski.&nbsp;</Typography>
+      <Typography variant="body1">{t("footer.rightsReserved")}</Typography>
     </Box>
   );
 };

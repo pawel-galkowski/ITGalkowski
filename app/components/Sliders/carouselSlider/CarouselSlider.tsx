@@ -82,7 +82,7 @@ const CarouselSlider: React.FC<{ images: SliderImageProps[]; height?: number }> 
         </Box>
 
         <Box
-          sx={carouselSliderStyles.prevImgBox(height)}
+          sx={carouselSliderStyles.nextImgBox(height)}
           data-testid={carouselSliderTestIds.nextImgBox}
         >
           <Box

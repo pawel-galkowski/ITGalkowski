@@ -57,41 +57,49 @@ const Header: React.FC = () => {
   };
 
   const drawer = (
-    <Box sx={headerStyles.drawerBox} data-testid={headerTestIds.drawer}>
+    <Box sx={headerStyles.drawerBox} data-testid={headerTestIds.drawer} role="presentation">
       <Typography variant="h6" sx={headerStyles.drawerTitle} data-testid={headerTestIds.drawerTitle}>
         Logo ITGalkowski
       </Typography>
       <Divider />
-      <List data-testid={headerTestIds.drawerNav}>
-        {navItems.map((item) => (
-          <ListItem key={item.key} disablePadding>
-            <ListItemButton
-              component="a"
-              href={item.url}
-              sx={headerStyles.drawerListButton}
-              onClick={handleDrawerToggle}
-              data-testid={headerTestIds.drawerListButton}
-            >
-              <ListItemText primary={item.label} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
+      <nav aria-label="Mobile navigation menu">
+        <List data-testid={headerTestIds.drawerNav}>
+          {navItems.map((item) => (
+            <ListItem key={item.key} disablePadding>
+              <ListItemButton
+                component="a"
+                href={item.url}
+                sx={headerStyles.drawerListButton}
+                onClick={handleDrawerToggle}
+                data-testid={headerTestIds.drawerListButton}
+                aria-label={`Navigate to ${item.label}`}
+              >
+                <ListItemText primary={item.label} />
+              </ListItemButton>
+            </ListItem>
+          ))}
+        </List>
+      </nav>
+      <Box sx={{ mt: 'auto', mb: 2, display: 'flex', justifyContent: 'center' }}>
+        <LanguageButtons language={language} handleLanguageChange={handleLanguageChange} />
+      </Box>
     </Box>
   );
 
   return (
     <>
       <AppBar
+        component="header"
         position="fixed"
         sx={headerStyles.appBar}
         data-testid={headerTestIds.root}
-        aria-label="Site header navigation"
       >
-        <Toolbar>
+        <Toolbar sx={headerStyles.toolbar}>
           <IconButton
             color="inherit"
-            aria-label="open navigation drawer"
+            aria-label="Open navigation menu"
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-navigation-drawer"
             edge="start"
             onClick={handleDrawerToggle}
             sx={headerStyles.menuButton}
@@ -107,14 +115,23 @@ const Header: React.FC = () => {
             <Box
               component="img"
               src="/img/logo.png"
-              alt="ITGalkowski logo"
+              alt="ITGalkowski - Professional IT Solutions"
               sx={headerStyles.logo}
               data-testid={headerTestIds.logo}
+              loading="eager"
             />
           </Typography>
+          
+          {/* Mobile Language Switcher - Always Visible */}
+          <Box sx={headerStyles.mobileLanguageBox}>
+            <LanguageButtons language={language} handleLanguageChange={handleLanguageChange} />
+          </Box>
+          
+          {/* Desktop Navigation */}
           <Box
+            component="nav"
             sx={headerStyles.nav}
-            role="navigation"
+            aria-label="Desktop navigation"
             data-testid={headerTestIds.nav}
           >
             {navItems.map((item) => (
@@ -123,6 +140,7 @@ const Header: React.FC = () => {
                 component="a"
                 href={item.url}
                 sx={{ color: "#fff" }}
+                aria-label={`Navigate to ${item.label}`}
               >
                 {item.label}
               </Button>
@@ -131,19 +149,19 @@ const Header: React.FC = () => {
           </Box>
         </Toolbar>
       </AppBar>
-      <nav aria-label="Main navigation">
-        <Drawer
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true,
-          }}
-          sx={headerStyles.drawer}
-        >
-          {drawer}
-        </Drawer>
-      </nav>
+      <Drawer
+        id="mobile-navigation-drawer"
+        variant="temporary"
+        open={mobileOpen}
+        onClose={handleDrawerToggle}
+        ModalProps={{
+          keepMounted: true, // Better mobile performance
+        }}
+        sx={headerStyles.drawer}
+        aria-label="Mobile navigation drawer"
+      >
+        {drawer}
+      </Drawer>
     </>
   );
 };

@@ -9,7 +9,7 @@ import {
 } from "@mui/lab";
 import en from "@/components/experience-timeline/data/en.json";
 import pl from "@/components/experience-timeline/data/pl.json";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
 import { v4 as uuidv4 } from "uuid";
 import { stringToHTML } from "@/components/experience-timeline/utils";
 import { useLanguage } from "@/context/LanguageContext";
@@ -40,9 +40,11 @@ export const experienceTimelineTestIds = {
 
 const ExperienceTimeline = () => {
   const { language } = useLanguage();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const data = language === "pl" ? pl : en;
   return (
-    <Timeline position="alternate" sx={timelineStyles} data-testid={experienceTimelineTestIds.root}>
+    <Timeline position={isMobile ? "right" : "alternate"} sx={timelineStyles} data-testid={experienceTimelineTestIds.root}>
       {data.map((el: ExperienceItem) => (
         <TimelineItem key={uuidv4()} sx={timelineItemStyles} data-testid={experienceTimelineTestIds.item}>
           <TimelineOppositeContent

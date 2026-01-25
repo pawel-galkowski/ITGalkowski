@@ -1,6 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { renderWithA11y } from "@/test-utils/a11y";
 import { LanguageProvider } from "@/context/LanguageContext";
+import { en } from "@/i18n/en";
 import Header, { headerTestIds } from "./Header";
 
 const HeaderWithProvider = () => (
@@ -17,9 +18,9 @@ describe("Header Component", () => {
 
   it("renders navigation items", () => {
     render(<HeaderWithProvider />);
-    const homeItems = screen.getAllByText("Home");
-    const aboutItems = screen.getAllByText("About");
-    const contactItems = screen.getAllByText("Contact");
+    const homeItems = screen.getAllByText(en.header.home);
+    const aboutItems = screen.getAllByText(en.header.about);
+    const contactItems = screen.getAllByText(en.header.contact);
     expect(homeItems.length).toBeGreaterThan(0);
     expect(aboutItems.length).toBeGreaterThan(0);
     expect(contactItems.length).toBeGreaterThan(0);
@@ -45,7 +46,7 @@ describe("Header Component", () => {
     render(<HeaderWithProvider />);
     const menuButton = screen.getAllByRole("button")[0];
     fireEvent.click(menuButton!);
-    const homeItems = screen.getAllByText("Home");
+    const homeItems = screen.getAllByText(en.header.home);
     expect(homeItems.length).toBeGreaterThan(0);
   });
 
@@ -86,13 +87,13 @@ describe("Header Component", () => {
 
   it("menu button has proper aria-label", () => {
     render(<HeaderWithProvider />);
-    const menuButton = screen.getByLabelText("open navigation drawer");
+    const menuButton = screen.getByLabelText("Open navigation menu");
     expect(menuButton).toBeInTheDocument();
   });
 
-  it("main navigation has aria-label", () => {
+  it("desktop navigation has aria-label", () => {
     render(<HeaderWithProvider />);
-    const nav = screen.getByLabelText("Main navigation");
+    const nav = screen.getByLabelText("Desktop navigation");
     expect(nav).toBeInTheDocument();
   });
 
@@ -100,7 +101,7 @@ describe("Header Component", () => {
     render(<HeaderWithProvider />);
     const menuButton = screen.getAllByRole("button")[0];
     if (menuButton) fireEvent.click(menuButton);
-    const navItems = screen.getAllByText("Home");
+    const navItems = screen.getAllByText(en.header.home);
     if (navItems[1]) fireEvent.click(navItems[1]);
     expect(screen.queryAllByRole("navigation")[0]).toBeDefined();
   });

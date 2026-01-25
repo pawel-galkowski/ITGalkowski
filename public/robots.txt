@@ -1,0 +1,13 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Disallow admin or sensitive areas (if any)
+# Disallow: /admin/
+# Disallow: /api/
+
+# Sitemap location
+Sitemap: https://itgalkowski.pl/sitemap.xml
+
+# Crawl delay (optional, use if needed)
+# Crawl-delay: 10

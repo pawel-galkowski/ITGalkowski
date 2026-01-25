@@ -5,7 +5,6 @@ import { Box } from "@mui/material";
 import { useParams } from "next/navigation";
 import { Languages } from "@/i18n/types";
 import { useLanguage } from "@/context/LanguageContext";
-import styles from "@/index.module.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import EntrySection from "@/sections/entrySection/EntrySection";
@@ -20,8 +19,12 @@ import ContactSection from "@/sections/contactSection/ContactSection";
 
 const homeStyles = {
   display: "flex",
-  flexDirection: "column",
+  flexDirection: "column" as const,
   width: "100%",
+  maxWidth: "100vw",
+  alignItems: "center",
+  paddingTop: { xs: '56px', sm: '64px', md: '70px' },
+  overflow: 'hidden',
 };
 
 const Home: React.FC = () => {
@@ -35,9 +38,12 @@ const Home: React.FC = () => {
   }, [params, setLanguage]);
 
   return (
-    <main className={styles.main}>
+    <main className="main" role="main" aria-label="Main content">
+      <a href="#main-content" className="skip-to-main">
+        Skip to main content
+      </a>
       <Header />
-      <Box sx={homeStyles}>
+      <Box component="div" id="main-content" sx={homeStyles}>
         <EntrySection />
         <InovationSection />
         <TilesSection />
