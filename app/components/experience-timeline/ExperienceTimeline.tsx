@@ -7,12 +7,13 @@ import {
   TimelineOppositeContent,
   TimelineSeparator,
 } from "@mui/lab";
-import en from "@/components/experienceTimeline/data/en.json";
-import pl from "@/components/experienceTimeline/data/pl.json";
+import en from "@/components/experience-timeline/data/en.json";
+import pl from "@/components/experience-timeline/data/pl.json";
 import { Box, Typography } from "@mui/material";
 import { v4 as uuidv4 } from "uuid";
-import { stringToHTML } from "@/components/experienceTimeline/utils";
+import { stringToHTML } from "@/components/experience-timeline/utils";
 import { useLanguage } from "@/context/LanguageContext";
+import type { ExperienceItem } from "./types";
 import {
   timelineStyles,
   timelineItemStyles,
@@ -42,7 +43,7 @@ const ExperienceTimeline = () => {
   const data = language === "pl" ? pl : en;
   return (
     <Timeline position="alternate" sx={timelineStyles} data-testid={experienceTimelineTestIds.root}>
-      {data.map((el) => (
+      {data.map((el: ExperienceItem) => (
         <TimelineItem key={uuidv4()} sx={timelineItemStyles} data-testid={experienceTimelineTestIds.item}>
           <TimelineOppositeContent
             align="right"

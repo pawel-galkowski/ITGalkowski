@@ -1,4 +1,4 @@
-import ImageTiles from "@/components/ImageTiles/ImageTiles";
+import ImageTiles from "@/components/image-tiles";
 import { useLanguage } from "@/context/LanguageContext";
 import { useTranslations } from "@/i18n";
 import { Box, Container, Typography } from "@mui/material";

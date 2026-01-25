@@ -44,7 +44,7 @@ describe("Header Component", () => {
   it("toggles drawer when menu button is clicked", () => {
     render(<HeaderWithProvider />);
     const menuButton = screen.getAllByRole("button")[0];
-    fireEvent.click(menuButton);
+    fireEvent.click(menuButton!);
     const homeItems = screen.getAllByText("Home");
     expect(homeItems.length).toBeGreaterThan(0);
   });
@@ -99,9 +99,9 @@ describe("Header Component", () => {
   it("drawer closes when item is clicked", () => {
     render(<HeaderWithProvider />);
     const menuButton = screen.getAllByRole("button")[0];
-    fireEvent.click(menuButton);
+    if (menuButton) fireEvent.click(menuButton);
     const navItems = screen.getAllByText("Home");
-    fireEvent.click(navItems[1]);
+    if (navItems[1]) fireEvent.click(navItems[1]);
     expect(screen.queryAllByRole("navigation")[0]).toBeDefined();
   });
 });

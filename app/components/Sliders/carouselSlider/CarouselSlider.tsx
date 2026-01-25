@@ -61,8 +61,8 @@ const CarouselSlider: React.FC<{ images: SliderImageProps[]; height?: number }> 
         >
           <Box
             component="img"
-            src={images[getPrevIndex(currentIndex)].src}
-            alt={images[getPrevIndex(currentIndex)].alt}
+            src={images[getPrevIndex(currentIndex)]?.src}
+            alt={images[getPrevIndex(currentIndex)]?.alt}
             sx={carouselSliderStyles.img}
             data-testid={carouselSliderTestIds.img}
           />
@@ -74,8 +74,8 @@ const CarouselSlider: React.FC<{ images: SliderImageProps[]; height?: number }> 
         >
           <Box
             component="img"
-            src={images[currentIndex].src}
-            alt={images[currentIndex].alt}
+            src={images[currentIndex]?.src}
+            alt={images[currentIndex]?.alt}
             sx={carouselSliderStyles.img}
             data-testid={carouselSliderTestIds.img}
           />
@@ -87,8 +87,8 @@ const CarouselSlider: React.FC<{ images: SliderImageProps[]; height?: number }> 
         >
           <Box
             component="img"
-            src={images[getNextIndex(currentIndex)].src}
-            alt={images[getNextIndex(currentIndex)].alt}
+            src={images[getNextIndex(currentIndex)]?.src}
+            alt={images[getNextIndex(currentIndex)]?.alt}
             sx={carouselSliderStyles.img}
             data-testid={carouselSliderTestIds.img}
           />

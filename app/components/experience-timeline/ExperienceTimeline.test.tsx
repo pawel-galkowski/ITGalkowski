@@ -3,7 +3,7 @@ import ExperienceTimeline, { experienceTimelineTestIds } from "./ExperienceTimel
 import { renderWithLanguage } from "@/test-utils/a11y";
 
 // Mock the data files
-jest.mock("./en.json", () => [
+jest.mock("./data/en.json", () => [
   {
     date: "2020 - 2021",
     position: "Junior Developer",
@@ -18,7 +18,7 @@ jest.mock("./en.json", () => [
   },
 ]);
 
-jest.mock("./pl.json", () => [
+jest.mock("./data/pl.json", () => [
   {
     date: "2020 - 2021",
     position: "Junior Developer",

@@ -1,4 +1,4 @@
-import CarouselSlider from "@/components/sliders/carouselSlider/CarouselSlider";
+import { CarouselSlider } from "@/components/sliders";
 import { Box } from "@mui/material";
 import React from "react";
 import { imgSliderSectionStyles } from "./ImgSliderSection.styles";

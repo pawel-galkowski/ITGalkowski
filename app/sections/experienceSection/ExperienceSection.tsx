@@ -1,4 +1,4 @@
-import ExperienceTimeline from "@/components/experienceTimeline/ExperienceTimeline";
+import ExperienceTimeline from "@/components/experience-timeline";
 import { useLanguage } from "@/context/LanguageContext";
 import { useTranslations } from "@/i18n";
 import { Box, Container, Typography } from "@mui/material";

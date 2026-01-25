@@ -2,7 +2,7 @@ import { parse, HTMLElement } from "node-html-parser";
 import React from "react";
 
 let nodeCounter = 0;
-export const parseHTMLToReact = (node: any): React.ReactNode => {
+export const parseHTMLToReact = (node: unknown): React.ReactNode => {
   if (!node) return null;
 
   // Handle text nodes
@@ -28,14 +28,14 @@ export const parseHTMLToReact = (node: any): React.ReactNode => {
       }
     }
     
-    const props: any = {
+    const props: Record<string, unknown> = {
       key,
       ...attrs,
     };
 
     const children = node.childNodes
-      ?.map((child: any) => parseHTMLToReact(child))
-      .filter((child: any) => child !== null && child !== "") || [];
+      ?.map((child) => parseHTMLToReact(child))
+      .filter((child) => child !== null && child !== "") || [];
 
     // Map HTML tags to React components or elements
     switch (tagName) {

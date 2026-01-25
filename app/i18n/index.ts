@@ -15,7 +15,7 @@ export const useTranslations = (language: Language = Languages.EN) => {
   const getText = useCallback(
     (path: string): string => {
       const keys = path.split(".");
-      let value: any = t;
+      let value: unknown = t;
 
       for (const key of keys) {
         if (value && typeof value === "object" && key in value) {

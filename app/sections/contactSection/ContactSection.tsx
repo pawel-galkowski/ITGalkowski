@@ -1,7 +1,7 @@
 import { useLanguage } from "@/context/LanguageContext";
 import { useTranslations } from "@/i18n";
 import { Box, Container, Typography } from "@mui/material";
-import ContactForm from "@/components/contactForm/ContactForm";
+import ContactForm from "@/components/contact-form";
 import React from "react";
 import { contactSectionStyles } from "./ContactSection.styles";
 

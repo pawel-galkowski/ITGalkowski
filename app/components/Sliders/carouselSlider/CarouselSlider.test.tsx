@@ -51,7 +51,7 @@ describe("CarouselSlider", () => {
   it("navigates to image on dot click", () => {
     render(<CarouselSlider images={images} />);
     const dots = screen.getAllByTestId(carouselSliderTestIds.dot);
-    fireEvent.click(dots[2]);
+    fireEvent.click(dots[2]!);
     const imgs = screen.getAllByTestId(carouselSliderTestIds.img);
     expect(imgs[1]).toHaveAttribute("alt", "Image 3");
   });

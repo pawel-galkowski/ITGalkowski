@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import Faqs, { baseTestIds, generateFaqTestId } from "@/components/faqs/Faqs";
+import Faqs, { baseTestIds, generateFaqTestId } from "@/components/faqs";
 
 const faqsList = [
   { question: "How does the FAQ work?", answer: "The FAQ works using an accordion." },
@@ -12,8 +12,8 @@ describe("Faqs component", () => {
     expect(screen.getByTestId(baseTestIds.root)).toBeInTheDocument();
     expect(screen.getByTestId(generateFaqTestId(baseTestIds.accordion, 0))).toBeInTheDocument();
     expect(screen.getByTestId(generateFaqTestId(baseTestIds.accordion, 1))).toBeInTheDocument();
-    expect(screen.getByText(faqsList[0].question)).toBeInTheDocument();
-    expect(screen.getByText(faqsList[1].question)).toBeInTheDocument();
+    expect(screen.getByText(faqsList[0]!.question)).toBeInTheDocument();
+    expect(screen.getByText(faqsList[1]!.question)).toBeInTheDocument();
   });
 
   it("renders ExpandMoreIcon for each accordion", () => {
@@ -35,8 +35,8 @@ describe("Faqs component", () => {
 
   it("shows the correct answer text when expanded", () => {
     render(<Faqs faqsList={faqsList} />);
-    expect(screen.getByText(faqsList[0].answer)).toBeVisible();
+    expect(screen.getByText(faqsList[0]!.answer)).toBeVisible();
     fireEvent.click(screen.getByTestId(generateFaqTestId(baseTestIds.summary, 1)));
-    expect(screen.getByText(faqsList[1].answer)).toBeVisible();
+    expect(screen.getByText(faqsList[1]!.answer)).toBeVisible();
   });
 });

@@ -1,4 +1,4 @@
-import Faqs from "@/components/faqs/Faqs";
+import Faqs from "@/components/faqs";
 import { useLanguage } from "@/context/LanguageContext";
 import { useTranslations } from "@/i18n";
 import { Box, Container, Typography } from "@mui/material";

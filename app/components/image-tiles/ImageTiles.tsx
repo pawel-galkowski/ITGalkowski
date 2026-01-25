@@ -1,9 +1,10 @@
 import { Box, useMediaQuery, useTheme, Typography } from "@mui/material";
 import { v4 as uuidv4 } from "uuid";
-import en from "@/components/ImageTiles/data/en.json";
-import pl from "@/components/ImageTiles/data/pl.json";
+import en from "@/components/image-tiles/data/en.json";
+import pl from "@/components/image-tiles/data/pl.json";
 import { useLanguage } from "@/context/LanguageContext";
-import { imageTilesStyles } from "@/components/imageTiles/ImageTiles.styles";
+import { imageTilesStyles } from "@/components/image-tiles/ImageTiles.styles";
+import type { ImageTileItem } from "./types";
 
 export const imageTilesTestIds = {
   root: "image-tiles-root",
@@ -22,7 +23,7 @@ const ImageTiles: React.FC = () => {
       sx={imageTilesStyles.root(isMobile)}
       data-testid={imageTilesTestIds.root}
     >
-      {itemData.map((item) => (
+      {itemData.map((item: ImageTileItem) => (
         <Box
           key={uuidv4()}
           sx={imageTilesStyles.tile}

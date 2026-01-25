@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import ImageCarousel, { sliderTestIds }  from "@/components/sliders/Slider";
-import { SliderImageProps } from "@/components/sliders/types";
+import { Slider as ImageCarousel, sliderTestIds } from "@/components/sliders";
+import type { SliderImageProps } from "@/components/sliders";
 
 describe("ImageCarousel (Slider) Component", () => {
   const mockImages: SliderImageProps[] = [

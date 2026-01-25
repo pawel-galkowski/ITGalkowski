@@ -1,10 +1,10 @@
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import ContactForm, { contactFormTestIds } from "@/components/contactForm/ContactForm";
+import ContactForm, { contactFormTestIds } from "@/components/contact-form";
 
 // Mock ReCAPTCHA
 jest.mock("react-google-recaptcha", () =>
-  React.forwardRef((props: any, ref) => {
+  React.forwardRef((props: { onChange?: (token: string | null) => void }, ref) => {
     React.useImperativeHandle(ref, () => ({
       executeAsync: () => Promise.resolve("mocked-token"),
       reset: jest.fn(),
@@ -34,8 +34,8 @@ jest.mock("@/i18n", () => ({
 // Helper to set fetch mock
 
 const defaultJson = { success: true };
-const setFetchMock = (ok: boolean = true, json: any = defaultJson): void => {
-  (globalThis.fetch as unknown as jest.Mock) = jest.fn((): Promise<{ ok: boolean; json: () => Promise<any> }> =>
+const setFetchMock = (ok: boolean = true, json: Record<string, unknown> = defaultJson): void => {
+  (globalThis.fetch as unknown as jest.Mock) = jest.fn((): Promise<{ ok: boolean; json: () => Promise<Record<string, unknown>> }> =>
     Promise.resolve({ ok, json: () => Promise.resolve(json) })
   );
 };
