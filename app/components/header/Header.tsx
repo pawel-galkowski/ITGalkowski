@@ -88,6 +88,7 @@ const Header: React.FC = () => {
 
   return (
     <>
+      <h1 className="sr-only">ITGalkowski - Professional IT Solutions</h1>
       <AppBar
         component="header"
         position="fixed"
@@ -139,6 +140,7 @@ const Header: React.FC = () => {
                 key={item.key}
                 component="a"
                 href={item.url}
+                role="link"
                 sx={{ color: "#fff" }}
                 aria-label={`Navigate to ${item.label}`}
               >

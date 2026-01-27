@@ -1,3 +1,5 @@
+"use client";
+
 import { useTranslations } from "@/i18n";
 import { Box, Button, Typography } from "@mui/material";
 import React from "react";

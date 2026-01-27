@@ -1,4 +1,3 @@
-import { Providers } from "../providers";
 import { Languages } from "../i18n/types";
 import type { Metadata } from "next";
 import "@/globals.css";
@@ -75,6 +74,7 @@ export const metadata: Metadata = {
 };
 
 import React from "react";
+import LanguageInitializer from "../components/LanguageInitializer";
 
 export default function LangLayout(
   props: Readonly<{ children: React.ReactNode; params: Promise<{ lang: string }> }>
@@ -84,59 +84,9 @@ export default function LangLayout(
   const initialLanguage = params.lang === Languages.PL ? Languages.PL : Languages.EN;
 
   return (
-    <html lang={initialLanguage ?? Languages.EN} style={{ scrollBehavior: "smooth" }}>
-      <head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="theme-color" content="#1F2629" />
-        <meta name="format-detection" content="telephone=no" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/manifest.json" />
-        
-        {/* Structured Data for SEO */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "ProfessionalService",
-              "name": "ITGalkowski",
-              "description": "Professional IT solutions and software development services",
-              "url": process.env.NEXT_PUBLIC_SITE_URL || "https://itgalkowski.pl",
-              "logo": `${process.env.NEXT_PUBLIC_SITE_URL}/logo.png`,
-              "sameAs": [
-                "https://linkedin.com/in/itgalkowski",
-                "https://github.com/itgalkowski",
-              ],
-              "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "PL"
-              },
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "contactType": "Customer Service",
-                "availableLanguage": ["English", "Polish"]
-              }
-            })
-          }}
-        />
-      </head>
-      <body
-        style={{
-          padding: 0,
-          margin: 0,
-          width: "100vw",
-          maxWidth: "100vw",
-          boxSizing: "border-box",
-          minHeight: "100vh",
-          overflowX: "hidden",
-        }}
-        suppressHydrationWarning
-      >
-        <Providers initialLanguage={initialLanguage}>{children}</Providers>
-      </body>
-    </html>
+    <>
+      <LanguageInitializer initialLanguage={initialLanguage} />
+      {children}
+    </>
   );
 }

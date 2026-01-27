@@ -1,3 +1,5 @@
+"use client";
+
 import ImageTiles from "@/components/image-tiles";
 import { useLanguage } from "@/context/LanguageContext";
 import { useTranslations } from "@/i18n";

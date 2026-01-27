@@ -1,3 +1,5 @@
+"use client";
+
 import ExperienceTimeline from "@/components/experience-timeline";
 import { useLanguage } from "@/context/LanguageContext";
 import { useTranslations } from "@/i18n";

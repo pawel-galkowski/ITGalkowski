@@ -1,3 +1,5 @@
+"use client";
+
 import { useLanguage } from "@/context/LanguageContext";
 import { useTranslations } from "@/i18n";
 import { Container, Box, Typography } from "@mui/material";

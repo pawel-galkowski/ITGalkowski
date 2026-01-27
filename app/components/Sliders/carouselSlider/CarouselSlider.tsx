@@ -19,9 +19,10 @@ export const carouselSliderTestIds = {
   dot: "carousel-slider-dot",
 };
 
-const CarouselSlider: React.FC<{ images: SliderImageProps[]; height?: number }> = ({
+const CarouselSlider: React.FC<{ images: SliderImageProps[]; height?: number; width?: number | string }> = ({
   images,
   height = 400,
+  width = "80vw",
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -45,7 +46,7 @@ const CarouselSlider: React.FC<{ images: SliderImageProps[]; height?: number }> 
 
   return (
     <Box sx={carouselSliderStyles.root} data-testid={carouselSliderTestIds.root}>
-      <Box sx={carouselSliderStyles.sliderBox} data-testid={carouselSliderTestIds.sliderBox}>
+      <Box sx={carouselSliderStyles.sliderBox(width)} data-testid={carouselSliderTestIds.sliderBox}>
         <IconButton
           onClick={handlePreviousClick}
           sx={carouselSliderStyles.navButton("left")}
@@ -56,7 +57,7 @@ const CarouselSlider: React.FC<{ images: SliderImageProps[]; height?: number }> 
         </IconButton>
 
         <Box
-          sx={carouselSliderStyles.prevImgBox(height)}
+          sx={carouselSliderStyles.prevImgBox(height, width)}
           data-testid={carouselSliderTestIds.prevImgBox}
         >
           <Box
@@ -69,7 +70,7 @@ const CarouselSlider: React.FC<{ images: SliderImageProps[]; height?: number }> 
         </Box>
 
         <Box
-          sx={carouselSliderStyles.mainImgBox(height)}
+          sx={carouselSliderStyles.mainImgBox(height, width)}
           data-testid={carouselSliderTestIds.mainImgBox}
         >
           <Box
@@ -82,7 +83,7 @@ const CarouselSlider: React.FC<{ images: SliderImageProps[]; height?: number }> 
         </Box>
 
         <Box
-          sx={carouselSliderStyles.nextImgBox(height)}
+          sx={carouselSliderStyles.nextImgBox(height, width)}
           data-testid={carouselSliderTestIds.nextImgBox}
         >
           <Box

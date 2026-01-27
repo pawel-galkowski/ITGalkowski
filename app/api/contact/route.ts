@@ -1,40 +1,48 @@
-import type { NextApiRequest, NextApiResponse } from "next";
+import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-import fetch from "node-fetch";
 
-const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
-  }
-  const { name, email, message, recaptchaToken } = req.body;
-  if (!name || !email || !message || !recaptchaToken) {
-    return res.status(400).json({ error: "Missing fields" });
-  }
-  // Validate email
-  if (!/^\S+@\S+\.\S+$/.test(email)) {
-    return res.status(400).json({ error: "Invalid email" });
-  }
-  // Verify reCAPTCHA
+const validateBodyElements = (body: Record<string, unknown>, key: string): string | null => {
+  const value = body[key];
+  return typeof value === "string" && value.trim() !== "" ? value.trim() : null;
+}
+
+export async function POST(request: Request) {
   try {
+    const body = (await request.json()) as Record<string, unknown>;
+    const name = validateBodyElements(body, "name");
+    const email = validateBodyElements(body, "email");
+    const message = validateBodyElements(body, "message");
+    const recaptchaToken = validateBodyElements(body, "recaptchaToken");
+
+    if (!name || !email || !message || !recaptchaToken) {
+      return NextResponse.json({ error: "Missing fields" }, { status: 400 });
+    }
+
+    if (!/^\S+@\S+\.\S+$/.test(email)) {
+      return NextResponse.json({ error: "Invalid email" }, { status: 400 });
+    }
+
+    // Verify reCAPTCHA
     const recaptchaRes = await fetch(`https://www.google.com/recaptcha/api/siteverify`, {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`,
+      body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${encodeURIComponent(recaptchaToken)}`,
     });
-    const recaptchaData = (await recaptchaRes.json()) as { success: boolean };
+    const recaptchaData = (await recaptchaRes.json()) as { success?: boolean };
     if (!recaptchaData.success) {
-      return res.status(400).json({ error: "reCAPTCHA failed" });
+      return NextResponse.json({ error: "reCAPTCHA failed" }, { status: 400 });
     }
-    // Use environment variable for recipient
+
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT),
+      port: Number(process.env.SMTP_PORT) || 587,
       secure: false,
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
     });
+
     await transporter.sendMail({
       from: process.env.SMTP_USER,
       to: process.env.CONTACT_RECIPIENT,
@@ -42,11 +50,10 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       replyTo: email,
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     });
-    return res.status(200).json({ success: true });
+
+    return NextResponse.json({ success: true });
   } catch (err) {
     console.error("Error in contact form submission:", err);
-    return res.status(500).json({ error: "Failed to send email" });
+    return NextResponse.json({ error: "Failed to send email" }, { status: 500 });
   }
-};
-
-export default handler;
+}

@@ -27,13 +27,6 @@ body {
   box-sizing: border-box;
 }
 
-/* Ensure images are responsive */
-.main img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
 /* Better text wrapping */
 .main h1, .main h2, .main h3, .main h4, .main h5, .main h6 {
   word-wrap: break-word;
@@ -84,4 +77,17 @@ body {
 
 .skip-to-main:focus {
   top: 0;
+}
+
+/* Visually hidden helper for screen-reader-only text */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }

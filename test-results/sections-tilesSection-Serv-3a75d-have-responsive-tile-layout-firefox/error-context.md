@@ -1,0 +1,252 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - main "Main content" [ref=e2]:
+    - link "Skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#main-content"
+    - heading "ITGalkowski - Professional IT Solutions" [level=1] [ref=e4]
+    - generic [ref=e6]:
+      - img "ITGalkowski - Professional IT Solutions" [ref=e8]
+      - navigation "Desktop navigation" [ref=e9]:
+        - link "Navigate to Home" [ref=e10] [cursor=pointer]:
+          - /url: "#"
+          - text: Home
+        - link "Navigate to About" [ref=e11] [cursor=pointer]:
+          - /url: "#about"
+          - text: About
+        - link "Navigate to Subjects" [ref=e12] [cursor=pointer]:
+          - /url: "#subjects"
+          - text: Subjects
+        - link "Navigate to Timeline" [ref=e13] [cursor=pointer]:
+          - /url: "#timeline"
+          - text: Timeline
+        - link "Navigate to FAQS" [ref=e14] [cursor=pointer]:
+          - /url: "#faqs"
+          - text: FAQS
+        - link "Navigate to Projects" [ref=e15] [cursor=pointer]:
+          - /url: "#projects"
+          - text: Projects
+        - link "Navigate to Contact" [ref=e16] [cursor=pointer]:
+          - /url: "#contact"
+          - text: Contact
+        - button "Switch to Polish" [ref=e18] [cursor=pointer]:
+          - img "English flag" [ref=e19]
+    - generic [ref=e20]:
+      - generic [ref=e21]:
+        - generic [ref=e22]:
+          - heading "Master Your Projects with Expert Code" [level=1] [ref=e23]
+          - heading "Elevate your projects with expert full-stack JavaScript solutions in Katowice. Unlock seamless integration and cutting-edge innovation." [level=4] [ref=e24]
+          - button "Hire Your Expert" [ref=e25] [cursor=pointer]
+        - img "Top Layout" [ref=e26]
+      - generic [ref=e27]:
+        - generic [ref=e28]:
+          - generic [ref=e29]:
+            - heading "Innovative JavaScript Engineering Silesia" [level=1] [ref=e30]
+            - heading "Explore top-tier full-stack JavaScript solutions with our expert services in Katowice. Specializing in cutting-edge technologies, we deliver seamless, scalable web applications tailored to your unique business needs. Partner with a trusted engineer dedicated to driving innovation and efficiency in the Silesian Voivodeship and beyond." [level=4] [ref=e31]
+          - img "laptop" [ref=e32]
+        - generic [ref=e34]:
+          - img "Szpital rejonowy w Raciborzu Logo" [ref=e36]
+          - img "Instal Konsorcjum Logo" [ref=e38]
+          - img "ABN AMRO Logo" [ref=e40]
+          - img "Ing Bank Logo" [ref=e42]
+          - img "Capgemini Polska Logo" [ref=e44]
+          - img "Szpital rejonowy w Raciborzu Logo" [ref=e46]
+          - img "Instal Konsorcjum Logo" [ref=e48]
+          - img "ABN AMRO Logo" [ref=e50]
+          - img "Ing Bank Logo" [ref=e52]
+          - img "Capgemini Polska Logo" [ref=e54]
+      - generic [ref=e56]:
+        - heading "Innovative Web Development in Silesia" [level=2] [ref=e57]
+        - generic [ref=e58]:
+          - generic [ref=e59]:
+            - img "Custom Web Application Development" [ref=e60]
+            - heading "Custom Web Application Development" [level=6] [ref=e61]
+            - paragraph [ref=e62]: Expertly crafted, dynamic web solutions tailored to your business needs and user experiences.
+          - generic [ref=e63]:
+            - img "Responsive Frontend Design" [ref=e64]
+            - heading "Responsive Frontend Design" [level=6] [ref=e65]
+            - paragraph [ref=e66]: Create stunning, responsive interfaces that adapt seamlessly across all devices and platforms.
+          - generic [ref=e67]:
+            - img "Backend API Integration" [ref=e68]
+            - heading "Backend API Integration" [level=6] [ref=e69]
+            - paragraph [ref=e70]: Streamline your operations with robust, scalable APIs for efficient data management and connectivity.
+          - generic [ref=e71]:
+            - img "Full-stack JavaScript Consultation" [ref=e72]
+            - heading "Full-stack JavaScript Consultation" [level=6] [ref=e73]
+            - paragraph [ref=e74]: Leverage expert guidance on JavaScript development to optimize your tech stack and strategy.
+      - generic [ref=e77]:
+        - button "previous slide" [ref=e78] [cursor=pointer]:
+          - img [ref=e79]
+        - img "cutting-edge technology" [ref=e82]
+        - img "we build websites" [ref=e84]
+        - img "we build web applications" [ref=e86]
+        - button "next slide" [ref=e87] [cursor=pointer]:
+          - img [ref=e88]
+      - generic [ref=e98]:
+        - heading "My work timeline" [level=2] [ref=e99]
+        - list [ref=e100]:
+          - listitem [ref=e101]:
+            - generic [ref=e102]: 07/2025 - Present
+            - generic [ref=e107]:
+              - strong [ref=e109]: Senior Software Engineer
+              - generic [ref=e110]: Capgemini SE
+              - list [ref=e113]:
+                - listitem [ref=e114]:
+                  - paragraph [ref=e115]: Contributed to an AI‑powered search platform using Azure AI Search and Cognitive Services, improving relevance and user experience.
+                - listitem [ref=e116]:
+                  - paragraph [ref=e117]: Built modern, responsive interfaces using TypeScript and component‑based frontend architectures, with a strong focus on UX clarity and performance.
+                - listitem [ref=e118]:
+                  - paragraph [ref=e119]: Decreased UI-related defects by ~20% through improved component architecture and testing standards.
+                - listitem [ref=e120]:
+                  - paragraph [ref=e121]: Collaborated with designers to prototype new interaction patterns and refine visual consistency across the product.
+                - listitem [ref=e122]:
+                  - paragraph [ref=e123]: Mentored engineers and improved frontend architecture, reducing duplication and accelerating delivery.
+                - listitem [ref=e124]:
+                  - paragraph [ref=e125]: Established testing and accessibility standards across the team.
+          - listitem [ref=e126]:
+            - generic [ref=e127]: 05/2022 - 07/2025
+            - generic [ref=e132]:
+              - strong [ref=e134]: Software Engineer
+              - generic [ref=e135]: Capgemini SE
+              - list [ref=e138]:
+                - listitem [ref=e139]:
+                  - paragraph [ref=e140]: Collaborated with distributed teams across multiple time zones, ensuring smooth delivery and alignment.
+                - listitem [ref=e141]:
+                  - paragraph [ref=e142]: Delivered scalable frontend solutions using React, TypeScript, Node, and cloud‑native tooling.
+                - listitem [ref=e143]:
+                  - paragraph [ref=e144]: Worked directly with clients to define requirements and iterate quickly based on feedback.
+                - listitem [ref=e145]:
+                  - paragraph [ref=e146]: Built automated testing frameworks (Jest, Cypress) to ensure reliability and reduce regressions.
+                - listitem [ref=e147]:
+                  - paragraph [ref=e148]: Facilitated knowledge‑sharing sessions and improved engineering quality across the team.
+                - listitem [ref=e149]:
+                  - paragraph [ref=e150]: Enhanced UI performance and consistency across multiple applications by improving component architecture and reducing redundant logic.
+          - listitem [ref=e151]:
+            - generic [ref=e152]: 12/2020 - 05/2022
+            - generic [ref=e157]:
+              - strong [ref=e159]: JavaScript Developer
+              - generic [ref=e160]: ING Bank Śląski S.A.
+              - list [ref=e163]:
+                - listitem [ref=e164]:
+                  - paragraph [ref=e165]: Maintained and optimised a large‑scale banking system used by thousands of customers.
+                - listitem [ref=e166]:
+                  - paragraph [ref=e167]: Developed reusable UI components in JavaScript, improving maintainability and reducing UI defects.
+                - listitem [ref=e168]:
+                  - paragraph [ref=e169]: Created mock data and testing utilities to support QA automation.
+                - listitem [ref=e170]:
+                  - paragraph [ref=e171]: Proposed architectural improvements to enhance performance and stability.
+                - listitem [ref=e172]:
+                  - paragraph [ref=e173]: Supported a system serving thousands of daily users, ensuring stability and smooth performance.
+          - listitem [ref=e174]:
+            - generic [ref=e175]: 07/2018 - 12/2020
+            - generic [ref=e180]:
+              - strong [ref=e182]: Junior Full‑Stack Developer
+              - generic [ref=e183]: Instal‑Konsorcjum Sp. z o.o.
+              - list [ref=e186]:
+                - listitem [ref=e187]:
+                  - paragraph [ref=e188]:
+                    - text: Built a client ticket dashboard, reducing support call volume by
+                    - strong [ref=e189]: 40%
+                    - text: .
+                - listitem [ref=e190]:
+                  - paragraph [ref=e191]: Developed responsive websites using JavaScript, Vue, PHP, MySQL, Node, and C# .NET Core.
+                - listitem [ref=e192]:
+                  - paragraph [ref=e193]: Modernised legacy systems, achieving measurable performance gains (18%+ faster load times).
+                - listitem [ref=e194]:
+                  - paragraph [ref=e195]: Maintained internal applications across multiple technologies.
+      - generic [ref=e198]:
+        - img "Empowering Digital Solutions" [ref=e200]
+        - generic [ref=e201]:
+          - heading "Empowering Digital Solutions" [level=1] [ref=e202]
+          - paragraph [ref=e203]: Located in the heart of Katowice, Software Engineering showcases a diverse portfolio of full-stack JavaScript projects that highlight innovation and expertise. Specializing in building seamless user experiences, our work combines cutting-edge technology with a passion for solving complex problems. We are committed to delivering high-quality software solutions that drive success for businesses around the world.
+      - generic [ref=e206]:
+        - heading "Comprehensive JavaScript FAQs" [level=1] [ref=e207]
+        - generic [ref=e208]:
+          - generic [ref=e209]:
+            - heading "What services do you offer as a full-stack JavaScript engineer?" [level=3] [ref=e210]:
+              - button "What services do you offer as a full-stack JavaScript engineer?" [expanded] [ref=e211] [cursor=pointer]:
+                - heading "What services do you offer as a full-stack JavaScript engineer?" [level=5] [ref=e213]
+                - img [ref=e216]
+            - region "What services do you offer as a full-stack JavaScript engineer?" [ref=e221]:
+              - paragraph [ref=e223]: I offer a range of services including full-stack JavaScript development, API design and implementation, database management, and deployment automation.
+          - heading "Which JavaScript frameworks do you specialize in?" [level=3] [ref=e225]:
+            - button "Which JavaScript frameworks do you specialize in?" [ref=e226] [cursor=pointer]:
+              - heading "Which JavaScript frameworks do you specialize in?" [level=5] [ref=e228]
+              - img [ref=e231]
+          - heading "Can you work remotely from Katowice?" [level=3] [ref=e234]:
+            - button "Can you work remotely from Katowice?" [ref=e235] [cursor=pointer]:
+              - heading "Can you work remotely from Katowice?" [level=5] [ref=e237]
+              - img [ref=e240]
+          - heading "Do you handle the entire development process?" [level=3] [ref=e243]:
+            - button "Do you handle the entire development process?" [ref=e244] [cursor=pointer]:
+              - heading "Do you handle the entire development process?" [level=5] [ref=e246]
+              - img [ref=e249]
+          - heading "What is your approach to project management?" [level=3] [ref=e252]:
+            - button "What is your approach to project management?" [ref=e253] [cursor=pointer]:
+              - heading "What is your approach to project management?" [level=5] [ref=e255]
+              - img [ref=e258]
+      - generic [ref=e261]:
+        - heading "Elevate Your Web Experience" [level=1] [ref=e262]
+        - paragraph [ref=e263]: Showcasing a robust full-stack JavaScript portfolio built on a TypeScript foundation, right from the heart of Katowice.
+        - link "Explore Portfolio" [ref=e264] [cursor=pointer]:
+          - /url: https://github.com/pawel-galkowski
+      - generic [ref=e267]:
+        - heading "Get in Touch" [level=2] [ref=e268]
+        - generic [ref=e270]:
+          - generic [ref=e271]:
+            - generic:
+              - text: Name
+              - generic: "*"
+            - generic "Name" [ref=e272]:
+              - textbox "Name" [ref=e273]
+              - group:
+                - generic: Name *
+          - generic [ref=e274]:
+            - generic:
+              - text: Email Address
+              - generic: "*"
+            - generic "Email Address" [ref=e275]:
+              - textbox "Email Address" [ref=e276]
+              - group:
+                - generic: Email Address *
+          - generic [ref=e277]:
+            - generic:
+              - text: Message
+              - generic: "*"
+            - generic "Message" [ref=e278]:
+              - textbox "Message" [ref=e279]
+              - group:
+                - generic: Message *
+          - iframe [ref=e282]:
+            - generic [ref=f1e2]:
+              - generic [ref=f1e6]:
+                - text: Localhost is not in the list of
+                - link "supported domains" [ref=f1e7] [cursor=pointer]:
+                  - /url: https://cloud.google.com/recaptcha/docs/troubleshoot-recaptcha-issues#localhost-error
+                - text: for this site key.
+              - generic [ref=f1e8]:
+                - generic [ref=f1e11]: reCAPTCHA
+                - generic [ref=f1e12]:
+                  - link "Privacy" [ref=f1e13] [cursor=pointer]:
+                    - /url: https://www.google.com/intl/en/policies/privacy/
+                  - text: "-"
+                  - link "Terms" [ref=f1e14] [cursor=pointer]:
+                    - /url: https://www.google.com/intl/en/policies/terms/
+          - button "Send Message" [ref=e284] [cursor=pointer]
+    - contentinfo [ref=e285]:
+      - paragraph [ref=e286]: © Copyright 2026 ITGalkowski.
+      - paragraph [ref=e287]: All rights reserved.
+  - generic [ref=e292] [cursor=pointer]:
+    - button "Open Next.js Dev Tools" [ref=e293]:
+      - img [ref=e294]
+    - generic [ref=e298]:
+      - button "Open issues overlay" [ref=e299]:
+        - generic [ref=e300]:
+          - generic [ref=e301]: "0"
+          - generic [ref=e302]: "1"
+        - generic [ref=e303]: Issue
+      - button "Collapse issues badge" [ref=e304]:
+        - img [ref=e305]
+  - alert [ref=e307]
+```

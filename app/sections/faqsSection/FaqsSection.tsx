@@ -1,3 +1,5 @@
+"use client";
+
 import Faqs from "@/components/faqs";
 import { useLanguage } from "@/context/LanguageContext";
 import { useTranslations } from "@/i18n";

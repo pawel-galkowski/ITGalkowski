@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, useMediaQuery, useTheme, Typography } from "@mui/material";
 import { v4 as uuidv4 } from "uuid";
 import en from "@/components/image-tiles/data/en.json";
@@ -5,6 +7,7 @@ import pl from "@/components/image-tiles/data/pl.json";
 import { useLanguage } from "@/context/LanguageContext";
 import { imageTilesStyles } from "@/components/image-tiles/ImageTiles.styles";
 import type { ImageTileItem } from "./types";
+import { Languages } from "@/i18n/types";
 
 export const imageTilesTestIds = {
   root: "image-tiles-root",
@@ -14,7 +17,7 @@ export const imageTilesTestIds = {
 
 const ImageTiles: React.FC = () => {
   const { language } = useLanguage();
-  const itemData = language === "pl" ? pl : en;
+  const itemData = (language === Languages.PL ? pl : en) as ImageTileItem[];
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 

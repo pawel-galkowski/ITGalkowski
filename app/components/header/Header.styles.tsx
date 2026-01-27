@@ -26,7 +26,7 @@ export const headerStyles = {
   nav: {
     display: { xs: "none", md: "flex" },
     alignItems: "center",
-    gap: { xs: 2, md: 3, lg: 5 },
+    gap: { xs: 2, md: 3 },
     '& a': {
       color: 'inherit',
       textDecoration: 'none',

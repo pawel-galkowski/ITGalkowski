@@ -2,7 +2,7 @@ import { parse, HTMLElement } from "node-html-parser";
 import React from "react";
 
 let nodeCounter = 0;
-export const parseHTMLToReact = (node: unknown): React.ReactNode => {
+export const parseHTMLToReact = (node: any): React.ReactNode => {
   if (!node) return null;
 
   // Handle text nodes
@@ -12,30 +12,30 @@ export const parseHTMLToReact = (node: unknown): React.ReactNode => {
 
   if (node.nodeType === 3) {
     // Text node
-    const text = node.text || node.content || "";
+    const text = (node.text as string) || (node.content as string) || "";
     return text.trim() ? text : null;
   }
 
   if (node.nodeType === 1 || node instanceof HTMLElement) {
     // Element node
-    const tagName = node.tagName?.toLowerCase();
+    const tagName = (node.tagName as string | undefined)?.toLowerCase();
     const key = `node-${nodeCounter++}`;
-    
+
     const attrs: Record<string, string> = {};
     if (node.attributes) {
       for (const [name, value] of Object.entries(node.attributes)) {
-        attrs[name] = value as string;
+        attrs[name] = String(value);
       }
     }
-    
+
     const props: Record<string, unknown> = {
       key,
       ...attrs,
     };
 
-    const children = node.childNodes
-      ?.map((child) => parseHTMLToReact(child))
-      .filter((child) => child !== null && child !== "") || [];
+    const children = (node.childNodes as any[] | undefined)
+      ?.map((child: any) => parseHTMLToReact(child))
+      .filter((child: any) => child !== null && child !== "") || [];
 
     // Map HTML tags to React components or elements
     switch (tagName) {
@@ -64,7 +64,7 @@ export const parseHTMLToReact = (node: unknown): React.ReactNode => {
       case "div":
         return React.createElement("div", props, ...children);
       default:
-        return React.createElement(tagName || "div", props, ...children);
+        return React.createElement((tagName as any) || "div", props, ...children);
     }
   }
 
@@ -74,5 +74,5 @@ export const parseHTMLToReact = (node: unknown): React.ReactNode => {
 export const stringToHTML = (str: string) => {
   nodeCounter = 0;
   const parsed = parse(str);
-  return parseHTMLToReact(parsed);
+  return parseHTMLToReact(parsed as any);
 };

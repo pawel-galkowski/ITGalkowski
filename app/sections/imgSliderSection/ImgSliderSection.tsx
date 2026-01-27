@@ -37,7 +37,7 @@ const images = [
 const ImgSliderSection: React.FC = () => {
   return (
     <Box sx={imgSliderSectionStyles.root} data-testid={imgSliderSectionTestIds.root}>
-      <CarouselSlider images={images} height={800} />
+      <CarouselSlider images={images} height={700} width="100%"/>
     </Box>
   );
 };

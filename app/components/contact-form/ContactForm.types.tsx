@@ -15,3 +15,5 @@ export const initialState: FormState = {
   email: "",
   message: "",
 };
+
+export type ContactFormData = FormState;

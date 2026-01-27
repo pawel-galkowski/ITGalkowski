@@ -1,4 +1,4 @@
-
+"use client";
 import React, { useState, useRef } from "react";
 import { Box, TextField, Button, Typography, CircularProgress, Fade } from "@mui/material";
 import { motion } from "framer-motion";
