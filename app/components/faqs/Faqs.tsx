@@ -2,7 +2,7 @@ import * as React from "react";
 import { Accordion, AccordionDetails, AccordionSummary, Box, Typography } from "@mui/material";
 import { ExpandMore } from "@mui/icons-material";
 import { v4 as uuidv4 } from "uuid";
-import { accordionStyles, summaryStyles, detailsStyles, answerTypographyStyles } from "@/components/faqs/Faqs.styles";
+import { accordionStyles, accordionRootStyles, summaryStyles, detailsStyles, answerTypographyStyles } from "@/components/faqs/Faqs.styles";
 
 interface FaqsProps {
   faqsList: { question: string; answer: string }[];
@@ -24,7 +24,7 @@ const Faqs: React.FC<FaqsProps> = ({ faqsList }) => {
   };
 
   return (
-    <div data-testid={baseTestIds.root}>
+    <Box data-testid={baseTestIds.root} sx={accordionRootStyles(expanded)}>
       {faqsList?.map((faq, index) => (
         <Accordion
           key={uuidv4()}
@@ -54,7 +54,7 @@ const Faqs: React.FC<FaqsProps> = ({ faqsList }) => {
           </AccordionDetails>
         </Accordion>
       ))}
-    </div>
+    </Box>
   );
 };
 

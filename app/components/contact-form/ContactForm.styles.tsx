@@ -26,7 +26,6 @@ export const textFieldStyles = {
     },
     color: "primary.contrastText",
     backgroundColor: "transparent",
-    fontSize: { xs: '0.9rem', sm: '1rem' },
   },
   "& .MuiInputBase-input": {
     minHeight: 44,
@@ -34,11 +33,9 @@ export const textFieldStyles = {
   },
   "& .MuiInputLabel-root": {
     color: "primary.contrastText",
-    fontSize: { xs: '0.9rem', sm: '1rem' },
   },
   "& .MuiFormHelperText-root": {
     color: "primary.contrastText",
-    fontSize: { xs: '0.75rem', sm: '0.875rem' },
   },
 };
 
@@ -48,11 +45,10 @@ export const buttonStyles = {
   border: "2px solid",
   borderColor: "primary.contrastText",
   boxShadow: "none",
-  fontWeight: 700,
   width: { xs: '100%', sm: 'auto' },
   maxWidth: { xs: 300, sm: 'none' },
   mx: { xs: 'auto', sm: 0 },
-  fontSize: { xs: '0.95rem', sm: '1.1rem' },
+  // rely on Typography variant for button font size
   px: { xs: 3, sm: 4 },
   py: { xs: 1.25, sm: 1.5 },
   minHeight: 48,

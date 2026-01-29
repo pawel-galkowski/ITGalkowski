@@ -37,7 +37,7 @@ const ImageTiles: React.FC = () => {
             src={item.src}
             alt={item.title}
             sx={imageTilesStyles.image}
-            data-testid={imageTilesTestIds.image}
+            data-testid={imageTilesTestIds.image} 
           />
           <Typography variant="h6" sx={imageTilesStyles.title}>
             {item.title}

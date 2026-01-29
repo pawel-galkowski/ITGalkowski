@@ -34,7 +34,7 @@ const FaqsSection: React.FC = () => {
           data-testid={faqsSectionTestIds.contentWrapper}
         >
           <Typography
-            variant="h1"
+            variant="h2"
             sx={faqsSectionStyles.title}
           >
             {translations?.faqs?.header || "Comprehensive JavaScript FAQs"}

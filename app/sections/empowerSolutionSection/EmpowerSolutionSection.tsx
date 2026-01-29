@@ -44,8 +44,8 @@ const EmpowerSolutionSection: React.FC = () => {
             sx={empowerSolutionSectionStyles.textBox}
             data-testid={empowerSolutionSectionTestIds.textBox}
           >
-            <Typography variant="h1">{t("empowerSolutionSection.title")}</Typography>
-            <Typography variant="body1">{t("empowerSolutionSection.body")}</Typography>
+            <Typography variant="h2">{t("empowerSolutionSection.title")}</Typography>
+            <Typography variant="h5">{t("empowerSolutionSection.body")}</Typography>
           </Box>
         </Box>
       </Container>

@@ -141,7 +141,7 @@ const Header: React.FC = () => {
                 component="a"
                 href={item.url}
                 role="link"
-                sx={{ color: "#fff" }}
+                sx={{ color: "primary.contrastText" }}
                 aria-label={`Navigate to ${item.label}`}
               >
                 {item.label}

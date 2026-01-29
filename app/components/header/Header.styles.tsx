@@ -33,7 +33,7 @@ export const headerStyles = {
       padding: '8px 12px',
       borderRadius: '4px',
       transition: 'background-color 0.2s ease',
-      fontSize: { md: '0.9rem', lg: '1rem' },
+      // Keep font sizing to MUI Typography variants
       '&:hover, &:focus': {
         backgroundColor: 'rgba(255, 255, 255, 0.1)',
         outline: '2px solid transparent',
@@ -61,7 +61,7 @@ export const headerStyles = {
   drawerTitle: {
     my: 2,
     px: 2,
-    fontSize: { xs: '1.25rem', sm: '1.5rem' },
+    // Typography variant on the component should set size
   },
   drawerListButton: {
     textAlign: "center" as const,

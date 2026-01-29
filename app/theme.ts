@@ -10,7 +10,7 @@ const theme = createTheme({
       letterSpacing: "-0.02em",
     },
     h2: {
-      fontSize: "clamp(1.5rem, 3vw + 0.5rem, 2.5rem)", // Fluid 24-40px (reduced mobile start)
+      fontSize: "clamp(2rem, 3vw + 1rem, 3rem)", // Fluid 24-40px (reduced mobile start)
       fontWeight: 600,
       lineHeight: 1.3,
       letterSpacing: "-0.01em",

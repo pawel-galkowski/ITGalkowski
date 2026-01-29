@@ -1,42 +1,55 @@
-// Styles for ImageTiles component extracted from inline sx and style props
-
 export const imageTilesStyles = {
   root: (isMobile: boolean) => ({
     display: "grid",
-    gridTemplateColumns: isMobile 
-      ? "1fr" 
-      : { xs: '1fr', sm: 'repeat(2, 1fr)' },
-    gap: { xs: 3, sm: 4, md: 5 },
+    gridTemplateColumns: isMobile ? "1fr" : { xs: "1fr", sm: "repeat(2, 1fr)" },
+    gap: { xs: 2, sm: 3, md: 4 },
+    alignItems: "center",
+    justifyItems: "center",
+    gridAutoRows: "auto",
     width: "100%",
     px: { xs: 2, sm: 3, md: 4 },
   }),
   tile: {
     display: "flex",
     flexDirection: "column",
-    height: '100%',
+    height: "auto",
+    // maxWidth: 400,
+    maxHeight: 600,
+    justifyContent: "center",
     textAlign: { xs: "center", sm: "left" },
     alignItems: { xs: "center", sm: "flex-start" },
+    backgroundColor: "background.paper",
+    padding: { xs: 2, sm: 3 },
+    boxSizing: "border-box" as const,
+    borderRadius: 2,
+    boxShadow: 1,
+    width: "100%",
+    overflow: "hidden",
+    transition: "transform 0.18s ease, box-shadow 0.18s ease",
+    '&:hover': {
+      transform: 'translateY(-6px)',
+      boxShadow: 6,
+    },
+    position: 'relative',
   },
   image: {
     width: "100%",
     height: "auto",
     aspectRatio: "1",
     objectFit: "cover" as const,
-    marginBottom: { xs: 1.5, sm: 2 },
+    marginBottom: { xs: 1, sm: 1.5 },
     borderRadius: 1,
-    transition: 'transform 0.3s ease',
-    '&:hover': {
-      transform: 'scale(1.02)',
+      display: 'block',
+      boxSizing: 'border-box',
+    transition: "transform 0.3s ease",
+    "&:hover": {
+      transform: "scale(1.02)",
     },
   },
   title: {
-    fontWeight: 600,
     marginBottom: { xs: 0.75, sm: 1 },
-    fontSize: { xs: '1.1rem', sm: '1.25rem' },
   },
   content: {
     color: "text.secondary",
-    fontSize: { xs: '0.875rem', sm: '0.95rem' },
-    lineHeight: 1.6,
   },
 };

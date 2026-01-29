@@ -10,26 +10,23 @@ export const carouselSliderStyles = {
     gap: { xs: 2, sm: 3 },
     overflow: "hidden",
   },
-  sliderBox: (width?: number | string) => {
-    const base = {
-      position: "relative",
-      width: "100%",
-      maxWidth: width === "100%" ? "100%" : { xs: "100%", sm: "90%", md: "85%" },
-      mx: "auto",
-      px: { xs: 0.5, sm: 2 },
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      gap: { xs: 1, sm: 2 },
-      minHeight: { xs: "auto", sm: "auto" },
-    };
-    return base;
-  },
+  sliderBox: (width?: number | string) => ({
+    position: "relative",
+    width: "100%",
+    maxWidth: width === "100%" ? "100%" : { xs: "100%", sm: "90%", md: "85%" },
+    mx: "auto",
+    px: { xs: 0.5, sm: width === "100%" ? 0 : 2 },
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: { xs: 1, sm: 2 },
+    minHeight: { xs: "auto", sm: "auto" },
+  }),
   navButton: (side: "left" | "right") => {
     const base = {
       position: "absolute" as const,
       zIndex: 10,
-      color: "#fff",
+      color: "primary.contrastText",
       backgroundColor: "rgba(0, 0, 0, 0.5)",
       "&:hover": {
         backgroundColor: "rgba(0, 0, 0, 0.7)",
@@ -55,7 +52,8 @@ export const carouselSliderStyles = {
     height: { xs: "auto", sm: height * 0.9, md: height },
     aspectRatio: { xs: "16/9", sm: "auto" },
     maxHeight: { xs: 350, sm: "none" },
-    border: "4px solid #51C9FF",
+    border: "4px solid",
+    borderColor: "primary.light",
     borderRadius: 2,
     overflow: "hidden",
     boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
@@ -85,11 +83,11 @@ export const carouselSliderStyles = {
     width: active ? 10 : 8,
     height: active ? 10 : 8,
     borderRadius: "50%",
-    backgroundColor: active ? "#1F2629" : "#999",
+    backgroundColor: active ? "primary.main" : "text.disabled",
     cursor: "pointer",
     transition: "all 0.3s ease",
     "&:hover": {
-      backgroundColor: "#1F2629",
+      backgroundColor: "primary.main",
     },
   }),
 };

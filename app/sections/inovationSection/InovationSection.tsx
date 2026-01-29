@@ -28,10 +28,10 @@ const InovationSection: React.FC = () => {
           sx={inovationSectionStyles.textBox}
           data-testid={inovationSectionTestIds.textBox}
         >
-          <Typography variant="h1" color="white">
+          <Typography variant="h2" color="white">
             {t("inovationSection.title")}
           </Typography>
-          <Typography variant="h4" color="white">
+          <Typography variant="h5" color="white">
             {t("inovationSection.body")}
           </Typography>
         </Box>

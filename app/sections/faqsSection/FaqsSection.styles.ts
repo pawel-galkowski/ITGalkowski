@@ -17,8 +17,6 @@ export const faqsSectionStyles = {
     textAlign: { xs: "center", md: "left" },
   },
   title: {
-    fontSize: { xs: "1.75rem", sm: "2.25rem", md: "2.625rem" },
-    fontWeight: 600,
     mb: { xs: 2, sm: 3, md: 4 },
     textAlign: "center",
     px: { xs: 2, sm: 3 },

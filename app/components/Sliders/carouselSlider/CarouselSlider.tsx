@@ -53,7 +53,7 @@ const CarouselSlider: React.FC<{ images: SliderImageProps[]; height?: number; wi
           data-testid={carouselSliderTestIds.leftButton}
           aria-label="previous slide"
         >
-          <NavigateBeforeIcon sx={{ fontSize: 32 }} />
+          <NavigateBeforeIcon fontSize="large" />
         </IconButton>
 
         <Box
@@ -101,7 +101,7 @@ const CarouselSlider: React.FC<{ images: SliderImageProps[]; height?: number; wi
           data-testid={carouselSliderTestIds.rightButton}
           aria-label="next slide"
         >
-          <NavigateNextIcon sx={{ fontSize: 32 }} />
+          <NavigateNextIcon fontSize="large" />
         </IconButton>
       </Box>
 

@@ -21,9 +21,8 @@ import {
   timelineOppositeContentStyles,
   timelineContentStyles,
   timelineBoxStyles,
-  summaryBoxStyles,
+  timelineSummaryStyles,
 } from "./ExperienceTimeline.styles";
-
 
 export const experienceTimelineTestIds = {
   root: "experience-timeline-root",
@@ -42,12 +41,20 @@ export const experienceTimelineTestIds = {
 const ExperienceTimeline = () => {
   const { language } = useLanguage();
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const data = language === "pl" ? pl : en;
   return (
-    <Timeline position={isMobile ? "right" : "alternate"} sx={timelineStyles} data-testid={experienceTimelineTestIds.root}>
+    <Timeline
+      position={isMobile ? "right" : "alternate"}
+      sx={timelineStyles}
+      data-testid={experienceTimelineTestIds.root}
+    >
       {data.map((el: ExperienceItem) => (
-        <TimelineItem key={uuidv4()} sx={timelineItemStyles} data-testid={experienceTimelineTestIds.item}>
+        <TimelineItem
+          key={uuidv4()}
+          sx={timelineItemStyles}
+          data-testid={experienceTimelineTestIds.item}
+        >
           <TimelineOppositeContent
             align="right"
             variant="body1"
@@ -62,15 +69,26 @@ const ExperienceTimeline = () => {
             <TimelineDot color="secondary" data-testid={experienceTimelineTestIds.dot} />
             <TimelineConnector data-testid={experienceTimelineTestIds.connector} />
           </TimelineSeparator>
-          <TimelineContent sx={timelineContentStyles} data-testid={experienceTimelineTestIds.content}>
+          <TimelineContent
+            sx={timelineContentStyles}
+            data-testid={experienceTimelineTestIds.content}
+          >
             <Box sx={timelineBoxStyles}>
-              <Typography variant="h5" component="span" data-testid={experienceTimelineTestIds.position}>
+              <Typography
+                variant="h5"
+                component="span"
+                data-testid={experienceTimelineTestIds.position}
+              >
                 <strong>{el.position}</strong>
               </Typography>
-              <Typography variant="h6" component="span" data-testid={experienceTimelineTestIds.company}>
+              <Typography
+                variant="h6"
+                component="span"
+                data-testid={experienceTimelineTestIds.company}
+              >
                 {el.company}
               </Typography>
-              <Box sx={summaryBoxStyles} data-testid={experienceTimelineTestIds.summary}>
+              <Box sx={timelineSummaryStyles} data-testid={experienceTimelineTestIds.summary}>
                 {stringToHTML(el.summary)}
               </Box>
             </Box>

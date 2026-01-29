@@ -6,7 +6,7 @@ export const sectionStyles = {
   flexDirection: "column" as const,
   justifyContent: "center",
   alignItems: "center",
-  backgroundColor: "#f9fafb",
+  backgroundColor: "background.default",
   textAlign: "center" as const,
 };
 
@@ -44,11 +44,10 @@ export const navButtonStyles = {
   minWidth: 44,
   minHeight: 44,
   backgroundColor: "rgba(0, 0, 0, 0.4)",
-  color: "#fff",
+  color: "primary.contrastText",
   border: "none",
   borderRadius: "50%",
-  fontSize: { xs: "1.25rem", sm: "1.4rem", md: "1.5rem" },
-  fontWeight: "normal" as const,
+  // Leave font sizing to theme/typography variants
   cursor: "pointer",
   display: "flex",
   alignItems: "center",
@@ -56,7 +55,7 @@ export const navButtonStyles = {
   opacity: 0.8,
   transition: "all 0.3s ease",
   padding: 0,
-  lineHeight: 1,
+  
   zIndex: 1,
   "&:hover": {
     backgroundColor: "rgba(255, 255, 255, 0.6)",

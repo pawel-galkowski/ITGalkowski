@@ -8,9 +8,9 @@ export const footerStyles = {
   flexDirection: { md: "row", sm: "column", xs: "column" },
   alignItems: "center",
   justifyContent: "center",
-  color: "white",
+  color: "primary.contrastText",
   textAlign: 'center',
   '& > *': {
-    fontSize: { xs: '0.875rem', sm: '1rem' },
+    // Typography variants control font sizes
   },
 };

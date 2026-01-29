@@ -46,7 +46,7 @@ describe("Footer Component", () => {
   it("has white text color", () => {
     render(<FooterWithProvider />);
     const footer = screen.getByTestId(footerTestIds.root);
-    expect(footer).toHaveStyle("color: white");
+    expect(footer).toHaveStyle("color: rgb(255, 255, 255)");
   });
 
   it("displays full copyright notice with translated text", () => {

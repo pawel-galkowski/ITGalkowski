@@ -18,7 +18,7 @@ const ExperienceSection: React.FC = () => {
   return (
     <Box sx={experienceSectionStyles.root} id="timeline" data-testid={experienceSectionTestIds.root}>
       <Container data-testid={experienceSectionTestIds.container}>
-        <Typography variant="h2" sx={experienceSectionStyles.title}>
+        <Typography variant="h3" sx={experienceSectionStyles.title}>
           {t("experience.header")}
         </Typography>
         <ExperienceTimeline />

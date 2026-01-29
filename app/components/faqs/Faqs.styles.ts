@@ -1,3 +1,7 @@
+export const accordionRootStyles = (expanded: string | false) => ({
+  pb: expanded ? 0 : 6,
+});
+
 export const accordionStyles = {
   backgroundColor: "transparent",
   color: "primary.contrastText",
@@ -12,14 +16,14 @@ export const accordionStyles = {
     borderColor: "primary.contrastText",
   },
   "&:focus-within": {
-    outline: '2px solid',
-    outlineColor: 'primary.light',
+    outline: "2px solid",
+    outlineColor: "primary.light",
     outlineOffset: 2,
   },
 };
 
 export const summaryStyles = {
-  padding: { xs: "12px 0", sm: "16px 0" },
+  padding: { xs: "12px 6px", sm: "16px 8px" },
   minHeight: { xs: "44px", sm: "48px" },
   transition: "min-height 0.2s",
   "&.Mui-expanded": {
@@ -30,7 +34,6 @@ export const summaryStyles = {
   },
   "& .MuiAccordionSummary-content": {
     margin: 0,
-    fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' },
   },
   "& .MuiAccordionSummary-expandIconWrapper": {
     color: "primary.contrastText",
@@ -38,14 +41,12 @@ export const summaryStyles = {
 };
 
 export const detailsStyles = {
-  padding: { xs: "8px 0 16px 0", sm: "8px 0 20px 0" },
+  padding: { xs: "8px 6px 16px 6px", sm: "8px 8px 20px 8px" },
   overflow: "hidden",
   transition: "max-height 0.3s cubic-bezier(0.4,0,0.2,1)",
 };
 
 export const answerTypographyStyles = {
   opacity: 0.9,
-  fontSize: { xs: '0.875rem', sm: '0.95rem', md: '1rem' },
-  lineHeight: 1.7,
-  textAlign: 'left' as const,
+  textAlign: "left" as const,
 };
