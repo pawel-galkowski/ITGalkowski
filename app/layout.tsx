@@ -9,8 +9,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang={Languages.EN}>
-      <body>
+    <html lang={Languages.EN} suppressHydrationWarning>
+      <body suppressHydrationWarning>
         <Providers>
           <CleanupGrammarly />
           {children}

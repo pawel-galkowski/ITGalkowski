@@ -25,6 +25,12 @@ export const LanguageProvider = ({ children, initialLanguage }: LanguageProvider
     }
   }, []);
 
+  React.useEffect(() => {
+    if (typeof document !== "undefined") {
+      document.documentElement.lang = language;
+    }
+  }, [language]);
+
   // Initialize from localStorage after hydration only
   React.useEffect(() => {
     const stored = localStorage.getItem("language") as Language | null;

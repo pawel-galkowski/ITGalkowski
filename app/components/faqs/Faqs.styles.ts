@@ -1,13 +1,9 @@
-export const accordionRootStyles = (expanded: string | false) => ({
-  pb: expanded ? 0 : 6,
-});
-
 export const accordionStyles = {
   backgroundColor: "transparent",
   color: "primary.contrastText",
   border: "2px solid transparent",
   py: { xs: 0.5, sm: 1 },
-  px: { xs: 2, sm: 3 },
+  px: { xs: 0, sm: 3 },
   margin: 0,
   transition: "border-color 0.3s ease",
   "&:before": { display: "none" },
@@ -30,7 +26,7 @@ export const summaryStyles = {
     minHeight: { xs: "44px", sm: "48px" },
   },
   "&:hover": {
-    backgroundColor: "rgba(255, 255, 255, 0.05)",
+    backgroundColor: "background.default",
   },
   "& .MuiAccordionSummary-content": {
     margin: 0,

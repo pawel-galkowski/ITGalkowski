@@ -1,5 +1,3 @@
-// ExperienceTimeline.styles.tsx
-
 export const timelineStyles = {
   py: { xs: 2, sm: 3 },
   "& .MuiTimelineItem-root": {

@@ -1,12 +1,15 @@
 export const experienceSectionStyles = {
   root: {
-    py: { xs: 3, sm: 5, md: 10 },
-    px: { xs: 2, sm: 3, md: 5 },
+    py: { xs: 3, sm: 5, md: 5, lg: 10 },
+    px: { xs: 0, sm: 3, md: 5 },
     display: "flex",
     width: "100%",
     flexDirection: "column",
     gap: { xs: 1.5, sm: 2, md: 4 },
     backgroundColor: "secondary.main",
+  },
+  container: {
+    px: { xs: 1, sm: 2 },
   },
   title: {
     textAlign: "center",

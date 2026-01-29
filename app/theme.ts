@@ -68,6 +68,10 @@ const theme = createTheme({
       main: "#F5ECE1",
       light: "#FF8B00",
       contrastText: "#111827"
+    },
+    background: {
+      default: "rgba(255, 255, 255, 0.05)",
+      paper: "#rgba(255, 255, 255, 0.1)",
     }
   },
   breakpoints: {

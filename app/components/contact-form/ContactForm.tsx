@@ -53,7 +53,6 @@ const ContactForm: React.FC = () => {
         setSubmitting(false);
         return;
       }
-      // Send to API route (serverless function)
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },

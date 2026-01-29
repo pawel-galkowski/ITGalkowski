@@ -2,7 +2,8 @@ export const tilesSectionStyles = {
   root: {
     width: "100%",
     backgroundColor: "secondary.main",
-    py: { xs: 3, sm: 5, md: 10 },
+    pt: { xs: 3, sm: 3, lg: 10 },
+    pb: { xs: 3, sm: 5, md: 10, lg: 10 },
     px: { xs: 2, sm: 3, md: 5 },
   },
   title: {

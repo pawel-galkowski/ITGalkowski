@@ -17,7 +17,7 @@ const ExperienceSection: React.FC = () => {
   const { t } = useTranslations(language);
   return (
     <Box sx={experienceSectionStyles.root} id="timeline" data-testid={experienceSectionTestIds.root}>
-      <Container data-testid={experienceSectionTestIds.container}>
+      <Container data-testid={experienceSectionTestIds.container} sx={experienceSectionStyles.container}>
         <Typography variant="h3" sx={experienceSectionStyles.title}>
           {t("experience.header")}
         </Typography>

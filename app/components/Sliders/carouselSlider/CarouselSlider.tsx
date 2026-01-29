@@ -57,7 +57,7 @@ const CarouselSlider: React.FC<{ images: SliderImageProps[]; height?: number; wi
         </IconButton>
 
         <Box
-          sx={carouselSliderStyles.prevImgBox(height, width)}
+          sx={carouselSliderStyles.prevImgBox(height)}
           data-testid={carouselSliderTestIds.prevImgBox}
         >
           <Box
@@ -70,7 +70,7 @@ const CarouselSlider: React.FC<{ images: SliderImageProps[]; height?: number; wi
         </Box>
 
         <Box
-          sx={carouselSliderStyles.mainImgBox(height, width)}
+          sx={carouselSliderStyles.mainImgBox(height)}
           data-testid={carouselSliderTestIds.mainImgBox}
         >
           <Box
@@ -83,7 +83,7 @@ const CarouselSlider: React.FC<{ images: SliderImageProps[]; height?: number; wi
         </Box>
 
         <Box
-          sx={carouselSliderStyles.nextImgBox(height, width)}
+          sx={carouselSliderStyles.nextImgBox(height)}
           data-testid={carouselSliderTestIds.nextImgBox}
         >
           <Box

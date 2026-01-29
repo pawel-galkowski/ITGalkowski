@@ -9,7 +9,7 @@ export const pl: Translations = {
     skills: "Umiejętności",
     subjects: "Obszar doświadczenia",
     contact: "Kontakt",
-    faqs: "FAQ",
+    faqs: "Faq",
     timeline: "Oś czasu",
   },
   footer: {

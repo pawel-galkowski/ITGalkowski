@@ -38,8 +38,8 @@ export const carouselSliderStyles = {
     if (side === "right") return { ...base, right: { xs: 0, sm: 10 } };
     return base;
   },
-  prevImgBox: (height: number, width?: number | string) => ({
-    flex: { xs: "0 0 0%", sm: "0 0 20%", md: "0 0 25%" },
+  prevImgBox: (height: number) => ({
+    flex: { xs: "0 0 0%", sm: "0 0 20%", md: "0 0 15%", lg: "0 0 25%" },
     height: { xs: 0, sm: height * 0.8, md: height },
     opacity: { xs: 0, sm: 0.5 },
     filter: { xs: "none", sm: "blur(4px)" },
@@ -47,8 +47,8 @@ export const carouselSliderStyles = {
     borderRadius: 1,
     display: { xs: "none", sm: "block" },
   }),
-  mainImgBox: (height: number, width?: number | string) => ({
-    flex: { xs: "1 1 100%", sm: "0 0 60%", md: "0 0 50%" },
+  mainImgBox: (height: number) => ({
+    flex: { xs: "1 1 100%", sm: "0 0 60%", md: "0 0 70%", lg: "0 0 50%" },
     height: { xs: "auto", sm: height * 0.9, md: height },
     aspectRatio: { xs: "16/9", sm: "auto" },
     maxHeight: { xs: 350, sm: "none" },
@@ -58,8 +58,8 @@ export const carouselSliderStyles = {
     overflow: "hidden",
     boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
   }),
-  nextImgBox: (height: number, width?: number | string) => ({
-    flex: { xs: "0 0 0%", sm: "0 0 20%", md: "0 0 25%" },
+  nextImgBox: (height: number) => ({
+    flex: { xs: "0 0 0%", sm: "0 0 20%", md: "0 0 15%", lg: "0 0 25%" },
     height: { xs: 0, sm: height * 0.8, md: height },
     opacity: { xs: 0, sm: 0.5 },
     filter: { xs: "none", sm: "blur(4px)" },

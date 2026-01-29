@@ -1,5 +1,3 @@
-// ContactForm.styles.tsx
-
 export const formBoxStyles = {
   mx: "auto",
   width: '100%',
@@ -12,6 +10,7 @@ export const formBoxStyles = {
 };
 
 export const textFieldStyles = {
+  width: "100%",
   "& .MuiOutlinedInput-root": {
     "& fieldset": {
       borderColor: "primary.contrastText",
@@ -48,7 +47,6 @@ export const buttonStyles = {
   width: { xs: '100%', sm: 'auto' },
   maxWidth: { xs: 300, sm: 'none' },
   mx: { xs: 'auto', sm: 0 },
-  // rely on Typography variant for button font size
   px: { xs: 3, sm: 4 },
   py: { xs: 1.25, sm: 1.5 },
   minHeight: 48,

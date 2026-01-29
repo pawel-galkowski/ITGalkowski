@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import {
   AppBar,
   Box,
@@ -17,6 +17,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useLanguage } from "@/context/LanguageContext";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useTranslations } from "@/i18n";
 import { Languages } from "@/i18n/types";
 import { LanguageButtons } from "../utils";
@@ -28,7 +29,7 @@ export const headerTestIds = {
   logo: "header-logo",
   menuButton: "header-menu-button",
   drawer: "header-drawer",
-  drawerTitle: "header-drawer-title",
+  logoBox: "header-logo-box",
   drawerNav: "header-drawer-nav",
   drawerListButton: "header-drawer-list-button",
 };
@@ -36,16 +37,19 @@ export const headerTestIds = {
 const Header: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { language, setLanguage } = useLanguage();
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   const { t } = useTranslations(language);
 
   const navItems = [
-    { key: "header.home", label: t("header.home"), url: '#' },
-    { key: "header.about", label: t("header.about"), url: '#about' },
-    { key: "header.subjects", label: t("header.subjects"), url: '#subjects' },
-    { key: "header.timeline", label: t("header.timeline"), url: '#timeline' },
-    { key: "header.faqs", label: t("header.faqs"), url: '#faqs' },
-    { key: "header.projects", label: t("header.projects"), url: '#projects' },
-    { key: "header.contact", label: t("header.contact"), url: '#contact' },
+    { key: "header.home", label: t("header.home"), url: "#" },
+    { key: "header.about", label: t("header.about"), url: "#about" },
+    { key: "header.subjects", label: t("header.subjects"), url: "#subjects" },
+    { key: "header.timeline", label: t("header.timeline"), url: "#timeline" },
+    { key: "header.faqs", label: t("header.faqs"), url: "#faqs" },
+    { key: "header.projects", label: t("header.projects"), url: "#projects" },
+    { key: "header.contact", label: t("header.contact"), url: "#contact" },
   ];
 
   const handleDrawerToggle = () => {
@@ -54,13 +58,37 @@ const Header: React.FC = () => {
 
   const handleLanguageChange = (lang: Languages) => {
     setLanguage(lang);
+    const currentPath = pathname || "/";
+    let newPath = currentPath;
+    if (/^\/(en|pl)(\/|$)/.test(currentPath)) {
+      newPath = currentPath.replace(/^\/(en|pl)/, `/${lang}`);
+    } else {
+      newPath = `/${lang}${currentPath}`;
+    }
+    const query = searchParams ? `?${searchParams.toString()}` : "";
+    const hash = globalThis.window === undefined ? "" : globalThis.location.hash;
+    router.push(`${newPath}${query}${hash}`);
   };
+
+  const onLogoClick = useMemo(
+    () => () => {
+      globalThis.location.href = "/";
+    },
+    []
+  );
 
   const drawer = (
     <Box sx={headerStyles.drawerBox} data-testid={headerTestIds.drawer} role="presentation">
-      <Typography variant="h6" sx={headerStyles.drawerTitle} data-testid={headerTestIds.drawerTitle}>
-        Logo ITGalkowski
-      </Typography>
+      <Box sx={headerStyles.logoBox} data-testid={headerTestIds.logoBox}>
+        <Box
+          component="img"
+          src="/img/logo.png"
+          alt="ITGalkowski - Professional IT Solutions"
+          sx={headerStyles.logoMobile}
+          data-testid={headerTestIds.logo}
+          loading="eager"
+        />
+      </Box>
       <Divider />
       <nav aria-label="Mobile navigation menu">
         <List data-testid={headerTestIds.drawerNav}>
@@ -80,9 +108,6 @@ const Header: React.FC = () => {
           ))}
         </List>
       </nav>
-      <Box sx={{ mt: 'auto', mb: 2, display: 'flex', justifyContent: 'center' }}>
-        <LanguageButtons language={language} handleLanguageChange={handleLanguageChange} />
-      </Box>
     </Box>
   );
 
@@ -112,6 +137,10 @@ const Header: React.FC = () => {
             variant="h6"
             component="div"
             sx={headerStyles.title}
+            onClick={onLogoClick}
+            role="button"
+            tabIndex={0}
+            aria-label="Navigate to homepage"
           >
             <Box
               component="img"
@@ -122,12 +151,12 @@ const Header: React.FC = () => {
               loading="eager"
             />
           </Typography>
-          
+
           {/* Mobile Language Switcher - Always Visible */}
           <Box sx={headerStyles.mobileLanguageBox}>
             <LanguageButtons language={language} handleLanguageChange={handleLanguageChange} />
           </Box>
-          
+
           {/* Desktop Navigation */}
           <Box
             component="nav"
@@ -141,7 +170,7 @@ const Header: React.FC = () => {
                 component="a"
                 href={item.url}
                 role="link"
-                sx={{ color: "primary.contrastText" }}
+                sx={headerStyles.desktopButtons}
                 aria-label={`Navigate to ${item.label}`}
               >
                 {item.label}

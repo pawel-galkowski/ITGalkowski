@@ -23,6 +23,7 @@ import {
   timelineBoxStyles,
   timelineSummaryStyles,
 } from "./ExperienceTimeline.styles";
+import { Languages } from "@/i18n/types";
 
 export const experienceTimelineTestIds = {
   root: "experience-timeline-root",
@@ -41,8 +42,8 @@ export const experienceTimelineTestIds = {
 const ExperienceTimeline = () => {
   const { language } = useLanguage();
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const data = language === "pl" ? pl : en;
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const data = language === Languages.PL ? pl : en;
   return (
     <Timeline
       position={isMobile ? "right" : "alternate"}

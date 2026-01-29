@@ -2,7 +2,7 @@
 
 import { useTranslations } from "@/i18n";
 import { Box, Button, Typography } from "@mui/material";
-import React from "react";
+import React, { useMemo } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { entrySectionStyles } from "./EntrySection.styles";
 
@@ -16,12 +16,17 @@ export const entrySectionTestIds = {
 const EntrySection: React.FC = () => {
   const { language } = useLanguage();
   const { t } = useTranslations(language);
+
+  const onButtonClick = useMemo(
+    () => () => {
+      globalThis.location.href = "#contact";
+    },
+    []
+  );
+
   return (
     <Box sx={entrySectionStyles.root} data-testid={entrySectionTestIds.root}>
-      <Box
-        sx={entrySectionStyles.textBox}
-        data-testid={entrySectionTestIds.textBox}
-      >
+      <Box sx={entrySectionStyles.textBox} data-testid={entrySectionTestIds.textBox}>
         <Typography variant="h1">{t("entrySection.title")}</Typography>
         <Typography variant="h4">{t("entrySection.body")}</Typography>
         <Button
@@ -29,6 +34,7 @@ const EntrySection: React.FC = () => {
           size="large"
           sx={entrySectionStyles.button}
           data-testid={entrySectionTestIds.button}
+          onClick={onButtonClick}
         >
           {t("entrySection.button")}
         </Button>

@@ -5,7 +5,8 @@ export const faqsSectionStyles = {
     px: { xs: 2, sm: 3, md: 5 },
     color: "primary.contrastText",
     width: "100%",
-    minHeight: { xs: "auto", md: "600px" },
+    height: { xs: 700, sm: 600, md: 800},
+    
   },
   contentWrapper: {
     width: "100%",
@@ -19,6 +20,6 @@ export const faqsSectionStyles = {
   title: {
     mb: { xs: 2, sm: 3, md: 4 },
     textAlign: "center",
-    px: { xs: 2, sm: 3 },
+    px: { xs: 0, sm: 3 },
   },
 };

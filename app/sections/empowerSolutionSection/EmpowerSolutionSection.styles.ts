@@ -6,7 +6,8 @@ export const empowerSolutionSectionStyles = {
     justifyContent: "center",
     width: "100%",
     minHeight: { xs: "auto", md: "450px" },
-    py: { xs: 3, sm: 5, md: 8 },
+    pt: { xs: 3, sm: 5, md: 2, lg: 8 },
+    pb: { xs: 3, sm: 5, md: 8, lg: 8 },
     px: { xs: 2, sm: 3, md: 5 },
   },
   contentWrapper: {

@@ -1,6 +1,5 @@
 "use client";
 
-import { LogoSlider } from "@/components/sliders";
 import { Box, Container, Typography } from "@mui/material";
 import React from "react";
 import { useTranslations } from "@/i18n";
@@ -43,7 +42,6 @@ const InovationSection: React.FC = () => {
           data-testid={inovationSectionTestIds.image}
         />
       </Container>
-      <LogoSlider />
     </Box>
   );
 };
