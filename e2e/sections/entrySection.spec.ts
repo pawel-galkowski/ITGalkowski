@@ -25,7 +25,10 @@ test.describe('Entry Section - CTA and Content', () => {
   });
 
   test('should mention Katowice location', async ({ page }) => {
-    const katowiceText = page.locator('text=/Katowice/i');
-    await expect(katowiceText).toBeVisible();
+    // Katowice is mentioned in various sections, scroll to see more content
+    await page.evaluate(() => window.scrollBy(0, 500));
+    await page.waitForTimeout(200);
+    const katowiceText = page.locator('text=/Katowice/i').first();
+    await expect(katowiceText).toBeVisible({ timeout: 10000 });
   });
 });

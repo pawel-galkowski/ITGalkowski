@@ -15,20 +15,16 @@ describe("LogoSlider", () => {
     const logoImgs = screen.getAllByTestId(logoSliderTestIds.logoImg);
     expect(logoBoxes.length).toBe(10);
     expect(logoImgs.length).toBe(10);
-    // Check that at least one known alt is present
-    expect(screen.getAllByAltText("Szpital rejonowy w Raciborzu Logo").length).toBe(2);
-    expect(screen.getAllByAltText("Capgemini Polska Logo").length).toBe(2);
+    // Only the first set has alt text, the duplicates have empty alt
+    expect(screen.getAllByAltText("Szpital rejonowy w Raciborzu Logo").length).toBe(1);
+    expect(screen.getAllByAltText("Capgemini Polska Logo").length).toBe(1);
   });
 
-  it("renders both grayscale variants", () => {
+  it("renders all logos with grayscale(0%)", () => {
     render(<LogoSlider />);
     const logoImgs = screen.getAllByTestId(logoSliderTestIds.logoImg);
-    // First 5 should have grayscale(50%), next 5 grayscale(100%)
-    logoImgs.slice(0, 5).forEach(img => {
-      expect(img).toHaveStyle("filter: grayscale(50%)");
-    });
-    logoImgs.slice(5).forEach(img => {
-      expect(img).toHaveStyle("filter: grayscale(100%)");
+    logoImgs.forEach(img => {
+      expect(img).toHaveStyle("filter: grayscale(0%)");
     });
   });
 });

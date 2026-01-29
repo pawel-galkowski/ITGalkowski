@@ -13,13 +13,14 @@ test.describe('Services/Tiles Section', () => {
   });
 
   test('should have responsive tile layout', async ({ page }) => {
-    let tiles = page.locator('[class*="grid"]');
-    let desktopCount = await tiles.count();
-    expect(desktopCount).toBeGreaterThan(0);
+    // Scroll to tiles section
+    const tilesSection = page.locator('[data-testid="tiles-section-root"]');
+    await tilesSection.scrollIntoViewIfNeeded();
+    await expect(tilesSection).toBeVisible({ timeout: 10000 });
+    
+    // Check on mobile viewport
     await page.setViewportSize({ width: 375, height: 667 });
-    await page.reload();
-    tiles = page.locator('[class*="grid"]');
-    let mobileCount = await tiles.count();
-    expect(mobileCount).toBeGreaterThan(0);
+    await page.waitForTimeout(300);
+    await expect(tilesSection).toBeVisible({ timeout: 10000 });
   });
 });

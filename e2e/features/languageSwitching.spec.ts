@@ -13,13 +13,18 @@ test.describe('Language Switching', () => {
   });
 
   test('should switch language on button click', async ({ page }) => {
-    const langButtons = page.locator('header [role="button"]');
-    const count = await langButtons.count();
-    if (count >= 2) {
-      await langButtons.nth(1).click();
-      await page.waitForTimeout(300);
-      const newText = await page.locator('body').textContent();
-      expect(newText).toBeTruthy();
-    }
+    // Set desktop viewport (beforeEach already navigated to /)
+    await page.setViewportSize({ width: 1280, height: 720 });
+    await page.waitForLoadState('networkidle');
+    
+    // Find the language button in the desktop nav and click it
+    const langButton = page.locator('nav [data-testid="language-buttons-container"] button').first();
+    await expect(langButton).toBeVisible({ timeout: 10000 });
+    await langButton.click();
+    await page.waitForTimeout(500);
+    
+    // Verify page still works after language switch
+    const body = page.locator('body');
+    await expect(body).toBeVisible();
   });
 });
