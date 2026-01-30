@@ -34,7 +34,6 @@ test.describe('Home Page Navigation and Content', () => {
     // Scroll to bottom first to ensure page is scrollable
     await page.evaluate(() => window.scrollTo(0, 0));
     await page.waitForTimeout(100);
-    const initialScroll = await page.evaluate(() => window.scrollY);
     // Use scrollTo with a target position
     await page.evaluate(() => {
       const height = document.body.scrollHeight;
