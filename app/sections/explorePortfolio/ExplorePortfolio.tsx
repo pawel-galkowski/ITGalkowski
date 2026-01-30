@@ -1,10 +1,10 @@
 "use client";
 
-import { useLanguage } from "@/context/LanguageContext";
-import { useTranslations } from "@/i18n";
 import { Box, Typography, Button } from "@mui/material";
 import React from "react";
 import { explorePortfolioStyles } from "./ExplorePortfolio.styles";
+import { useTranslations } from "@/i18n";
+import { useLanguage } from "@/context/LanguageContext";
 
 export const explorePortfolioTestIds = {
   root: "explore-portfolio-root",
@@ -18,15 +18,8 @@ const ExplorePortfolio: React.FC = () => {
   const { t } = useTranslations(language);
 
   return (
-    <Box
-      sx={explorePortfolioStyles.root}
-      id="projects"
-      data-testid={explorePortfolioTestIds.root}
-    >
-      <Box
-        sx={explorePortfolioStyles.overlay}
-        data-testid={explorePortfolioTestIds.overlay}
-      >
+    <Box sx={explorePortfolioStyles.root} id="projects" data-testid={explorePortfolioTestIds.root}>
+      <Box sx={explorePortfolioStyles.overlay} data-testid={explorePortfolioTestIds.overlay}>
         <Typography variant="h1">{t("explorePortfolio.title")}</Typography>
         <Typography variant="body1">{t("explorePortfolio.body")}</Typography>
         <Button

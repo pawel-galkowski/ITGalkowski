@@ -30,16 +30,15 @@ jest.mock("@/i18n", () => ({
   }),
 }));
 
-
 // Helper to set fetch mock
 
 const defaultJson = { success: true };
 const setFetchMock = (ok: boolean = true, json: Record<string, unknown> = defaultJson): void => {
-  (globalThis.fetch as unknown as jest.Mock) = jest.fn((): Promise<{ ok: boolean; json: () => Promise<Record<string, unknown>> }> =>
-    Promise.resolve({ ok, json: () => Promise.resolve(json) })
+  (globalThis.fetch as unknown as jest.Mock) = jest.fn(
+    (): Promise<{ ok: boolean; json: () => Promise<Record<string, unknown>> }> =>
+      Promise.resolve({ ok, json: () => Promise.resolve(json) })
   );
 };
-
 
 describe("ContactForm", () => {
   beforeEach(() => {
@@ -57,9 +56,20 @@ describe("ContactForm", () => {
 
   it("shows error for invalid email", async () => {
     render(<ContactForm />);
-    fireEvent.change(screen.getByTestId(contactFormTestIds.name).querySelector('input') as HTMLInputElement, { target: { value: "Test" } });
-    fireEvent.change(screen.getByTestId(contactFormTestIds.email).querySelector('input') as HTMLInputElement, { target: { value: "bademail" } });
-    fireEvent.change(screen.getByTestId(contactFormTestIds.message).querySelector('textarea') as HTMLTextAreaElement, { target: { value: "Hello" } });
+    fireEvent.change(
+      screen.getByTestId(contactFormTestIds.name).querySelector("input") as HTMLInputElement,
+      { target: { value: "Test" } }
+    );
+    fireEvent.change(
+      screen.getByTestId(contactFormTestIds.email).querySelector("input") as HTMLInputElement,
+      { target: { value: "bademail" } }
+    );
+    fireEvent.change(
+      screen
+        .getByTestId(contactFormTestIds.message)
+        .querySelector("textarea") as HTMLTextAreaElement,
+      { target: { value: "Hello" } }
+    );
     fireEvent.click(screen.getByTestId(contactFormTestIds.submit));
     expect(await screen.findByText("Invalid email address")).toBeInTheDocument();
   });
@@ -68,9 +78,20 @@ describe("ContactForm", () => {
     process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY = "test-key";
     setFetchMock(true, { success: true });
     render(<ContactForm />);
-    fireEvent.change(screen.getByTestId(contactFormTestIds.name).querySelector('input') as HTMLInputElement, { target: { value: "Test" } });
-    fireEvent.change(screen.getByTestId(contactFormTestIds.email).querySelector('input') as HTMLInputElement, { target: { value: "test@example.com" } });
-    fireEvent.change(screen.getByTestId(contactFormTestIds.message).querySelector('textarea') as HTMLTextAreaElement, { target: { value: "Hello" } });
+    fireEvent.change(
+      screen.getByTestId(contactFormTestIds.name).querySelector("input") as HTMLInputElement,
+      { target: { value: "Test" } }
+    );
+    fireEvent.change(
+      screen.getByTestId(contactFormTestIds.email).querySelector("input") as HTMLInputElement,
+      { target: { value: "test@example.com" } }
+    );
+    fireEvent.change(
+      screen
+        .getByTestId(contactFormTestIds.message)
+        .querySelector("textarea") as HTMLTextAreaElement,
+      { target: { value: "Hello" } }
+    );
     fireEvent.click(screen.getByTestId(contactFormTestIds.submit));
     await waitFor(() => {
       expect(globalThis.fetch).toHaveBeenCalledWith(
@@ -81,7 +102,7 @@ describe("ContactForm", () => {
     // Wait for success message in Fade (Typography with color="success.main")
     const allSend = await screen.findAllByText("Send", undefined, { timeout: 2000 });
     // The success message is a <p> (Typography), the button is a <button>
-    const successMsg = allSend.find(el => el.tagName.toLowerCase() === "p");
+    const successMsg = allSend.find((el) => el.tagName.toLowerCase() === "p");
     expect(successMsg).toBeInTheDocument();
   });
 
@@ -89,9 +110,20 @@ describe("ContactForm", () => {
     process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY = "test-key";
     setFetchMock(false, { error: "Server error" });
     render(<ContactForm />);
-    fireEvent.change(screen.getByTestId(contactFormTestIds.name).querySelector('input') as HTMLInputElement, { target: { value: "Test" } });
-    fireEvent.change(screen.getByTestId(contactFormTestIds.email).querySelector('input') as HTMLInputElement, { target: { value: "test@example.com" } });
-    fireEvent.change(screen.getByTestId(contactFormTestIds.message).querySelector('textarea') as HTMLTextAreaElement, { target: { value: "Hello" } });
+    fireEvent.change(
+      screen.getByTestId(contactFormTestIds.name).querySelector("input") as HTMLInputElement,
+      { target: { value: "Test" } }
+    );
+    fireEvent.change(
+      screen.getByTestId(contactFormTestIds.email).querySelector("input") as HTMLInputElement,
+      { target: { value: "test@example.com" } }
+    );
+    fireEvent.change(
+      screen
+        .getByTestId(contactFormTestIds.message)
+        .querySelector("textarea") as HTMLTextAreaElement,
+      { target: { value: "Hello" } }
+    );
     fireEvent.click(screen.getByTestId(contactFormTestIds.submit));
     // Wait for error message in Fade (Typography with color="error.main")
     const errorMsg = await screen.findByText("Server error", undefined, { timeout: 2000 });

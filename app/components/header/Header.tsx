@@ -16,11 +16,11 @@ import {
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useLanguage } from "@/context/LanguageContext";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { LanguageButtons } from "../utils";
+import { useLanguage } from "@/context/LanguageContext";
 import { useTranslations } from "@/i18n";
 import { Languages } from "@/i18n/types";
-import { LanguageButtons } from "../utils";
 import { headerStyles } from "@/components/header/Header.styles";
 
 export const headerTestIds = {

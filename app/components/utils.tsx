@@ -1,6 +1,6 @@
-import { Languages } from "@/i18n/types";
 import { Box, IconButton } from "@mui/material";
 import { languageButtonsStyles } from "./utils.styles";
+import { Languages } from "@/i18n/types";
 
 export const languageButtonsTestIds = {
   container: "language-buttons-container",
@@ -20,7 +20,13 @@ export const LanguageButtons: React.FC<{
         role="button"
         size="large"
       >
-        <Box component="img" src="/img/en.png" alt="English flag" sx={languageButtonsStyles.flag} data-testid={languageButtonsTestIds.enFlag} />
+        <Box
+          component="img"
+          src="/img/en.png"
+          alt="English flag"
+          sx={languageButtonsStyles.flag}
+          data-testid={languageButtonsTestIds.enFlag}
+        />
       </IconButton>
     )}
     {language === Languages.PL && (
@@ -30,7 +36,13 @@ export const LanguageButtons: React.FC<{
         role="button"
         size="large"
       >
-        <Box component="img" src="/img/pl.png" alt="Polish flag" sx={languageButtonsStyles.flag} data-testid={languageButtonsTestIds.plFlag} />
+        <Box
+          component="img"
+          src="/img/pl.png"
+          alt="Polish flag"
+          sx={languageButtonsStyles.flag}
+          data-testid={languageButtonsTestIds.plFlag}
+        />
       </IconButton>
     )}
   </Box>

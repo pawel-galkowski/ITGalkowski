@@ -25,7 +25,7 @@ describe("ExplorePortfolio Component", () => {
 
   it("renders heading", () => {
     const { container } = renderWithLanguage(<ExplorePortfolio />);
-    const headings = container.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    const headings = container.querySelectorAll("h1, h2, h3, h4, h5, h6");
     expect(headings.length).toBeGreaterThan(0);
   });
 

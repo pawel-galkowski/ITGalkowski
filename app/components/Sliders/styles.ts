@@ -55,7 +55,7 @@ export const navButtonStyles = {
   opacity: 0.8,
   transition: "all 0.3s ease",
   padding: 0,
-  
+
   zIndex: 1,
   "&:hover": {
     backgroundColor: "rgba(255, 255, 255, 0.6)",

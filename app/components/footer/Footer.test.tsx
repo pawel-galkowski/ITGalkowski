@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import { LanguageProvider } from "@/context/LanguageContext";
 import Footer, { footerTestIds } from "./Footer";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 const FooterWithProvider = () => (
   <LanguageProvider>
@@ -14,8 +14,10 @@ describe("Footer Component", () => {
     const currentYear = new Date().getFullYear();
     const footer = screen.getByTestId(footerTestIds.root);
     expect(footer).toBeInTheDocument();
-    const normalize = (str: string) => str.replaceAll(/\s+/g, ' ').replaceAll('\u00A0', ' ').trim();
-    expect(normalize(footer.textContent || "")).toBe(normalize(`© Copyright ${currentYear} ITGalkowski. All rights reserved.`));
+    const normalize = (str: string) => str.replaceAll(/\s+/g, " ").replaceAll("\u00A0", " ").trim();
+    expect(normalize(footer.textContent || "")).toBe(
+      normalize(`© Copyright ${currentYear} ITGalkowski. All rights reserved.`)
+    );
   });
 
   it("displays correct current year in copyright", () => {

@@ -1,2 +1,2 @@
-export { default } from './Footer';
-export { footerTestIds } from './Footer';
+export { default } from "./Footer";
+export { footerTestIds } from "./Footer";

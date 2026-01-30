@@ -8,8 +8,8 @@ export const entrySectionStyles = {
     width: "100%",
     maxWidth: "100vw",
     minHeight: { xs: "auto", md: "100vh" },
-    position: 'relative' as const,
-    overflow: 'hidden',
+    position: "relative" as const,
+    overflow: "hidden",
   },
   textBox: {
     gap: { xs: 1.5, sm: 2, md: 4 },
@@ -23,7 +23,7 @@ export const entrySectionStyles = {
     textAlign: { xs: "center", md: "left" },
     width: { xs: "100%", md: "50%" },
     order: { xs: 2, md: 1 },
-    position: 'relative' as const,
+    position: "relative" as const,
     zIndex: 1,
   },
   button: {
@@ -34,15 +34,15 @@ export const entrySectionStyles = {
     py: { xs: 1.5, sm: 2 },
     minHeight: 44,
     minWidth: 120,
-    transition: 'all 0.3s ease',
-    '&:hover': {
+    transition: "all 0.3s ease",
+    "&:hover": {
       backgroundColor: "secondary.light",
-      transform: 'translateY(-2px)',
+      transform: "translateY(-2px)",
       boxShadow: 3,
     },
-    '&:focus-visible': {
-      outline: '2px solid',
-      outlineColor: 'secondary.contrastText',
+    "&:focus-visible": {
+      outline: "2px solid",
+      outlineColor: "secondary.contrastText",
       outlineOffset: 2,
     },
   },

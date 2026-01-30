@@ -49,7 +49,7 @@ export default function CleanupGrammarly() {
     try {
       document.querySelectorAll("*").forEach((el) => removeGrammarlyAttributesFromElement(el));
     } catch (e) {
-      console.log("Error during initial Grammarly attributes cleanup:", e); 
+      console.log("Error during initial Grammarly attributes cleanup:", e);
     }
 
     // Observe future mutations (extensions may inject attributes later)

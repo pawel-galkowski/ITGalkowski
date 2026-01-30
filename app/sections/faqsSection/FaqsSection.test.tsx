@@ -20,7 +20,7 @@ describe("FaqsSection Component", () => {
 
   it("displays FAQ content with headings", () => {
     const { container } = renderWithLanguage(<FAQSection />);
-    const headings = container.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    const headings = container.querySelectorAll("h1, h2, h3, h4, h5, h6");
     expect(headings.length).toBeGreaterThan(0);
   });
 

@@ -1,11 +1,11 @@
 "use client";
 
-import ImageTiles from "@/components/image-tiles";
-import { useLanguage } from "@/context/LanguageContext";
-import { useTranslations } from "@/i18n";
 import { Box, Container, Typography } from "@mui/material";
 import React from "react";
 import { tilesSectionStyles } from "./TilesSection.styles";
+import ImageTiles from "@/components/image-tiles";
+import { useLanguage } from "@/context/LanguageContext";
+import { useTranslations } from "@/i18n";
 import LogoSlider from "@/components/sliders/logoSlider/LogoSlider";
 
 export const tilesSectionTestIds = {

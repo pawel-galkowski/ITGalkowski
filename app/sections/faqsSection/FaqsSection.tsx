@@ -1,11 +1,11 @@
 "use client";
 
-import Faqs from "@/components/faqs";
-import { useLanguage } from "@/context/LanguageContext";
-import { useTranslations } from "@/i18n";
 import { Box, Container, Typography } from "@mui/material";
 import React from "react";
 import { faqsSectionStyles } from "./FaqsSection.styles";
+import Faqs from "@/components/faqs";
+import { useLanguage } from "@/context/LanguageContext";
+import { useTranslations } from "@/i18n";
 
 export const faqsSectionTestIds = {
   root: "faqs-section-root",
@@ -23,20 +23,10 @@ const FaqsSection: React.FC = () => {
   }>;
 
   return (
-    <Box
-      sx={faqsSectionStyles.root}
-      id="faqs"
-      data-testid={faqsSectionTestIds.root}
-    >
+    <Box sx={faqsSectionStyles.root} id="faqs" data-testid={faqsSectionTestIds.root}>
       <Container maxWidth="md" data-testid={faqsSectionTestIds.container}>
-        <Box
-          sx={faqsSectionStyles.contentWrapper}
-          data-testid={faqsSectionTestIds.contentWrapper}
-        >
-          <Typography
-            variant="h2"
-            sx={faqsSectionStyles.title}
-          >
+        <Box sx={faqsSectionStyles.contentWrapper} data-testid={faqsSectionTestIds.contentWrapper}>
+          <Typography variant="h2" sx={faqsSectionStyles.title}>
             {translations?.faqs?.header || "Comprehensive JavaScript FAQs"}
           </Typography>
           <Faqs faqsList={faqsList} />

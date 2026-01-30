@@ -15,8 +15,8 @@ export const inovationSectionStyles = {
     px: { xs: 2, sm: 3, md: 5, lg: 6 },
     py: { xs: 2, sm: 3, md: 6 },
     maxWidth: 1400,
-    mx: 'auto',
-    width: '100%',
+    mx: "auto",
+    width: "100%",
   },
   textBox: {
     display: "flex",

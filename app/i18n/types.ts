@@ -61,7 +61,7 @@ export interface Translations {
       question: string;
       answer: string;
     }[];
-  }
+  };
   contact: {
     title: string;
     body: string;
@@ -69,5 +69,5 @@ export interface Translations {
     emailLabel: string;
     messageLabel: string;
     sendButton: string;
-  }
+  };
 }

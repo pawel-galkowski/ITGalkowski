@@ -2,8 +2,8 @@ import React, { useState, useCallback, useEffect } from "react";
 import { Box, IconButton } from "@mui/material";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-import { SliderImageProps } from "../types";
 import { v4 as uuidv4 } from "uuid";
+import { SliderImageProps } from "../types";
 import { carouselSliderStyles } from "./CarouselSlider.styles";
 
 export const carouselSliderTestIds = {
@@ -19,11 +19,11 @@ export const carouselSliderTestIds = {
   dot: "carousel-slider-dot",
 };
 
-const CarouselSlider: React.FC<{ images: SliderImageProps[]; height?: number; width?: number | string }> = ({
-  images,
-  height = 400,
-  width = "80vw",
-}) => {
+const CarouselSlider: React.FC<{
+  images: SliderImageProps[];
+  height?: number;
+  width?: number | string;
+}> = ({ images, height = 400, width = "80vw" }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePreviousClick = useCallback(() => {

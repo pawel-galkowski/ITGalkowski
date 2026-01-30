@@ -4,7 +4,7 @@ import nodemailer from "nodemailer";
 const validateBodyElements = (body: Record<string, unknown>, key: string): string | null => {
   const value = body[key];
   return typeof value === "string" && value.trim() !== "" ? value.trim() : null;
-}
+};
 
 export async function POST(request: Request) {
   try {

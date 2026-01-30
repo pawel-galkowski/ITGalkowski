@@ -1,14 +1,14 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Box, IconButton, SxProps, Theme } from "@mui/material";
+import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import { v4 as uuidv4 } from "uuid";
+import { ImageCarouselProps, SliderImageProps } from "@/components/sliders/types";
 import {
   imageContainerStyles,
   leftNavButtonStyles,
   rightNavButtonStyles,
 } from "@/components/sliders/styles";
-import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
-import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-import { ImageCarouselProps, SliderImageProps } from "@/components/sliders/types";
-import { v4 as uuidv4 } from "uuid";
 
 export const sliderTestIds = {
   root: "slider-root",

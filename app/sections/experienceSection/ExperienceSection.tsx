@@ -1,11 +1,11 @@
 "use client";
 
-import ExperienceTimeline from "@/components/experience-timeline";
-import { useLanguage } from "@/context/LanguageContext";
-import { useTranslations } from "@/i18n";
 import { Box, Container, Typography } from "@mui/material";
 import React from "react";
 import { experienceSectionStyles } from "./ExperienceSection.styles";
+import ExperienceTimeline from "@/components/experience-timeline";
+import { useLanguage } from "@/context/LanguageContext";
+import { useTranslations } from "@/i18n";
 
 export const experienceSectionTestIds = {
   root: "experience-section-root",
@@ -16,8 +16,15 @@ const ExperienceSection: React.FC = () => {
   const { language } = useLanguage();
   const { t } = useTranslations(language);
   return (
-    <Box sx={experienceSectionStyles.root} id="timeline" data-testid={experienceSectionTestIds.root}>
-      <Container data-testid={experienceSectionTestIds.container} sx={experienceSectionStyles.container}>
+    <Box
+      sx={experienceSectionStyles.root}
+      id="timeline"
+      data-testid={experienceSectionTestIds.root}
+    >
+      <Container
+        data-testid={experienceSectionTestIds.container}
+        sx={experienceSectionStyles.container}
+      >
         <Typography variant="h3" sx={experienceSectionStyles.title}>
           {t("experience.header")}
         </Typography>

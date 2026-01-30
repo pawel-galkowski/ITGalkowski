@@ -22,7 +22,7 @@ describe("ContactSection Component", () => {
   it("renders ContactForm component", () => {
     const { container } = renderWithLanguage(<ContactSection />);
     // ContactForm should be present in the DOM
-    const form = container.querySelector('form');
+    const form = container.querySelector("form");
     expect(form || container).toBeInTheDocument();
   });
 

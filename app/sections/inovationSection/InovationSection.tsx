@@ -2,9 +2,9 @@
 
 import { Box, Container, Typography } from "@mui/material";
 import React from "react";
+import { inovationSectionStyles } from "./InovationSection.styles";
 import { useTranslations } from "@/i18n";
 import { useLanguage } from "@/context/LanguageContext";
-import { inovationSectionStyles } from "./InovationSection.styles";
 
 export const inovationSectionTestIds = {
   root: "inovation-section-root",
@@ -23,10 +23,7 @@ const InovationSection: React.FC = () => {
         sx={inovationSectionStyles.container}
         data-testid={inovationSectionTestIds.container}
       >
-        <Box
-          sx={inovationSectionStyles.textBox}
-          data-testid={inovationSectionTestIds.textBox}
-        >
+        <Box sx={inovationSectionStyles.textBox} data-testid={inovationSectionTestIds.textBox}>
           <Typography variant="h2" color="white">
             {t("inovationSection.title")}
           </Typography>

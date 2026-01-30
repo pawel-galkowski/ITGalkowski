@@ -9,8 +9,8 @@ export const footerStyles = {
   alignItems: "center",
   justifyContent: "center",
   color: "primary.contrastText",
-  textAlign: 'center',
-  '& > *': {
+  textAlign: "center",
+  "& > *": {
     // Typography variants control font sizes
   },
 };

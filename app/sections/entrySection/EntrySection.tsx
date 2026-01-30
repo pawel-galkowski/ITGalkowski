@@ -1,10 +1,10 @@
 "use client";
 
-import { useTranslations } from "@/i18n";
 import { Box, Button, Typography } from "@mui/material";
 import React, { useMemo } from "react";
-import { useLanguage } from "@/context/LanguageContext";
 import { entrySectionStyles } from "./EntrySection.styles";
+import { useLanguage } from "@/context/LanguageContext";
+import { useTranslations } from "@/i18n";
 
 export const entrySectionTestIds = {
   root: "entry-section-root",

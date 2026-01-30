@@ -1,43 +1,43 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from "@playwright/test";
 
-test.describe('Home Page Navigation and Content', () => {
+test.describe("Home Page Navigation and Content", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/');
+    await page.goto("/");
   });
 
-  test('should load home page successfully', async ({ page }) => {
-    await expect(page.locator('main')).toBeVisible();
-    const heading = page.locator('text=Master Your Projects with Expert Code');
+  test("should load home page successfully", async ({ page }) => {
+    await expect(page.locator("main")).toBeVisible();
+    const heading = page.locator("text=Master Your Projects with Expert Code");
     await expect(heading).toBeVisible();
   });
 
-  test('should have navigation header', async ({ page }) => {
-    const header = page.locator('header');
+  test("should have navigation header", async ({ page }) => {
+    const header = page.locator("header");
     await expect(header).toBeVisible();
   });
 
-  test('should have footer visible at bottom', async ({ page }) => {
-    const footer = page.locator('footer');
+  test("should have footer visible at bottom", async ({ page }) => {
+    const footer = page.locator("footer");
     await expect(footer).toBeVisible();
   });
 
-  test('should display all major sections', async ({ page }) => {
-    const entryHeading = page.locator('text=Master Your Projects with Expert Code');
+  test("should display all major sections", async ({ page }) => {
+    const entryHeading = page.locator("text=Master Your Projects with Expert Code");
     await expect(entryHeading).toBeVisible();
-    const innovationHeading = page.locator('text=Innovative JavaScript Engineering Silesia');
+    const innovationHeading = page.locator("text=Innovative JavaScript Engineering Silesia");
     await expect(innovationHeading).toBeVisible();
     await page.evaluate(() => window.scrollBy(0, 500));
   });
 
-  test('should scroll smoothly through page', async ({ page }) => {
-    await page.waitForLoadState('networkidle');
+  test("should scroll smoothly through page", async ({ page }) => {
+    await page.waitForLoadState("networkidle");
     // Scroll to bottom first to ensure page is scrollable
     await page.evaluate(() => window.scrollTo(0, 0));
     await page.waitForTimeout(100);
     // Use scrollTo with a target position
     await page.evaluate(() => {
       const height = document.body.scrollHeight;
-      window.scrollTo({ top: Math.min(1000, height - window.innerHeight), behavior: 'instant' });
+      window.scrollTo({ top: Math.min(1000, height - window.innerHeight), behavior: "instant" });
     });
     await page.waitForTimeout(200);
     const afterScroll = await page.evaluate(() => window.scrollY);

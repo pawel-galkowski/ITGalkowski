@@ -5,13 +5,12 @@ export const faqsSectionStyles = {
     px: { xs: 2, sm: 3, md: 5 },
     color: "primary.contrastText",
     width: "100%",
-    height: { xs: 700, sm: 600, md: 800},
-    
+    height: { xs: 700, sm: 600, md: 800 },
   },
   contentWrapper: {
     width: "100%",
     maxWidth: 1200,
-    mx: 'auto',
+    mx: "auto",
     display: "flex",
     flexDirection: "column",
     gap: { xs: 1, sm: 1.5, md: 2 },

@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import CarouselSlider, { carouselSliderTestIds } from "./CarouselSlider";
 import { SliderImageProps } from "../types";
+import CarouselSlider, { carouselSliderTestIds } from "./CarouselSlider";
 
 describe("CarouselSlider", () => {
   const images: SliderImageProps[] = [

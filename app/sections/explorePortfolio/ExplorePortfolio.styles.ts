@@ -17,7 +17,7 @@ export const explorePortfolioStyles = {
     backgroundColor: "rgba(0, 0, 0, 0.65)",
     gap: { xs: 2, sm: 3, md: 4 },
     px: { xs: 3, sm: 4 },
-    textAlign: 'center',
+    textAlign: "center",
   },
   button: {
     backgroundColor: "secondary.light",
@@ -27,15 +27,15 @@ export const explorePortfolioStyles = {
     py: { xs: 1.5, sm: 2 },
     minHeight: 44,
     // Typography variant should control font-size on the component
-    transition: 'all 0.3s ease',
-    '&:hover': {
+    transition: "all 0.3s ease",
+    "&:hover": {
       backgroundColor: "secondary.light",
-      transform: 'translateY(-2px)',
+      transform: "translateY(-2px)",
       boxShadow: 3,
     },
-    '&:focus-visible': {
-      outline: '2px solid',
-      outlineColor: 'primary.contrastText',
+    "&:focus-visible": {
+      outline: "2px solid",
+      outlineColor: "primary.contrastText",
       outlineOffset: 2,
     },
   },

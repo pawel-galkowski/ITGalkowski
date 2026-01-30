@@ -9,7 +9,7 @@ export const tilesSectionStyles = {
   title: {
     mt: { xs: 0.5, sm: 1, md: 4 },
     mb: { xs: 1.5, sm: 2, md: 3 },
-    textAlign: 'center',
+    textAlign: "center",
     px: { xs: 1, sm: 2 },
   },
 };

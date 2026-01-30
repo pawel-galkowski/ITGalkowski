@@ -7,10 +7,7 @@ describe("LanguageButtons Component", () => {
   it("renders language buttons container with test ID", () => {
     const mockHandleLanguageChange = jest.fn();
     render(
-      <LanguageButtons 
-        language={Languages.EN} 
-        handleLanguageChange={mockHandleLanguageChange} 
-      />
+      <LanguageButtons language={Languages.EN} handleLanguageChange={mockHandleLanguageChange} />
     );
     expect(screen.getByTestId(languageButtonsTestIds.container)).toBeInTheDocument();
   });
@@ -18,10 +15,7 @@ describe("LanguageButtons Component", () => {
   it("renders English flag with test ID when language is English", () => {
     const mockHandleLanguageChange = jest.fn();
     render(
-      <LanguageButtons 
-        language={Languages.EN} 
-        handleLanguageChange={mockHandleLanguageChange} 
-      />
+      <LanguageButtons language={Languages.EN} handleLanguageChange={mockHandleLanguageChange} />
     );
     expect(screen.getByTestId(languageButtonsTestIds.enFlag)).toBeInTheDocument();
     expect(screen.getByAltText("English flag")).toBeInTheDocument();
@@ -30,10 +24,7 @@ describe("LanguageButtons Component", () => {
   it("renders Polish flag with test ID when language is Polish", () => {
     const mockHandleLanguageChange = jest.fn();
     render(
-      <LanguageButtons 
-        language={Languages.PL} 
-        handleLanguageChange={mockHandleLanguageChange} 
-      />
+      <LanguageButtons language={Languages.PL} handleLanguageChange={mockHandleLanguageChange} />
     );
     expect(screen.getByTestId(languageButtonsTestIds.plFlag)).toBeInTheDocument();
     expect(screen.getByAltText("Polish flag")).toBeInTheDocument();
@@ -43,12 +34,9 @@ describe("LanguageButtons Component", () => {
     const user = userEvent.setup();
     const mockHandleLanguageChange = jest.fn();
     render(
-      <LanguageButtons 
-        language={Languages.EN} 
-        handleLanguageChange={mockHandleLanguageChange} 
-      />
+      <LanguageButtons language={Languages.EN} handleLanguageChange={mockHandleLanguageChange} />
     );
-    
+
     const button = screen.getByTestId(languageButtonsTestIds.enFlag);
     await user.click(button);
     expect(mockHandleLanguageChange).toHaveBeenCalledWith(Languages.PL);
@@ -58,12 +46,9 @@ describe("LanguageButtons Component", () => {
     const user = userEvent.setup();
     const mockHandleLanguageChange = jest.fn();
     render(
-      <LanguageButtons 
-        language={Languages.PL} 
-        handleLanguageChange={mockHandleLanguageChange} 
-      />
+      <LanguageButtons language={Languages.PL} handleLanguageChange={mockHandleLanguageChange} />
     );
-    
+
     const button = screen.getByTestId(languageButtonsTestIds.plFlag);
     await user.click(button);
     expect(mockHandleLanguageChange).toHaveBeenCalledWith(Languages.EN);
@@ -72,12 +57,9 @@ describe("LanguageButtons Component", () => {
   it("displays English flag with proper styling", () => {
     const mockHandleLanguageChange = jest.fn();
     render(
-      <LanguageButtons 
-        language={Languages.EN} 
-        handleLanguageChange={mockHandleLanguageChange} 
-      />
+      <LanguageButtons language={Languages.EN} handleLanguageChange={mockHandleLanguageChange} />
     );
-    
+
     const flagImage = screen.getByTestId(languageButtonsTestIds.enFlag);
     expect(flagImage).toHaveAttribute("alt", "English flag");
     expect(flagImage).toHaveAttribute("src", "/img/en.png");
@@ -86,12 +68,9 @@ describe("LanguageButtons Component", () => {
   it("displays Polish flag with proper styling", () => {
     const mockHandleLanguageChange = jest.fn();
     render(
-      <LanguageButtons 
-        language={Languages.PL} 
-        handleLanguageChange={mockHandleLanguageChange} 
-      />
+      <LanguageButtons language={Languages.PL} handleLanguageChange={mockHandleLanguageChange} />
     );
-    
+
     const flagImage = screen.getByTestId(languageButtonsTestIds.plFlag);
     expect(flagImage).toHaveAttribute("alt", "Polish flag");
     expect(flagImage).toHaveAttribute("src", "/img/pl.png");

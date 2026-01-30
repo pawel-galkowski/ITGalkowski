@@ -1,14 +1,17 @@
-import { Languages } from "../i18n/types";
+import React from "react";
 import type { Metadata } from "next";
+import { Languages } from "../i18n/types";
+import LanguageInitializer from "../components/LanguageInitializer";
 import "@/globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://itgalkowski.pl'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://itgalkowski.pl"),
   title: {
     default: "ITGalkowski - Expert IT Solutions & Professional Portfolio",
     template: "%s | ITGalkowski",
   },
-  description: "Professional IT portfolio showcasing innovative solutions, extensive experience, and cutting-edge projects. Specializing in web development, software engineering, and digital transformation.",
+  description:
+    "Professional IT portfolio showcasing innovative solutions, extensive experience, and cutting-edge projects. Specializing in web development, software engineering, and digital transformation.",
   keywords: [
     "portfolio",
     "developer",
@@ -31,9 +34,9 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   openGraph: {
@@ -43,7 +46,8 @@ export const metadata: Metadata = {
     url: "/",
     siteName: "ITGalkowski",
     title: "ITGalkowski - Expert IT Solutions & Professional Portfolio",
-    description: "Professional IT portfolio showcasing innovative solutions, extensive experience, and cutting-edge projects. Specializing in web development, software engineering, and digital transformation.",
+    description:
+      "Professional IT portfolio showcasing innovative solutions, extensive experience, and cutting-edge projects. Specializing in web development, software engineering, and digital transformation.",
     images: [
       {
         url: "/og-image.jpg",
@@ -56,14 +60,15 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "ITGalkowski - Expert IT Solutions & Professional Portfolio",
-    description: "Professional IT portfolio showcasing innovative solutions, extensive experience, and cutting-edge projects.",
+    description:
+      "Professional IT portfolio showcasing innovative solutions, extensive experience, and cutting-edge projects.",
     images: ["/twitter-image.jpg"],
   },
   alternates: {
     canonical: "/",
     languages: {
-      'en': '/en',
-      'pl': '/pl',
+      en: "/en",
+      pl: "/pl",
     },
   },
   verification: {
@@ -72,9 +77,6 @@ export const metadata: Metadata = {
     // bing: "your-bing-verification-code",
   },
 };
-
-import React from "react";
-import LanguageInitializer from "../components/LanguageInitializer";
 
 export default function LangLayout(
   props: Readonly<{ children: React.ReactNode; params: Promise<{ lang: string }> }>

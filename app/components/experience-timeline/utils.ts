@@ -33,9 +33,10 @@ export const parseHTMLToReact = (node: any): React.ReactNode => {
       ...attrs,
     };
 
-    const children = (node.childNodes as any[] | undefined)
-      ?.map((child: any) => parseHTMLToReact(child))
-      .filter((child: any) => child !== null && child !== "") || [];
+    const children =
+      (node.childNodes as any[] | undefined)
+        ?.map((child: any) => parseHTMLToReact(child))
+        .filter((child: any) => child !== null && child !== "") || [];
 
     // Map HTML tags to React components or elements
     switch (tagName) {

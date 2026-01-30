@@ -25,8 +25,8 @@ export const logoSliderStyles = {
       md: `${logoSliderKeyframes} 24s linear infinite`,
     },
     width: "200%",
-    willChange: 'transform',
-    backfaceVisibility: 'hidden',
+    willChange: "transform",
+    backfaceVisibility: "hidden",
   },
   logoBox: {
     /* 10 logos at 20% = 200% of track; animation -100% moves 5 logos = seamless */
@@ -36,16 +36,16 @@ export const logoSliderStyles = {
     justifyContent: "center",
     px: { xs: 3, sm: 4, md: 5 },
     minHeight: { xs: 100, sm: 140, md: 100, lg: 200 },
-    willChange: 'transform',
-    backfaceVisibility: 'hidden',
+    willChange: "transform",
+    backfaceVisibility: "hidden",
   },
   logoImg: {
     height: { xs: 100, sm: 140, md: 100, lg: 200 },
-    width: 'auto',
-    maxWidth: '100%',
+    width: "auto",
+    maxWidth: "100%",
     objectFit: "contain",
     filter: `grayscale(0%)`,
-    transition: 'filter 0.3s ease, transform 0.2s ease',
-    backfaceVisibility: 'hidden',
+    transition: "filter 0.3s ease, transform 0.2s ease",
+    backfaceVisibility: "hidden",
   },
 };

@@ -1,10 +1,10 @@
 "use client";
 
-import { useLanguage } from "@/context/LanguageContext";
-import { useTranslations } from "@/i18n";
 import { Container, Box, Typography } from "@mui/material";
 import React from "react";
 import { empowerSolutionSectionStyles } from "./EmpowerSolutionSection.styles";
+import { useTranslations } from "@/i18n";
+import { useLanguage } from "@/context/LanguageContext";
 
 export const empowerSolutionSectionTestIds = {
   root: "empower-solution-section-root",
@@ -19,10 +19,7 @@ const EmpowerSolutionSection: React.FC = () => {
   const { language } = useLanguage();
   const { t } = useTranslations(language);
   return (
-    <Box
-      sx={empowerSolutionSectionStyles.root}
-      data-testid={empowerSolutionSectionTestIds.root}
-    >
+    <Box sx={empowerSolutionSectionStyles.root} data-testid={empowerSolutionSectionTestIds.root}>
       <Container maxWidth="xl" data-testid={empowerSolutionSectionTestIds.container}>
         <Box
           sx={empowerSolutionSectionStyles.contentWrapper}

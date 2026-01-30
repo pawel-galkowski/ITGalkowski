@@ -30,14 +30,14 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   reactCompiler: true,
-  
+
   // Performance optimizations
   poweredByHeader: false, // Remove X-Powered-By header for security
   compress: true, // Enable gzip compression
-  
+
   // Image optimization
   images: {
-    formats: ['image/avif', 'image/webp'], // Modern image formats
+    formats: ["image/avif", "image/webp"], // Modern image formats
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60, // Cache images for 60 seconds
@@ -63,34 +63,34 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  
+
   // Turbopack configuration (Next.js 16+)
   turbopack: {
     // Empty config to silence the warning
     // Turbopack handles most optimizations automatically
   },
-  
+
   // Webpack optimizations (for webpack mode only)
   webpack: (config, { isServer }) => {
     // Optimize bundle size
     if (!isServer) {
       config.optimization.splitChunks = {
-        chunks: 'all',
+        chunks: "all",
         cacheGroups: {
           default: false,
           vendors: false,
           // Vendor chunk
           vendor: {
-            name: 'vendor',
-            chunks: 'all',
+            name: "vendor",
+            chunks: "all",
             test: /node_modules/,
             priority: 20,
           },
           // Common chunk
           common: {
-            name: 'common',
+            name: "common",
             minChunks: 2,
-            chunks: 'all',
+            chunks: "all",
             priority: 10,
             reuseExistingChunk: true,
             enforce: true,

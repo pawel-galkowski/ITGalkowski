@@ -13,7 +13,6 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
-    // Additional strict type-checking options
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
     "noFallthroughCasesInSwitch": true,
@@ -30,18 +29,15 @@
       "@/*": ["./app/*"],
       "@/components/*": ["./app/components/*"],
       "@/sections/*": ["./app/sections/*"],
-      "@/lib/*": ["./app/lib/*"]
     }
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.*.ts",
-    "**/*.*.tsx",
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "eslint.config.mjs", "jest.config.js"]
 }

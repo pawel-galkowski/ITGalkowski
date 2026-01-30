@@ -3,7 +3,6 @@ import { Languages, type Language, type Translations } from "./types";
 import { en } from "./en";
 import { pl } from "./pl";
 
-
 export const translations: Record<Language, Translations> = {
   en,
   pl,
@@ -14,18 +13,18 @@ export const useTranslations = (language: Language = Languages.EN) => {
 
   const getText = useCallback(
     (path: string): string => {
-          const keys = path.split(".");
-          let value: any = t;
+      const keys = path.split(".");
+      let value: any = t;
 
-          for (const key of keys) {
-            if (value && typeof value === "object" && key in value) {
-              value = (value as Record<string, unknown>)[key];
-            } else {
-              return path;
-            }
-          }
+      for (const key of keys) {
+        if (value && typeof value === "object" && key in value) {
+          value = (value as Record<string, unknown>)[key];
+        } else {
+          return path;
+        }
+      }
 
-          return typeof value === "string" ? value : path;
+      return typeof value === "string" ? value : path;
     },
     [t]
   );

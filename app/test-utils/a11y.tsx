@@ -33,6 +33,9 @@ export async function checkAccessibility(element: HTMLElement | Document) {
 /**
  * Render a component with LanguageProvider for testing
  */
-export function renderWithLanguage(component: ReactElement, options?: Omit<RenderOptions, "wrapper">) {
+export function renderWithLanguage(
+  component: ReactElement,
+  options?: Omit<RenderOptions, "wrapper">
+) {
   return rtlRender(<LanguageProvider>{component}</LanguageProvider>, options);
 }

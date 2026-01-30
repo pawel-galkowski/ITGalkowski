@@ -1,14 +1,16 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from "@playwright/test";
 
-test.describe('FAQ Section', () => {
+test.describe("FAQ Section", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/');
+    await page.goto("/");
   });
 
-  test('should display FAQ section', async ({ page }) => {
+  test("should display FAQ section", async ({ page }) => {
     // Scroll to FAQ section
     await page.evaluate(() => {
-      const faqSection = document.querySelector('#faqs') || document.querySelector('[data-testid="faqs-section-root"]');
+      const faqSection =
+        document.querySelector("#faqs") ||
+        document.querySelector('[data-testid="faqs-section-root"]');
       if (faqSection) faqSection.scrollIntoView();
       else window.scrollBy(0, 3000);
     });
@@ -20,12 +22,12 @@ test.describe('FAQ Section', () => {
       await expect(faqSection).toBeVisible();
     } else {
       // Fallback: look for FAQ heading text
-      const faqHeading = page.locator('text=/FAQ|Questions|FAQs/i').first();
+      const faqHeading = page.locator("text=/FAQ|Questions|FAQs/i").first();
       await expect(faqHeading).toBeVisible({ timeout: 10000 });
     }
   });
 
-  test('should allow FAQ accordion expansion', async ({ page }) => {
+  test("should allow FAQ accordion expansion", async ({ page }) => {
     await page.evaluate(() => window.scrollBy(0, 3000));
     const accordions = page.locator('[role="button"]').filter({ hasText: /\?|question/ });
     const accordionCount = await accordions.count();

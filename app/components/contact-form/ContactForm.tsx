@@ -7,7 +7,12 @@ import { useLanguage } from "@/context/LanguageContext";
 import { useTranslations } from "@/i18n";
 import { FormState, FormErrors, initialState } from "@/components/contact-form/ContactForm.types";
 import { validate } from "@/components/contact-form/utils";
-import { formBoxStyles, textFieldStyles, buttonStyles, buttonBoxStyles } from "@/components/contact-form/ContactForm.styles";
+import {
+  formBoxStyles,
+  textFieldStyles,
+  buttonStyles,
+  buttonBoxStyles,
+} from "@/components/contact-form/ContactForm.styles";
 
 export const contactFormTestIds = {
   root: "contact-form-root",
@@ -67,11 +72,7 @@ const ContactForm: React.FC = () => {
       }
     } catch (err) {
       console.error("Error submitting contact form:", err);
-      setErrorMsg(
-        err instanceof Error
-          ? `Network error: ${err.message}`
-          : "Network error"
-      );
+      setErrorMsg(err instanceof Error ? `Network error: ${err.message}` : "Network error");
     } finally {
       setSubmitting(false);
     }
@@ -173,7 +174,15 @@ const ContactForm: React.FC = () => {
             aria-label={t("contact.sendButton")}
             data-testid={contactFormTestIds.submit}
           >
-            {submitting ? <CircularProgress size={24} color="inherit" data-testid={contactFormTestIds.loading} /> : t("contact.sendButton")}
+            {submitting ? (
+              <CircularProgress
+                size={24}
+                color="inherit"
+                data-testid={contactFormTestIds.loading}
+              />
+            ) : (
+              t("contact.sendButton")
+            )}
           </Button>
           <Fade in={!!success} unmountOnExit>
             <Typography color="success.main">{t("contact.sendButton")}</Typography>

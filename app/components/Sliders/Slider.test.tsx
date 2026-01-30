@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor, act } from "@testing-library/react";
 import { Slider as ImageCarousel, sliderTestIds } from "@/components/sliders";
 import type { SliderImageProps } from "@/components/sliders";
 
@@ -70,7 +70,7 @@ describe("ImageCarousel (Slider) Component", () => {
     render(<ImageCarousel images={mockImages} imgStyles={{ maxWidth: "100px" }} />);
     const images = screen.getAllByTestId(sliderTestIds.image);
     expect(images.length).toBeGreaterThan(0);
-    images.forEach(img => {
+    images.forEach((img) => {
       expect(img).toHaveStyle("max-width: 100px");
     });
   });
@@ -79,7 +79,9 @@ describe("ImageCarousel (Slider) Component", () => {
     jest.useFakeTimers();
     render(<ImageCarousel images={mockImages} />);
 
-    jest.advanceTimersByTime(4500);
+    await act(async () => {
+      jest.advanceTimersByTime(4500);
+    });
 
     await waitFor(() => {
       // Just check that images still exist

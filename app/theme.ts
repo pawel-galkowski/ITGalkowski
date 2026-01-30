@@ -2,7 +2,7 @@ import { createTheme } from "@mui/material";
 
 const theme = createTheme({
   typography: {
-    fontFamily: 'Rufina, Helvetica, Arial, sans-serif',
+    fontFamily: "Rufina, Helvetica, Arial, sans-serif",
     h1: {
       fontSize: "clamp(1.75rem, 4vw + 1rem, 4rem)", // Fluid 28-64px (reduced mobile start)
       fontWeight: 700,
@@ -62,79 +62,79 @@ const theme = createTheme({
     primary: {
       main: "#1F2629",
       light: "#51C9FF",
-      contrastText: "#fff"
+      contrastText: "#fff",
     },
     secondary: {
       main: "#F5ECE1",
       light: "#FF8B00",
-      contrastText: "#111827"
+      contrastText: "#111827",
     },
     background: {
       default: "rgba(255, 255, 255, 0.05)",
       paper: "#rgba(255, 255, 255, 0.1)",
-    }
+    },
   },
   breakpoints: {
     values: {
-      xs: 0,      // Mobile portrait
-      sm: 600,    // Mobile landscape / Small tablets
-      md: 900,    // Tablets
-      lg: 1200,   // Desktop
-      xl: 1536,   // Large desktop
+      xs: 0, // Mobile portrait
+      sm: 600, // Mobile landscape / Small tablets
+      md: 900, // Tablets
+      lg: 1200, // Desktop
+      xl: 1536, // Large desktop
     },
   },
   components: {
     MuiCssBaseline: {
       styleOverrides: {
-        '*': {
+        "*": {
           margin: 0,
           padding: 0,
-          boxSizing: 'border-box',
+          boxSizing: "border-box",
         },
         html: {
-          scrollBehavior: 'smooth',
-          WebkitFontSmoothing: 'antialiased',
-          MozOsxFontSmoothing: 'grayscale',
+          scrollBehavior: "smooth",
+          WebkitFontSmoothing: "antialiased",
+          MozOsxFontSmoothing: "grayscale",
         },
         body: {
           margin: 0,
           padding: 0,
-          overflowX: 'hidden',
+          overflowX: "hidden",
         },
-        'img, picture, video, canvas, svg': {
-          display: 'block',
-          maxWidth: '100%',
+        "img, picture, video, canvas, svg": {
+          display: "block",
+          maxWidth: "100%",
         },
-        'input, button, textarea, select': {
-          font: 'inherit',
+        "input, button, textarea, select": {
+          font: "inherit",
         },
-        'p, h1, h2, h3, h4, h5, h6': {
-          overflowWrap: 'break-word',
+        "p, h1, h2, h3, h4, h5, h6": {
+          overflowWrap: "break-word",
         },
       },
     },
     MuiButton: {
       styleOverrides: {
         root: {
-          minHeight: '44px', // WCAG touch target
-          minWidth: '44px',
-          textTransform: 'none',
+          minHeight: "44px", // WCAG touch target
+          minWidth: "44px",
+          textTransform: "none",
         },
       },
     },
     MuiIconButton: {
       styleOverrides: {
         root: {
-          minHeight: '44px', // WCAG touch target
-          minWidth: '44px',
+          minHeight: "44px", // WCAG touch target
+          minWidth: "44px",
         },
       },
     },
     MuiTextField: {
       styleOverrides: {
         root: {
-          '& .MuiInputBase-input': {
-            minHeight: '44px', // WCAG touch target
+          "& .MuiInputBase-input": {
+            minHeight: "44px", // WCAG touch target
           },
         },
       },

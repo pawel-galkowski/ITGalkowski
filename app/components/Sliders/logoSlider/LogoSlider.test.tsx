@@ -23,7 +23,7 @@ describe("LogoSlider", () => {
   it("renders all logos with grayscale(0%)", () => {
     render(<LogoSlider />);
     const logoImgs = screen.getAllByTestId(logoSliderTestIds.logoImg);
-    logoImgs.forEach(img => {
+    logoImgs.forEach((img) => {
       expect(img).toHaveStyle("filter: grayscale(0%)");
     });
   });

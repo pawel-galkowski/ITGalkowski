@@ -10,14 +10,14 @@ export const languageButtonsStyles = {
     width: { xs: 18, sm: 20, md: 24 },
     height: "auto",
     cursor: "pointer",
-    transition: 'transform 0.2s ease',
+    transition: "transform 0.2s ease",
     borderRadius: 0.5,
-    '&:hover': {
-      transform: 'scale(1.1)',
+    "&:hover": {
+      transform: "scale(1.1)",
     },
-    '&:focus-visible': {
-      outline: '2px solid',
-      outlineColor: 'primary.light',
+    "&:focus-visible": {
+      outline: "2px solid",
+      outlineColor: "primary.light",
       outlineOffset: 2,
     },
   },

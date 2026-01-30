@@ -1,6 +1,6 @@
 import React from "react";
-import { SliderImageProps } from "../types";
 import { Box } from "@mui/material";
+import { SliderImageProps } from "../types";
 // stable keys used instead of uuid to avoid remounts during animation
 import { logoSliderStyles } from "./LogoSlider.styles";
 

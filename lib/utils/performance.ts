@@ -1,5 +1,5 @@
-import type { Metric } from 'web-vitals';
-import * as webVitals from 'web-vitals';
+import type { Metric } from "web-vitals";
+import * as webVitals from "web-vitals";
 
 function sendToAnalytics(metric: Metric) {
   const body = JSON.stringify({
@@ -12,19 +12,19 @@ function sendToAnalytics(metric: Metric) {
   });
 
   if (navigator.sendBeacon) {
-    navigator.sendBeacon('/api/analytics', body);
+    navigator.sendBeacon("/api/analytics", body);
   } else {
-    fetch('/api/analytics', {
+    fetch("/api/analytics", {
       body,
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       keepalive: true,
     });
   }
 
-  if (process.env.NODE_ENV === 'development') {
+  if (process.env.NODE_ENV === "development") {
     console.log(`[Web Vitals] ${metric.name}:`, {
       value: metric.value,
       rating: metric.rating,
@@ -82,14 +82,14 @@ export function observeResourceTiming() {
     try {
       const observer = new PerformanceObserver((list) => {
         for (const entry of list.getEntries()) {
-          if (process.env.NODE_ENV === 'development' && entry.duration > 1000) {
+          if (process.env.NODE_ENV === "development" && entry.duration > 1000) {
             console.warn(`[Slow Resource] ${entry.name}: ${entry.duration}ms`);
           }
         }
       });
-      observer.observe({ entryTypes: ['resource'] });
+      observer.observe({ entryTypes: ["resource"] });
     } catch (error) {
-      console.error('Error setting up resource timing observer:', error);
+      console.error("Error setting up resource timing observer:", error);
     }
   }
 }
@@ -99,14 +99,14 @@ export function observeLongTasks() {
     try {
       const observer = new PerformanceObserver((list) => {
         for (const entry of list.getEntries()) {
-          if (process.env.NODE_ENV === 'development') {
+          if (process.env.NODE_ENV === "development") {
             console.warn(`[Long Task] Duration: ${entry.duration}ms`);
           }
         }
       });
-      observer.observe({ entryTypes: ['longtask'] });
+      observer.observe({ entryTypes: ["longtask"] });
     } catch (error) {
-      console.error('Error setting up long task observer:', error);
+      console.error("Error setting up long task observer:", error);
     }
   }
 }

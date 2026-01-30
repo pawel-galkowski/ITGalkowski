@@ -5,10 +5,10 @@ jest.mock("next/navigation", () => ({
   usePathname: () => "/",
   useSearchParams: () => ({ toString: () => "" }),
 }));
+import Header, { headerTestIds } from "./Header";
 import { renderWithA11y } from "@/test-utils/a11y";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { en } from "@/i18n/en";
-import Header, { headerTestIds } from "./Header";
 
 const HeaderWithProvider = () => (
   <LanguageProvider>
@@ -17,7 +17,6 @@ const HeaderWithProvider = () => (
 );
 
 describe("Header Component", () => {
-
   it("renders header with logo image and hidden h1", () => {
     render(<HeaderWithProvider />);
     // Check for visually hidden h1
@@ -119,4 +118,3 @@ describe("Header Component", () => {
     expect(screen.queryAllByRole("navigation")[0]).toBeDefined();
   });
 });
-

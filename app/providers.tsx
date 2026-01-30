@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
 import { ThemeProvider } from "@mui/material";
+import { ReactNode } from "react";
 import { LanguageProvider } from "./context/LanguageContext";
 import theme from "./theme";
-import { ReactNode } from "react";
 
 interface ProvidersProps {
   readonly children: ReactNode;

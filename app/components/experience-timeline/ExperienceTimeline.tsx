@@ -8,12 +8,8 @@ import {
   TimelineOppositeContent,
   TimelineSeparator,
 } from "@mui/lab";
-import en from "@/components/experience-timeline/data/en.json";
-import pl from "@/components/experience-timeline/data/pl.json";
 import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
 import { v4 as uuidv4 } from "uuid";
-import { stringToHTML } from "@/components/experience-timeline/utils";
-import { useLanguage } from "@/context/LanguageContext";
 import type { ExperienceItem } from "./types";
 import {
   timelineStyles,
@@ -23,6 +19,10 @@ import {
   timelineBoxStyles,
   timelineSummaryStyles,
 } from "./ExperienceTimeline.styles";
+import en from "@/components/experience-timeline/data/en.json";
+import pl from "@/components/experience-timeline/data/pl.json";
+import { stringToHTML } from "@/components/experience-timeline/utils";
+import { useLanguage } from "@/context/LanguageContext";
 import { Languages } from "@/i18n/types";
 
 export const experienceTimelineTestIds = {

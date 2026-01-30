@@ -23,8 +23,8 @@ const homeStyles = {
   width: "100%",
   maxWidth: "100vw",
   alignItems: "center",
-  paddingTop: { xs: '56px', sm: '64px', md: '70px' },
-  overflow: 'hidden',
+  paddingTop: { xs: "56px", sm: "64px", md: "70px" },
+  overflow: "hidden",
 };
 
 const Home: React.FC = () => {

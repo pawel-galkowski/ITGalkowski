@@ -2,7 +2,12 @@ import * as React from "react";
 import { Accordion, AccordionDetails, AccordionSummary, Box, Typography } from "@mui/material";
 import { ExpandMore } from "@mui/icons-material";
 import { v4 as uuidv4 } from "uuid";
-import { accordionStyles, summaryStyles, detailsStyles, answerTypographyStyles } from "@/components/faqs/Faqs.styles";
+import {
+  accordionStyles,
+  summaryStyles,
+  detailsStyles,
+  answerTypographyStyles,
+} from "@/components/faqs/Faqs.styles";
 
 interface FaqsProps {
   faqsList: { question: string; answer: string }[];
@@ -13,7 +18,7 @@ export const baseTestIds = {
   summary: "faq-summary",
   details: "faq-details",
   root: "faqs-root",
-}
+};
 export const generateFaqTestId = (base: string, index: number) => `${base}-${index}`;
 
 const Faqs: React.FC<FaqsProps> = ({ faqsList }) => {
@@ -49,8 +54,13 @@ const Faqs: React.FC<FaqsProps> = ({ faqsList }) => {
           >
             <Typography variant="h5">{faq.question}</Typography>
           </AccordionSummary>
-          <AccordionDetails sx={detailsStyles} data-testid={generateFaqTestId(baseTestIds.details, index)}>
-            <Typography sx={answerTypographyStyles} variant="body1">{faq.answer}</Typography>
+          <AccordionDetails
+            sx={detailsStyles}
+            data-testid={generateFaqTestId(baseTestIds.details, index)}
+          >
+            <Typography sx={answerTypographyStyles} variant="body1">
+              {faq.answer}
+            </Typography>
           </AccordionDetails>
         </Accordion>
       ))}
