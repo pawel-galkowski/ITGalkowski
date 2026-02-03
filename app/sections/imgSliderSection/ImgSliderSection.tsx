@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import React from "react";
 import { imgSliderSectionStyles } from "./ImgSliderSection.styles";
-import { CarouselSlider } from "@/components/sliders";
+import { CarouselSlider } from "../../components/sliders";
 
 export const imgSliderSectionTestIds = {
   root: "img-slider-section-root",

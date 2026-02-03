@@ -6,7 +6,7 @@ import { tilesSectionStyles } from "./TilesSection.styles";
 import ImageTiles from "@/components/image-tiles";
 import { useLanguage } from "@/context/LanguageContext";
 import { useTranslations } from "@/i18n";
-import LogoSlider from "@/components/sliders/logoSlider/LogoSlider";
+import { LogoSlider } from "@/components/sliders";
 
 export const tilesSectionTestIds = {
   root: "tiles-section-root",
