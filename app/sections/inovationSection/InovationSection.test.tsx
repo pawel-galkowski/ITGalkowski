@@ -1,7 +1,7 @@
 import React from "react";
 import { screen } from "@testing-library/react";
 import InovationSection, { inovationSectionTestIds } from "./InovationSection";
-import { renderWithLanguage } from "@/test-utils/a11y";
+import { renderWithLanguage } from "../../test-utils/a11y";
 
 describe("InovationSection Component", () => {
   it("renders root with test ID", () => {

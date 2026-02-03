@@ -3,9 +3,9 @@
 import { Box, Container, Typography } from "@mui/material";
 import React from "react";
 import { faqsSectionStyles } from "./FaqsSection.styles";
-import Faqs from "@/components/faqs";
-import { useLanguage } from "@/context/LanguageContext";
-import { useTranslations } from "@/i18n";
+import Faqs from "../../components/faqs";
+import { useLanguage } from "../../context/LanguageContext";
+import { useTranslations } from "../../i18n";
 
 export const faqsSectionTestIds = {
   root: "faqs-section-root",

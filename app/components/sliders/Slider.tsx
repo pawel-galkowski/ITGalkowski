@@ -3,12 +3,12 @@ import { Box, IconButton, SxProps, Theme } from "@mui/material";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import { v4 as uuidv4 } from "uuid";
-import { ImageCarouselProps, SliderImageProps } from "@/components/sliders/types";
+import { ImageCarouselProps, SliderImageProps } from "./types";
 import {
   imageContainerStyles,
   leftNavButtonStyles,
   rightNavButtonStyles,
-} from "@/components/sliders/styles";
+} from "./styles";
 
 export const sliderTestIds = {
   root: "slider-root",

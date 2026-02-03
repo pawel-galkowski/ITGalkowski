@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import EntrySection, { entrySectionTestIds } from "./EntrySection";
-import { LanguageProvider } from "@/context/LanguageContext";
+import { LanguageProvider } from "../../context/LanguageContext";
 
 const renderWithLanguage = (component: React.ReactElement) => {
   return render(<LanguageProvider>{component}</LanguageProvider>);

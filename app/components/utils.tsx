@@ -1,6 +1,6 @@
 import { Box, IconButton } from "@mui/material";
 import { languageButtonsStyles } from "./utils.styles";
-import { Languages } from "@/i18n/types";
+import { Languages } from "../i18n/types";
 
 export const languageButtonsTestIds = {
   container: "language-buttons-container",

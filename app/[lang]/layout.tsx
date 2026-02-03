@@ -2,7 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import { Languages } from "../i18n/types";
 import LanguageInitializer from "../components/LanguageInitializer";
-import "@/globals.css";
+import "../globals.css";
 
 // Generate static params for the [lang] route - required for static generation
 export async function generateStaticParams() {

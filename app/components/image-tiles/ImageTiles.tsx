@@ -3,11 +3,11 @@
 import { Box, useMediaQuery, useTheme, Typography } from "@mui/material";
 import { v4 as uuidv4 } from "uuid";
 import type { ImageTileItem } from "./types";
-import en from "@/components/image-tiles/data/en.json";
-import pl from "@/components/image-tiles/data/pl.json";
-import { useLanguage } from "@/context/LanguageContext";
-import { imageTilesStyles } from "@/components/image-tiles/ImageTiles.styles";
-import { Languages } from "@/i18n/types";
+import en from "./data/en.json";
+import pl from "./data/pl.json";
+import { useLanguage } from "../../context/LanguageContext";
+import { imageTilesStyles } from "./ImageTiles.styles";
+import { Languages } from "../../i18n/types";
 
 export const imageTilesTestIds = {
   root: "image-tiles-root",

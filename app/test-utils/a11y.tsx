@@ -1,7 +1,7 @@
 import { render as rtlRender, RenderOptions } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
 import React, { ReactElement } from "react";
-import { LanguageProvider } from "@/context/LanguageContext";
+import { LanguageProvider } from "../context/LanguageContext";
 
 expect.extend(toHaveNoViolations);
 

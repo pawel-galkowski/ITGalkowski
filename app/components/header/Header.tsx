@@ -18,10 +18,10 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { LanguageButtons } from "../utils";
-import { useLanguage } from "@/context/LanguageContext";
-import { useTranslations } from "@/i18n";
-import { Languages } from "@/i18n/types";
-import { headerStyles } from "@/components/header/Header.styles";
+import { useLanguage } from "../../context/LanguageContext";
+import { useTranslations } from "../../i18n";
+import { Languages } from "../../i18n/types";
+import { headerStyles } from "./Header.styles";
 
 export const headerTestIds = {
   root: "header-root",

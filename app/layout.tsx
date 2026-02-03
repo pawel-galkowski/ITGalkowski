@@ -1,5 +1,5 @@
 import { Providers } from "./providers";
-import "@/globals.css";
+import "./globals.css";
 import { Languages } from "./i18n/types";
 import CleanupGrammarly from "./components/CleanupGrammarly";
 

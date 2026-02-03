@@ -1,6 +1,6 @@
 import { screen } from "@testing-library/react";
 import ExperienceTimeline, { experienceTimelineTestIds } from "./ExperienceTimeline";
-import { renderWithLanguage } from "@/test-utils/a11y";
+import { renderWithLanguage } from "../../test-utils/a11y";
 
 // Mock the data files
 jest.mock("./data/en.json", () => [

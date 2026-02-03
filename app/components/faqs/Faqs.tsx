@@ -7,7 +7,7 @@ import {
   summaryStyles,
   detailsStyles,
   answerTypographyStyles,
-} from "@/components/faqs/Faqs.styles";
+} from "./Faqs.styles";
 
 interface FaqsProps {
   faqsList: { question: string; answer: string }[];

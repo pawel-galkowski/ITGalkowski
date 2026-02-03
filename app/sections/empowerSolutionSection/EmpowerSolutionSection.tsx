@@ -3,8 +3,8 @@
 import { Container, Box, Typography } from "@mui/material";
 import React from "react";
 import { empowerSolutionSectionStyles } from "./EmpowerSolutionSection.styles";
-import { useTranslations } from "@/i18n";
-import { useLanguage } from "@/context/LanguageContext";
+import { useTranslations } from "../../i18n";
+import { useLanguage } from "../../context/LanguageContext";
 
 export const empowerSolutionSectionTestIds = {
   root: "empower-solution-section-root",

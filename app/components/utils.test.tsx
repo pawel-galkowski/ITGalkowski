@@ -1,7 +1,7 @@
 import { screen, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { LanguageButtons, languageButtonsTestIds } from "./utils";
-import { Languages } from "@/i18n/types";
+import { Languages } from "../i18n/types";
 
 describe("LanguageButtons Component", () => {
   it("renders language buttons container with test ID", () => {

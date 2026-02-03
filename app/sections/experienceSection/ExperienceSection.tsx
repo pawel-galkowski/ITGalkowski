@@ -3,9 +3,9 @@
 import { Box, Container, Typography } from "@mui/material";
 import React from "react";
 import { experienceSectionStyles } from "./ExperienceSection.styles";
-import ExperienceTimeline from "@/components/experience-timeline";
-import { useLanguage } from "@/context/LanguageContext";
-import { useTranslations } from "@/i18n";
+import ExperienceTimeline from "../../components/experience-timeline";
+import { useLanguage } from "../../context/LanguageContext";
+import { useTranslations } from "../../i18n";
 
 export const experienceSectionTestIds = {
   root: "experience-section-root",

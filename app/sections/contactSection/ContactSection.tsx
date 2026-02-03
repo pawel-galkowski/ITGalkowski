@@ -3,9 +3,9 @@
 import { Box, Container, Typography } from "@mui/material";
 import React from "react";
 import { contactSectionStyles } from "./ContactSection.styles";
-import { useLanguage } from "@/context/LanguageContext";
-import { useTranslations } from "@/i18n";
-import ContactForm from "@/components/contact-form";
+import { useLanguage } from "../../context/LanguageContext";
+import { useTranslations } from "../../i18n";
+import ContactForm from "../../components/contact-form";
 
 export const contactSectionTestIds = {
   root: "contact-section-root",

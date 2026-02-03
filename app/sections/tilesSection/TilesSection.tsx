@@ -3,10 +3,10 @@
 import { Box, Container, Typography } from "@mui/material";
 import React from "react";
 import { tilesSectionStyles } from "./TilesSection.styles";
-import ImageTiles from "@/components/image-tiles";
-import { useLanguage } from "@/context/LanguageContext";
-import { useTranslations } from "@/i18n";
-import { LogoSlider } from "@/components/sliders";
+import ImageTiles from "../../components/image-tiles";
+import { useLanguage } from "../../context/LanguageContext";
+import { useTranslations } from "../../i18n";
+import { LogoSlider } from "../../components/sliders";
 
 export const tilesSectionTestIds = {
   root: "tiles-section-root",

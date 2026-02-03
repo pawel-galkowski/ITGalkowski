@@ -1,6 +1,6 @@
 import { screen } from "@testing-library/react";
 import EmpowerSolutionSection, { empowerSolutionSectionTestIds } from "./EmpowerSolutionSection";
-import { renderWithLanguage } from "@/test-utils/a11y";
+import { renderWithLanguage } from "../../test-utils/a11y";
 
 describe("EmpowerSolutionSection Component", () => {
   it("renders root and container with test IDs", () => {

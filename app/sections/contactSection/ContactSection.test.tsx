@@ -1,6 +1,6 @@
 import { screen } from "@testing-library/react";
 import ContactSection, { contactSectionTestIds } from "./ContactSection";
-import { renderWithLanguage } from "@/test-utils/a11y";
+import { renderWithLanguage } from "../../test-utils/a11y";
 
 describe("ContactSection Component", () => {
   it("renders root with test ID", () => {

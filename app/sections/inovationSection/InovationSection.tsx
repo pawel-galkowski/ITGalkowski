@@ -3,8 +3,8 @@
 import { Box, Container, Typography } from "@mui/material";
 import React from "react";
 import { inovationSectionStyles } from "./InovationSection.styles";
-import { useTranslations } from "@/i18n";
-import { useLanguage } from "@/context/LanguageContext";
+import { useTranslations } from "../../i18n";
+import { useLanguage } from "../../context/LanguageContext";
 
 export const inovationSectionTestIds = {
   root: "inovation-section-root",

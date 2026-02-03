@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import Footer, { footerTestIds } from "./Footer";
-import { LanguageProvider } from "@/context/LanguageContext";
+import { LanguageProvider } from "../../context/LanguageContext";
 
 const FooterWithProvider = () => (
   <LanguageProvider>

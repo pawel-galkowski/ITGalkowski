@@ -2,9 +2,9 @@
 
 import { Box, Typography } from "@mui/material";
 import React from "react";
-import { useLanguage } from "@/context/LanguageContext";
-import { useTranslations } from "@/i18n";
-import { footerStyles } from "@/components/footer/Footer.styles";
+import { useLanguage } from "../../context/LanguageContext";
+import { useTranslations } from "../../i18n";
+import { footerStyles } from "./Footer.styles";
 
 export const footerTestIds = {
   root: "footer-root",

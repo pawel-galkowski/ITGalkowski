@@ -1,6 +1,6 @@
 import { screen } from "@testing-library/react";
 import FAQSection, { faqsSectionTestIds } from "./FaqsSection";
-import { renderWithLanguage } from "@/test-utils/a11y";
+import { renderWithLanguage } from "../../test-utils/a11y";
 
 describe("FaqsSection Component", () => {
   it("renders root with test ID", () => {

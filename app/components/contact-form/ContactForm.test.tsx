@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import ContactForm, { contactFormTestIds } from "@/components/contact-form";
+import ContactForm, { contactFormTestIds } from ".";
 
 // Mock ReCAPTCHA
 jest.mock("react-google-recaptcha", () =>
@@ -14,10 +14,10 @@ jest.mock("react-google-recaptcha", () =>
 );
 
 // Mock useLanguage and useTranslations
-jest.mock("@/context/LanguageContext", () => ({
+jest.mock("../../context/LanguageContext", () => ({
   useLanguage: () => ({ language: "en" }),
 }));
-jest.mock("@/i18n", () => ({
+jest.mock("../../i18n", () => ({
   useTranslations: () => ({
     t: (key: string) => {
       // Return actual error/success strings for test matching

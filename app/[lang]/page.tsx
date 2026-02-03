@@ -3,19 +3,19 @@
 import React, { Suspense } from "react";
 import { Box } from "@mui/material";
 import { useParams } from "next/navigation";
-import { Languages } from "@/i18n/types";
-import { useLanguage } from "@/context/LanguageContext";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
-import EntrySection from "@/sections/entrySection/EntrySection";
-import InovationSection from "@/sections/inovationSection/InovationSection";
-import ExplorePortfolio from "@/sections/explorePortfolio/ExplorePortfolio";
-import FaqsSection from "@/sections/faqsSection/FaqsSection";
-import ImgSliderSection from "@/sections/imgSliderSection/ImgSliderSection";
-import ExperienceSection from "@/sections/experienceSection/ExperienceSection";
-import EmpowerSolutionSection from "@/sections/empowerSolutionSection/EmpowerSolutionSection";
-import TilesSection from "@/sections/tilesSection/TilesSection";
-import ContactSection from "@/sections/contactSection/ContactSection";
+import { Languages } from "../i18n/types";
+import { useLanguage } from "../context/LanguageContext";
+import Header from "../components/header";
+import Footer from "../components/footer";
+import EntrySection from "../sections/entrySection/EntrySection";
+import InovationSection from "../sections/inovationSection/InovationSection";
+import ExplorePortfolio from "../sections/explorePortfolio/ExplorePortfolio";
+import FaqsSection from "../sections/faqsSection/FaqsSection";
+import ImgSliderSection from "../sections/imgSliderSection/ImgSliderSection";
+import ExperienceSection from "../sections/experienceSection/ExperienceSection";
+import EmpowerSolutionSection from "../sections/empowerSolutionSection/EmpowerSolutionSection";
+import TilesSection from "../sections/tilesSection/TilesSection";
+import ContactSection from "../sections/contactSection/ContactSection";
 
 const homeStyles = {
   display: "flex",

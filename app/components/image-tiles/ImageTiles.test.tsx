@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { LanguageProvider } from "@/context/LanguageContext";
-import ImageTiles, { imageTilesTestIds } from "@/components/image-tiles";
+import { LanguageProvider } from "../../context/LanguageContext";
+import ImageTiles, { imageTilesTestIds } from ".";
 
 const renderWithLanguage = (component: React.ReactElement) => {
   return render(<LanguageProvider>{component}</LanguageProvider>);

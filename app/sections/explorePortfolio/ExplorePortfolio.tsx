@@ -3,8 +3,8 @@
 import { Box, Typography, Button } from "@mui/material";
 import React from "react";
 import { explorePortfolioStyles } from "./ExplorePortfolio.styles";
-import { useTranslations } from "@/i18n";
-import { useLanguage } from "@/context/LanguageContext";
+import { useTranslations } from "../../i18n";
+import { useLanguage } from "../../context/LanguageContext";
 
 export const explorePortfolioTestIds = {
   root: "explore-portfolio-root",

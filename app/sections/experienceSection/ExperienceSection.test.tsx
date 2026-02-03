@@ -1,6 +1,6 @@
 import { screen } from "@testing-library/react";
 import ExperienceSection, { experienceSectionTestIds } from "./ExperienceSection";
-import { renderWithLanguage } from "@/test-utils/a11y";
+import { renderWithLanguage } from "../../test-utils/a11y";
 
 describe("ExperienceSection Component", () => {
   it("renders root with test ID", () => {

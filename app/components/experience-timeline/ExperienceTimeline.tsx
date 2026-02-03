@@ -19,11 +19,11 @@ import {
   timelineBoxStyles,
   timelineSummaryStyles,
 } from "./ExperienceTimeline.styles";
-import en from "@/components/experience-timeline/data/en.json";
-import pl from "@/components/experience-timeline/data/pl.json";
-import { stringToHTML } from "@/components/experience-timeline/utils";
-import { useLanguage } from "@/context/LanguageContext";
-import { Languages } from "@/i18n/types";
+import en from "./data/en.json";
+import pl from "./data/pl.json";
+import { stringToHTML } from "./utils";
+import { useLanguage } from "../../context/LanguageContext";
+import { Languages } from "../../i18n/types";
 
 export const experienceTimelineTestIds = {
   root: "experience-timeline-root",

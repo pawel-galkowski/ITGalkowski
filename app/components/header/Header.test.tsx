@@ -6,9 +6,9 @@ jest.mock("next/navigation", () => ({
   useSearchParams: () => ({ toString: () => "" }),
 }));
 import Header, { headerTestIds } from "./Header";
-import { renderWithA11y } from "@/test-utils/a11y";
-import { LanguageProvider } from "@/context/LanguageContext";
-import { en } from "@/i18n/en";
+import { renderWithA11y } from "../../test-utils/a11y";
+import { LanguageProvider } from "../../context/LanguageContext";
+import { en } from "../../i18n/en";
 
 const HeaderWithProvider = () => (
   <LanguageProvider>

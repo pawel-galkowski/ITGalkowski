@@ -1,6 +1,6 @@
 import { screen } from "@testing-library/react";
 import ExplorePortfolio, { explorePortfolioTestIds } from "./ExplorePortfolio";
-import { renderWithLanguage } from "@/test-utils/a11y";
+import { renderWithLanguage } from "../../test-utils/a11y";
 
 describe("ExplorePortfolio Component", () => {
   it("renders root with test ID", () => {

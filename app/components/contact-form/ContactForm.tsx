@@ -3,16 +3,16 @@ import React, { useState, useRef } from "react";
 import { Box, TextField, Button, Typography, CircularProgress, Fade } from "@mui/material";
 import { motion } from "framer-motion";
 import ReCAPTCHA from "react-google-recaptcha";
-import { useLanguage } from "@/context/LanguageContext";
-import { useTranslations } from "@/i18n";
-import { FormState, FormErrors, initialState } from "@/components/contact-form/ContactForm.types";
-import { validate } from "@/components/contact-form/utils";
+import { useLanguage } from "../../context/LanguageContext";
+import { useTranslations } from "../../i18n";
+import { FormState, FormErrors, initialState } from "./ContactForm.types";
+import { validate } from "./utils";
 import {
   formBoxStyles,
   textFieldStyles,
   buttonStyles,
   buttonBoxStyles,
-} from "@/components/contact-form/ContactForm.styles";
+} from "./ContactForm.styles";
 
 export const contactFormTestIds = {
   root: "contact-form-root",
