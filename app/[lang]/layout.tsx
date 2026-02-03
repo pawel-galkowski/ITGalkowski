@@ -4,6 +4,11 @@ import { Languages } from "../i18n/types";
 import LanguageInitializer from "../components/LanguageInitializer";
 import "@/globals.css";
 
+// Generate static params for the [lang] route - required for static generation
+export async function generateStaticParams() {
+  return [{ lang: Languages.EN }, { lang: Languages.PL }];
+}
+
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://itgalkowski.pl"),
   title: {

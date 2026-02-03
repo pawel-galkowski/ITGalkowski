@@ -108,7 +108,8 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  output: "standalone",
+  // Remove standalone output for Vercel compatibility
+  // output: "standalone",
 };
 
 export default nextConfig;

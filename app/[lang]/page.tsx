@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { Suspense } from "react";
 import { Box } from "@mui/material";
 import { useParams } from "next/navigation";
 import { Languages } from "@/i18n/types";
@@ -42,7 +42,9 @@ const Home: React.FC = () => {
       <a href="#main-content" className="skip-to-main">
         Skip to main content
       </a>
-      <Header />
+      <Suspense fallback={null}>
+        <Header />
+      </Suspense>
       <Box component="div" id="main-content" sx={homeStyles}>
         <EntrySection />
         <InovationSection />
