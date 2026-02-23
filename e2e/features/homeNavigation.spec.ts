@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { en } from "../../app/i18n/en";
 
 test.describe("Home Page Navigation and Content", () => {
   test.beforeEach(async ({ page }) => {
@@ -7,7 +8,7 @@ test.describe("Home Page Navigation and Content", () => {
 
   test("should load home page successfully", async ({ page }) => {
     await expect(page.locator("main")).toBeVisible();
-    const heading = page.locator("text=Master Your Projects with Expert Code");
+    const heading = page.locator(`text=${en.entrySection.title}`);
     await expect(heading).toBeVisible();
   });
 
@@ -22,9 +23,9 @@ test.describe("Home Page Navigation and Content", () => {
   });
 
   test("should display all major sections", async ({ page }) => {
-    const entryHeading = page.locator("text=Master Your Projects with Expert Code");
+    const entryHeading = page.locator(`text=${en.entrySection.title}`);
     await expect(entryHeading).toBeVisible();
-    const innovationHeading = page.locator("text=Innovative JavaScript Engineering Silesia");
+    const innovationHeading = page.locator(`text=${en.inovationSection.title}`);
     await expect(innovationHeading).toBeVisible();
     await page.evaluate(() => window.scrollBy(0, 500));
   });

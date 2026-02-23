@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { en } from "../../app/i18n/en";
 
 test.describe("FAQ Section", () => {
   test.beforeEach(async ({ page }) => {
@@ -22,14 +23,16 @@ test.describe("FAQ Section", () => {
       await expect(faqSection).toBeVisible();
     } else {
       // Fallback: look for FAQ heading text
-      const faqHeading = page.locator("text=/FAQ|Questions|FAQs/i").first();
+      const faqHeading = page.locator(`text=${en.faqs.header}`).first();
       await expect(faqHeading).toBeVisible({ timeout: 10000 });
     }
   });
 
   test("should allow FAQ accordion expansion", async ({ page }) => {
     await page.evaluate(() => window.scrollBy(0, 3000));
-    const accordions = page.locator('[role="button"]').filter({ hasText: /\?|question/ });
+    const accordions = page
+      .locator('[role="button"]')
+      .filter({ hasText: new RegExp(en.faqs.list[0]!.question, "i") });
     const accordionCount = await accordions.count();
     if (accordionCount > 0) {
       await accordions.first().click();

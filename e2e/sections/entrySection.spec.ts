@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { en } from "../../app/i18n/en";
 
 test.describe("Entry Section - CTA and Content", () => {
   test.beforeEach(async ({ page }) => {
@@ -6,12 +7,12 @@ test.describe("Entry Section - CTA and Content", () => {
   });
 
   test("should display entry section with content", async ({ page }) => {
-    const entryText = page.locator("text=Elevate your projects with expert full-stack JavaScript");
+    const entryText = page.locator(`text=${en.entrySection.title}`);
     await expect(entryText).toBeVisible();
   });
 
   test("should have clickable CTA button", async ({ page }) => {
-    const ctaButton = page.locator("button", { hasText: /Hire Your Expert/ });
+    const ctaButton = page.locator("button", { hasText: new RegExp(en.entrySection.button, "i") });
     await expect(ctaButton).toBeVisible();
     const isEnabled = await ctaButton.isEnabled();
     expect(isEnabled).toBe(true);
@@ -24,11 +25,10 @@ test.describe("Entry Section - CTA and Content", () => {
     expect(src).toBeTruthy();
   });
 
-  test("should mention Katowice location", async ({ page }) => {
-    // Katowice is mentioned in various sections, scroll to see more content
+  test("should display entry section body", async ({ page }) => {
     await page.evaluate(() => window.scrollBy(0, 500));
     await page.waitForTimeout(200);
-    const katowiceText = page.locator("text=/Katowice/i").first();
-    await expect(katowiceText).toBeVisible({ timeout: 10000 });
+    const entryBodyText = page.locator(`text=${en.entrySection.body}`);
+    await expect(entryBodyText).toBeVisible({ timeout: 10000 });
   });
 });
