@@ -1,6 +1,11 @@
 import { render, screen } from "@testing-library/react";
 import LogoSlider, { logoSliderTestIds } from "./LogoSlider";
 
+const expectedLogoAlts = [
+  "Szpital rejonowy w Raciborzu Logo",
+  "Capgemini Polska Logo",
+];
+
 describe("LogoSlider", () => {
   it("renders root and track", () => {
     render(<LogoSlider />);
@@ -16,8 +21,9 @@ describe("LogoSlider", () => {
     expect(logoBoxes.length).toBe(10);
     expect(logoImgs.length).toBe(10);
     // Only the first set has alt text, the duplicates have empty alt
-    expect(screen.getAllByAltText("Szpital rejonowy w Raciborzu Logo").length).toBe(1);
-    expect(screen.getAllByAltText("Capgemini Polska Logo").length).toBe(1);
+    expectedLogoAlts.forEach((altText) => {
+      expect(screen.getAllByAltText(altText).length).toBe(1);
+    });
   });
 
   it("renders all logos with grayscale(0%)", () => {

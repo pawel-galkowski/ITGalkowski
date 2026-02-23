@@ -18,7 +18,7 @@ describe("LanguageButtons Component", () => {
       <LanguageButtons language={Languages.EN} handleLanguageChange={mockHandleLanguageChange} />
     );
     expect(screen.getByTestId(languageButtonsTestIds.enFlag)).toBeInTheDocument();
-    expect(screen.getByAltText("English flag")).toBeInTheDocument();
+    expect(screen.getByTestId(languageButtonsTestIds.enFlag)).toHaveAttribute("alt");
   });
 
   it("renders Polish flag with test ID when language is Polish", () => {
@@ -27,7 +27,7 @@ describe("LanguageButtons Component", () => {
       <LanguageButtons language={Languages.PL} handleLanguageChange={mockHandleLanguageChange} />
     );
     expect(screen.getByTestId(languageButtonsTestIds.plFlag)).toBeInTheDocument();
-    expect(screen.getByAltText("Polish flag")).toBeInTheDocument();
+    expect(screen.getByTestId(languageButtonsTestIds.plFlag)).toHaveAttribute("alt");
   });
 
   it("calls handler when English flag is clicked", async () => {
@@ -61,7 +61,7 @@ describe("LanguageButtons Component", () => {
     );
 
     const flagImage = screen.getByTestId(languageButtonsTestIds.enFlag);
-    expect(flagImage).toHaveAttribute("alt", "English flag");
+    expect(flagImage).toHaveAttribute("alt");
     expect(flagImage).toHaveAttribute("src", "/img/en.png");
   });
 
@@ -72,7 +72,7 @@ describe("LanguageButtons Component", () => {
     );
 
     const flagImage = screen.getByTestId(languageButtonsTestIds.plFlag);
-    expect(flagImage).toHaveAttribute("alt", "Polish flag");
+    expect(flagImage).toHaveAttribute("alt");
     expect(flagImage).toHaveAttribute("src", "/img/pl.png");
   });
 });

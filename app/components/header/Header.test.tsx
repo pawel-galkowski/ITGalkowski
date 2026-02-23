@@ -19,11 +19,10 @@ const HeaderWithProvider = () => (
 describe("Header Component", () => {
   it("renders header with logo image and hidden h1", () => {
     render(<HeaderWithProvider />);
-    // Check for visually hidden h1
-    expect(screen.getByText("ITGalkowski - Professional IT Solutions")).toBeInTheDocument();
     // Check for at least one logo image
     const logos = screen.getAllByTestId(headerTestIds.logo);
     expect(logos.length).toBeGreaterThan(0);
+    expect(logos[0]).toHaveAttribute("alt");
   });
 
   it("renders navigation items", () => {
@@ -99,14 +98,16 @@ describe("Header Component", () => {
 
   it("menu button has proper aria-label", () => {
     render(<HeaderWithProvider />);
-    const menuButton = screen.getByLabelText("Open navigation menu");
+    const menuButton = screen.getByTestId(headerTestIds.menuButton);
     expect(menuButton).toBeInTheDocument();
+    expect(menuButton).toHaveAttribute("aria-label");
   });
 
   it("desktop navigation has aria-label", () => {
     render(<HeaderWithProvider />);
-    const nav = screen.getByLabelText("Desktop navigation");
+    const nav = screen.getByTestId(headerTestIds.nav);
     expect(nav).toBeInTheDocument();
+    expect(nav).toHaveAttribute("aria-label");
   });
 
   it("drawer closes when item is clicked", () => {

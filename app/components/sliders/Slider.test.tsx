@@ -17,8 +17,8 @@ describe("ImageCarousel (Slider) Component", () => {
     const images = screen.getAllByTestId(sliderTestIds.image);
     expect(images.length).toBeGreaterThan(0);
     // Check that at least one known alt is present
-    expect(screen.getAllByAltText("Image 1").length).toBeGreaterThan(0);
-    expect(screen.getAllByAltText("Image 2").length).toBeGreaterThan(0);
+    expect(screen.getAllByAltText(mockImages[0]!.alt).length).toBeGreaterThan(0);
+    expect(screen.getAllByAltText(mockImages[1]!.alt).length).toBeGreaterThan(0);
   });
 
   it("renders navigation buttons with test IDs", () => {
@@ -84,7 +84,7 @@ describe("ImageCarousel (Slider) Component", () => {
 
     await waitFor(() => {
       // Just check that images still exist
-      const images = screen.getAllByAltText("Image 1");
+      const images = screen.getAllByAltText(mockImages[0]!.alt);
       expect(images.length).toBeGreaterThan(0);
     });
 

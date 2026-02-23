@@ -33,6 +33,19 @@ jest.mock("./data/pl.json", () => [
   },
 ]);
 
+const expectedTimelineEntries = [
+  {
+    date: "2020 - 2021",
+    position: "Junior Developer",
+    company: "Tech Company",
+  },
+  {
+    date: "2021 - 2023",
+    position: "Mid-level Developer",
+    company: "Growth Startup",
+  },
+];
+
 describe("ExperienceTimeline Component", () => {
   it("renders timeline component", () => {
     renderWithLanguage(<ExperienceTimeline />);
@@ -42,22 +55,22 @@ describe("ExperienceTimeline Component", () => {
   it("displays experience entries", () => {
     renderWithLanguage(<ExperienceTimeline />);
     const positions = screen.getAllByTestId(experienceTimelineTestIds.position);
-    expect(positions[0]).toHaveTextContent("Junior Developer");
-    expect(positions[1]).toHaveTextContent("Mid-level Developer");
+    expect(positions[0]).toHaveTextContent(expectedTimelineEntries[0]!.position);
+    expect(positions[1]).toHaveTextContent(expectedTimelineEntries[1]!.position);
   });
 
   it("displays company names", () => {
     renderWithLanguage(<ExperienceTimeline />);
     const companies = screen.getAllByTestId(experienceTimelineTestIds.company);
-    expect(companies[0]).toHaveTextContent("Tech Company");
-    expect(companies[1]).toHaveTextContent("Growth Startup");
+    expect(companies[0]).toHaveTextContent(expectedTimelineEntries[0]!.company);
+    expect(companies[1]).toHaveTextContent(expectedTimelineEntries[1]!.company);
   });
 
   it("displays dates", () => {
     renderWithLanguage(<ExperienceTimeline />);
     const dates = screen.getAllByTestId(experienceTimelineTestIds.date);
-    expect(dates[0]).toHaveTextContent("2020 - 2021");
-    expect(dates[1]).toHaveTextContent("2021 - 2023");
+    expect(dates[0]).toHaveTextContent(expectedTimelineEntries[0]!.date);
+    expect(dates[1]).toHaveTextContent(expectedTimelineEntries[1]!.date);
   });
 
   it("renders timeline items", () => {

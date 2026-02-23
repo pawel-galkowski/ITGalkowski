@@ -2,6 +2,7 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import { LanguageProvider } from "../../context/LanguageContext";
 import ImageTiles, { imageTilesTestIds } from ".";
+import enTiles from "./data/en.json";
 
 const renderWithLanguage = (component: React.ReactElement) => {
   return render(<LanguageProvider>{component}</LanguageProvider>);
@@ -27,32 +28,29 @@ describe("ImageTiles Component", () => {
 
   it("displays all service titles", () => {
     renderWithLanguage(<ImageTiles />);
-    expect(screen.getByText("Custom Web Application Development")).toBeInTheDocument();
-    expect(screen.getByText("Responsive Frontend Design")).toBeInTheDocument();
-    expect(screen.getByText("Backend API Integration")).toBeInTheDocument();
-    expect(screen.getByText("Full-stack JavaScript Consultation")).toBeInTheDocument();
+    enTiles.forEach((item) => {
+      expect(screen.getByText(item.title)).toBeInTheDocument();
+    });
   });
 
   it("displays all service descriptions", () => {
     renderWithLanguage(<ImageTiles />);
-    expect(screen.getByText(/Expertly crafted, dynamic web solutions/)).toBeInTheDocument();
-    expect(screen.getByText(/Create stunning, responsive interfaces/)).toBeInTheDocument();
-    expect(screen.getByText(/Streamline your operations with robust/)).toBeInTheDocument();
-    expect(screen.getByText(/Leverage expert guidance on JavaScript/)).toBeInTheDocument();
+    enTiles.forEach((item) => {
+      expect(screen.getByText(item.content)).toBeInTheDocument();
+    });
   });
 
   it("renders correct number of image tiles", () => {
     renderWithLanguage(<ImageTiles />);
     const tiles = screen.getAllByTestId(imageTilesTestIds.tile);
-    expect(tiles.length).toBe(4);
+    expect(tiles.length).toBe(enTiles.length);
   });
 
   it("displays images with correct alt text", () => {
     renderWithLanguage(<ImageTiles />);
-    expect(screen.getByAltText("Custom Web Application Development")).toBeInTheDocument();
-    expect(screen.getByAltText("Responsive Frontend Design")).toBeInTheDocument();
-    expect(screen.getByAltText("Backend API Integration")).toBeInTheDocument();
-    expect(screen.getByAltText("Full-stack JavaScript Consultation")).toBeInTheDocument();
+    enTiles.forEach((item) => {
+      expect(screen.getByAltText(item.title)).toBeInTheDocument();
+    });
   });
 
   it("images have proper src attributes", () => {

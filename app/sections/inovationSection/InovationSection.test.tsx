@@ -2,6 +2,7 @@ import React from "react";
 import { screen } from "@testing-library/react";
 import InovationSection, { inovationSectionTestIds } from "./InovationSection";
 import { renderWithLanguage } from "../../test-utils/a11y";
+import { en } from "../../i18n/en";
 
 describe("InovationSection Component", () => {
   it("renders root with test ID", () => {
@@ -22,34 +23,32 @@ describe("InovationSection Component", () => {
   it("renders image with test ID", () => {
     renderWithLanguage(<InovationSection />);
     expect(screen.getByTestId(inovationSectionTestIds.image)).toBeInTheDocument();
-    expect(screen.getByAltText("laptop")).toBeInTheDocument();
+    expect(screen.getByTestId(inovationSectionTestIds.image)).toHaveAttribute("alt");
   });
 
   it("renders main heading", () => {
     renderWithLanguage(<InovationSection />);
-    expect(screen.getByText("Innovative JavaScript Engineering Silesia")).toBeInTheDocument();
+    expect(screen.getByText(en.inovationSection.title)).toBeInTheDocument();
   });
 
   it("displays description text", () => {
     renderWithLanguage(<InovationSection />);
-    expect(
-      screen.getByText(/Explore top-tier full-stack JavaScript solutions/)
-    ).toBeInTheDocument();
+    expect(screen.getByText(en.inovationSection.body)).toBeInTheDocument();
   });
 
-  it("contains Katowice reference", () => {
+  it("contains modern TypeScript architecture reference", () => {
     renderWithLanguage(<InovationSection />);
-    expect(screen.getByText(/Katowice/)).toBeInTheDocument();
+    expect(screen.getByTestId(inovationSectionTestIds.textBox)).toHaveTextContent(/TypeScript/i);
   });
 
-  it("contains Silesian Voivodeship reference", () => {
+  it("contains cloud platforms reference", () => {
     renderWithLanguage(<InovationSection />);
-    expect(screen.getByText(/Silesian Voivodeship/)).toBeInTheDocument();
+    expect(screen.getByText(/cloud platforms/i)).toBeInTheDocument();
   });
 
   it("has correct image src", () => {
     renderWithLanguage(<InovationSection />);
-    const image = screen.getByAltText("laptop");
+    const image = screen.getByTestId(inovationSectionTestIds.image);
     expect(image.getAttribute("src")).toBe("/img/laptop.jpg");
   });
 
@@ -61,17 +60,17 @@ describe("InovationSection Component", () => {
 
   it("contains cutting-edge mention", () => {
     renderWithLanguage(<InovationSection />);
-    expect(screen.getByText(/cutting-edge technologies/)).toBeInTheDocument();
+    expect(screen.getByTestId(inovationSectionTestIds.textBox)).toHaveTextContent(/cutting/i);
   });
 
   it("mentions scalable solutions", () => {
     renderWithLanguage(<InovationSection />);
-    expect(screen.getByText(/scalable web applications/)).toBeInTheDocument();
+    expect(screen.getByText(/scalable, maintainable applications/i)).toBeInTheDocument();
   });
 
   it("mentions business needs", () => {
     renderWithLanguage(<InovationSection />);
-    expect(screen.getByText(/unique business needs/)).toBeInTheDocument();
+    expect(screen.getByText(/business needs/i)).toBeInTheDocument();
   });
 
   it("renders with dark background color", () => {

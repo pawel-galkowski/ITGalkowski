@@ -1,6 +1,7 @@
 import { screen } from "@testing-library/react";
 import EmpowerSolutionSection, { empowerSolutionSectionTestIds } from "./EmpowerSolutionSection";
 import { renderWithLanguage } from "../../test-utils/a11y";
+import { en } from "../../i18n/en";
 
 describe("EmpowerSolutionSection Component", () => {
   it("renders root and container with test IDs", () => {
@@ -18,7 +19,7 @@ describe("EmpowerSolutionSection Component", () => {
     renderWithLanguage(<EmpowerSolutionSection />);
     expect(screen.getByTestId(empowerSolutionSectionTestIds.imageBox)).toBeInTheDocument();
     expect(screen.getByTestId(empowerSolutionSectionTestIds.image)).toBeInTheDocument();
-    expect(screen.getByAltText("Empowering Digital Solutions")).toBeInTheDocument();
+    expect(screen.getByAltText(en.empowerSolutionSection.title)).toBeInTheDocument();
   });
 
   it("renders text box with test ID", () => {

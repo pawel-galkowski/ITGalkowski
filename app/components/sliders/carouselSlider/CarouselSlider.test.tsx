@@ -27,7 +27,7 @@ describe("CarouselSlider", () => {
     const imgs = screen.getAllByTestId(carouselSliderTestIds.img);
     expect(imgs.length).toBe(3);
     // The main image is the second one
-    expect(imgs[1]).toHaveAttribute("alt", "Image 1");
+    expect(imgs[1]).toHaveAttribute("alt", images[0]!.alt);
   });
 
   it("renders dot indicators", () => {
@@ -39,13 +39,13 @@ describe("CarouselSlider", () => {
   it("navigates to next and previous image on button click", () => {
     render(<CarouselSlider images={images} />);
     const getMainImg = () => screen.getAllByTestId(carouselSliderTestIds.img)[1];
-    expect(getMainImg()).toHaveAttribute("alt", "Image 1");
+    expect(getMainImg()).toHaveAttribute("alt", images[0]!.alt);
 
     fireEvent.click(screen.getByTestId(carouselSliderTestIds.rightButton));
-    expect(getMainImg()).toHaveAttribute("alt", "Image 2");
+    expect(getMainImg()).toHaveAttribute("alt", images[1]!.alt);
 
     fireEvent.click(screen.getByTestId(carouselSliderTestIds.leftButton));
-    expect(getMainImg()).toHaveAttribute("alt", "Image 1");
+    expect(getMainImg()).toHaveAttribute("alt", images[0]!.alt);
   });
 
   it("navigates to image on dot click", () => {
@@ -53,6 +53,6 @@ describe("CarouselSlider", () => {
     const dots = screen.getAllByTestId(carouselSliderTestIds.dot);
     fireEvent.click(dots[2]!);
     const imgs = screen.getAllByTestId(carouselSliderTestIds.img);
-    expect(imgs[1]).toHaveAttribute("alt", "Image 3");
+    expect(imgs[1]).toHaveAttribute("alt", images[2]!.alt);
   });
 });

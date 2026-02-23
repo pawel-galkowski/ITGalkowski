@@ -5,7 +5,7 @@
     "position": "Senior Software Engineer",
     "location": "Katowice (Praca hybrydowa)",
     "date": "07/2025 - Obecnie",
-    "summary": "<ul><li><p>Przyczynił się do platformy wyszukiwania zasilanej sztuczną inteligencją przy użyciu usługi Azure AI Search i Cognitive Services, poprawiając trafność i doświadczenie użytkownika.</p></li><li><p>Zbudował nowoczesne, responsywne interfejsy przy użyciu TypeScript i architektur frontendowych opartych na komponentach, z silnym naciskiem na jasność UX i wydajność.</p></li><li><p>Zmniejszył defekty związane z interfejsem użytkownika o ~20% dzięki ulepszonej architekturze komponentów i standardom testowania.</p></li><li><p>Współpracował z projektantami w celu prototypowania nowych wzorców interakcji i udoskonalania spójności wizualnej w całym produkcie.</p></li><li><p>Mentorował inżynierów i ulepszył architekturę frontendową, zmniejszając duplikaty i przyspieszając dostarczanie.</p></li><li><p>Ustalił standardy testowania i dostępności w całej zespole.</p></li></ul>",
+    "summary": "<ul><li><p>Odpowiadałem za tworzenie i rozwój rozwiązań full‑stack opartych na TypeScript, Node.js oraz nowoczesnych frameworkach frontendowych.</p></li><li><p>Budowałem i utrzymywałem usługi backendowe oraz API, dbając o integracje, logikę domenową i skalowalność systemów.</p></li><li><p>Pracowałem w środowisku Azure, współtworząc platformy wykorzystujące AI oraz integrując usługi z systemami kognitywnymi i danymi.</p></li><li><p>Współpracowałem z zespołami Product, Design, QA i Data, przekładając wymagania biznesowe na stabilne funkcjonalności produkcyjne.</p></li><li><p>Uczestniczyłem w decyzjach architektonicznych, dbając o równowagę między szybkim dostarczaniem a długoterminową jakością.</p></li><li><p>Mentorowałem inżynierów, prowadziłem code review i współtworzyłem narzędzia oraz standardy inżynieryjne.</p></li></ul>",
     "url": {
       "label": "capgemini.com",
       "href": "https://www.capgemini.com/"
@@ -17,7 +17,7 @@
     "position": "Software Engineer",
     "location": "Katowice (Praca zdalna)",
     "date": "05/2022 - 07/2025",
-    "summary": "<ul><li><p>Współpracował z rozproszonymi zespołami w wielu strefach czasowych, zapewniając płynne dostarczanie i wyrównanie.</p></li><li><p>Dostarczył skalowalne rozwiązania frontendowe przy użyciu React, TypeScript, Node i narzędzi natywnych dla chmury.</p></li><li><p>Pracował bezpośrednio z klientami w celu zdefiniowania wymagań i szybkiej iteracji na podstawie opinii.</p></li><li><p>Zbudował zautomatyzowane ramy testowania (Jest, Cypress) w celu zapewnienia niezawodności i zmniejszenia regresji.</p></li><li><p>Ułatwił sesje wymiany wiedzy i poprawił jakość inżynierii w całym zespole.</p></li><li><p>Ulepszył wydajność i spójność interfejsu użytkownika w wielu aplikacjach poprzez ulepszenie architektury komponentów i zmniejszenie nadmiarowej logiki.</p></li></ul>",
+    "summary": "<ul><li><p>Realizowałem projekty full‑stack z wykorzystaniem React, TypeScript, Node.js oraz infrastruktury chmurowej.</p></li><li><p>Tworzyłem i rozwijałem usługi backendowe oraz REST API, integrując je z systemami zewnętrznymi i bazami danych.</p></li><li><p>Poprawiałem wydajność, jakość kodu i spójność warstw frontendowych oraz backendowych.</p></li><li><p>Współpracowałem z rozproszonymi zespołami w różnych strefach czasowych, zapewniając płynne dostarczanie.</p></li><li><p>Budowałem procesy automatycznego testowania (Jest, Cypress), zwiększając niezawodność i ograniczając regresje.</p></li><li><p>Współpracowałem bezpośrednio z klientami, doprecyzowując wymagania i szybko iterując na podstawie opinii.</p></li></ul>",
     "url": {
       "label": "capgemini.com",
       "href": "https://www.capgemini.com/"
@@ -29,7 +29,7 @@
     "position": "JavaScript Developer",
     "location": "Katowice (Praca hybrydowa)",
     "date": "12/2020 - 05/2022",
-    "summary": "<ul><li><p>Utrzymywał i optymalizował wielkoobszarowy system bankowy używany przez tysiące klientów.</p></li><li><p>Opracował komponenty interfejsu użytkownika wielokrotnego użytku w języku JavaScript, poprawiając łatwość konserwacji i zmniejszając defekty interfejsu użytkownika.</p></li><li><p>Utworzył dane testowe i narzędzia testowania w celu wspierania automatyzacji QA.</p></li><li><p>Zaproponował ulepszenia architektoniczne w celu zwiększenia wydajności i stabilności.</p></li><li><p>Wspierał system obsługujący tysiące użytkowników dziennie, zapewniając stabilność i płynną wydajność.</p></li></ul>",
+    "summary": "<ul><li><p>Rozwijałem i utrzymywałem platformę bankową o dużym obciążeniu, z której korzystały tysiące użytkowników dziennie.</p></li><li><p>Tworzyłem logikę backendową oraz REST API, koncentrując się na niezawodności, wydajności i bezpieczeństwie.</p></li><li><p>Współpracowałem z zespołami backend, QA i biznesem, dostarczając funkcjonalności end‑to‑end w środowisku regulowanym.</p></li><li><p>Wspierałem systemy produkcyjne o wysokiej dostępności, rozwiązując incydenty i problemy wydajnościowe.</p></li></ul>",
     "url": {
       "label": "ing.pl",
       "href": "https://www.ing.pl/"
@@ -38,10 +38,10 @@
   {
     "id": "bix2508glushfuan8d8g9ugx",
     "company": "Instal‑Konsorcjum Sp. z o.o.",
-    "position": "Junior Full‑Stack Developer ",
+    "position": "Junior Full‑Stack Developer",
     "location": "Wrocław (Praca lokalna)",
     "date": "07/2018 - 12/2020",
-    "summary": "<ul><li><p>Zbudował pulpit nawigacyjny biletów klientów, zmniejszając ilość połączeń na linię wsparcia o <strong>40%</strong>.</p></li><li><p>Opracował responsywne witryny internetowe przy użyciu JavaScript, Vue, PHP, MySQL, Node i C# .NET Core.</p></li><li><p>Zmodernizował systemy legacy, osiągając mierzalne wzrosty wydajności (18%+ szybsze czasy ładowania).</p></li><li><p>Utrzymywał aplikacje wewnętrzne na wielu technologiach.</p></li></ul>",
+    "summary": "<ul><li><p>Tworzyłem usługi backendowe i API w Node.js, PHP oraz relacyjnych bazach danych.</p></li><li><p>Budowałem systemy wewnętrzne i panele administracyjne, zmniejszając obciążenie operacyjne o około 40%.</p></li><li><p>Modernizowałem systemy legacy, poprawiając ich wydajność i łatwość utrzymania.</p></li><li><p>Utrzymywałem aplikacje wewnętrzne oparte na wielu technologiach i domenach biznesowych.</p></li></ul>",
     "url": {
       "label": "ik.pl",
       "href": "https://ik.pl/"

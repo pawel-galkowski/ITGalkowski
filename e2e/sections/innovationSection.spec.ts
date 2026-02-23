@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { en } from "../../app/i18n/en";
 
 test.describe("Innovation Section", () => {
   test.beforeEach(async ({ page }) => {
@@ -6,17 +7,17 @@ test.describe("Innovation Section", () => {
   });
 
   test("should display innovation section", async ({ page }) => {
-    const innovationHeading = page.locator("text=Innovative JavaScript Engineering Silesia");
+    const innovationHeading = page.locator(`text=${en.inovationSection.title}`);
     await expect(innovationHeading).toBeVisible();
   });
 
   test("should contain technology description", async ({ page }) => {
-    const techText = page.locator("text=/cutting-edge technologies/i");
+    const techText = page.locator(`text=${en.inovationSection.body}`);
     await expect(techText).toBeVisible();
   });
 
   test("should mention scalable solutions", async ({ page }) => {
-    const scalableText = page.locator("text=/scalable web applications/i");
+    const scalableText = page.locator(`text=${en.inovationSection.body}`);
     await expect(scalableText).toBeVisible();
   });
 
