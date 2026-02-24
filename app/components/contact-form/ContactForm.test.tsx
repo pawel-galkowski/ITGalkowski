@@ -66,7 +66,7 @@ describe("ContactForm", () => {
   });
 
   it("submits form and shows success", async () => {
-    process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY = "test-key";
+    process.env.RECAPTCHA_SITE_KEY = "test-key";
     setFetchMock(true, { success: true });
     renderWithLanguage(<ContactForm />);
     fireEvent.change(
@@ -100,7 +100,7 @@ describe("ContactForm", () => {
   });
 
   it("shows error if API fails", async () => {
-    process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY = "test-key";
+    process.env.RECAPTCHA_SITE_KEY = "test-key";
     setFetchMock(false, { error: "Server error" });
     renderWithLanguage(<ContactForm />);
     fireEvent.change(

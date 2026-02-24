@@ -152,16 +152,16 @@ const ContactForm: React.FC = () => {
           sx={textFieldStyles}
           data-testid={contactFormTestIds.message}
         />
-        {process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ? (
+        {process.env.RECAPTCHA_SITE_KEY ? (
           <ReCAPTCHA
             ref={recaptchaRef}
-            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+            sitekey={process.env.RECAPTCHA_SITE_KEY}
             size="invisible"
             data-testid={contactFormTestIds.recaptcha}
           />
         ) : (
           <Typography color="error.main">
-            reCAPTCHA site key is missing. Please set NEXT_PUBLIC_RECAPTCHA_SITE_KEY in your
+            reCAPTCHA site key is missing. Please set RECAPTCHA_SITE_KEY in your
             environment.
           </Typography>
         )}

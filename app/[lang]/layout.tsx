@@ -10,7 +10,7 @@ export async function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://itgalkowski.pl"),
+  metadataBase: new URL(process.env.SITE_URL || "https://itgalkowski.pl"),
   title: {
     default: "ITGalkowski - Expert IT Solutions & Professional Portfolio",
     template: "%s | ITGalkowski",
