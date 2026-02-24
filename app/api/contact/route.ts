@@ -33,18 +33,33 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "reCAPTCHA failed" }, { status: 400 });
     }
 
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT) || 587,
-      secure: false,
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    });
+    const emailUser = process.env.SMTP_USER ?? process.env.GMAIL_USER;
+    const emailPass = process.env.SMTP_PASS ?? process.env.GMAIL_PASS;
+
+    if (!emailUser || !emailPass || !process.env.CONTACT_RECIPIENT) {
+      return NextResponse.json({ error: "Email service is not configured" }, { status: 500 });
+    }
+
+    const transporter = process.env.SMTP_HOST
+      ? nodemailer.createTransport({
+          host: process.env.SMTP_HOST,
+          port: Number(process.env.SMTP_PORT) || 587,
+          secure: Number(process.env.SMTP_PORT) === 465,
+          auth: {
+            user: emailUser,
+            pass: emailPass,
+          },
+        })
+      : nodemailer.createTransport({
+          service: "gmail",
+          auth: {
+            user: emailUser,
+            pass: emailPass,
+          },
+        });
 
     await transporter.sendMail({
-      from: process.env.SMTP_USER,
+      from: emailUser,
       to: process.env.CONTACT_RECIPIENT,
       subject: `Contact Form Submission from ${name}`,
       replyTo: email,
